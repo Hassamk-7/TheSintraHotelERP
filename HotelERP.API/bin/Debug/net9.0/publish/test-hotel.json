@@ -1,0 +1,19 @@
+{
+  "hotelName": "Test Hotel",
+  "hotelCode": "TEST-001",
+  "address": "Test Address",
+  "city": "Test City",
+  "state": "Test State",
+  "country": "Pakistan",
+  "pinCode": "12345",
+  "phone": "+92-21-1234567",
+  "mobile": "+92-300-1234567",
+  "email": "test@hotel.com",
+  "website": "https://testhotel.com",
+  "fax": "",
+  "gstNumber": "GST-TEST",
+  "panNumber": "PAN-TEST",
+  "licenseNumber": "LIC-TEST",
+  "description": "Test Hotel Description",
+  "isActive": true
+}

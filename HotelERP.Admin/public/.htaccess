@@ -1,0 +1,14 @@
+# Enable Rewrite Engine
+RewriteEngine On
+RewriteBase /admin/
+
+# ============================================
+# ADMIN SPA ROUTING
+# ============================================
+
+# Allow real files and directories to be served (JS, CSS, images)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite all other requests to index.html (relative path)
+RewriteRule ^ index.html [L]

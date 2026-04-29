@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2c5aa0" />
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" sizes="any" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Sintra Hotel Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Gilda+Display&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Sintra Hotel CSS -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/plugins.css" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/style.css" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/Checkout.css" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/Thankyou.css" />
+    
+    <script>
+      (function () {
+        const siteName = 'Luxury Hotel';
+        const defaultDescription =
+          'Luxury Hotel - Experience the finest hospitality in Pakistan with premium rooms, suites, and world-class amenities. Book your perfect stay today.';
+        const defaultKeywords =
+          'luxury hotel, premium accommodation, Pakistan hotels, hotel booking, luxury suites, hospitality';
+
+        const path = window.location.pathname || '/';
+        const metaByPath = [
+          {
+            test: (p) => p === '/',
+            title: `Home | ${siteName}`,
+            description: defaultDescription,
+            keywords: defaultKeywords,
+          },
+          {
+            test: (p) => p.startsWith('/rooms'),
+            title: `Rooms | ${siteName}`,
+            description:
+              'Explore Luxury Hotel rooms and suites in Pakistan. Compare amenities, view pricing, and choose the perfect room for your stay.',
+            keywords:
+              'luxury hotel rooms, suites, room types, premium rooms, Pakistan accommodation, room rates, book room',
+          },
+          {
+            test: (p) => p.startsWith('/room/'),
+            title: `Room Details | ${siteName}`,
+            description: 'View room details, amenities, pricing, and availability.',
+            keywords: 'room details, hotel room, amenities, room price, book room',
+          },
+          {
+            test: (p) => p.startsWith('/gallery'),
+            title: `Gallery | ${siteName}`,
+            description:
+              'Explore the Luxury Hotel gallery—rooms, suites, dining, and facilities. Preview the experience before you book your stay in Pakistan.',
+            keywords: 'Luxury Hotel gallery, hotel photos, rooms images, suites photos, facilities, restaurant photos, Pakistan hotel',
+          },
+          {
+            test: (p) => p.startsWith('/restaurant'),
+            title: `Restaurant | ${siteName}`,
+            description:
+              'Dine at Luxury Hotel with curated Pakistani and international flavors. Explore our menu, locations, and signature dishes for every occasion.',
+            keywords: 'Luxury Hotel restaurant, hotel dining, Pakistani cuisine, continental food, menu, breakfast, lunch, dinner',
+          },
+          {
+            test: (p) => p.startsWith('/blogs'),
+            title: `Blogs | ${siteName}`,
+            description:
+              'Read Luxury Hotel blogs for travel inspiration, local guides, hotel updates, and special offers across Pakistan.',
+            keywords: 'Luxury Hotel blog, travel tips Pakistan, hotel news, travel guides, offers, updates',
+          },
+          {
+            test: (p) => p.startsWith('/blog/'),
+            title: `Blog | ${siteName}`,
+            description: 'Read our latest stories, travel tips, and hotel updates.',
+            keywords: 'Luxury Hotel blog, travel tips Pakistan, hotel news, travel guides, offers, updates',
+          },
+          {
+            test: (p) => p.startsWith('/search'),
+            title: `Search Rooms | ${siteName}`,
+            description:
+              'Search Luxury Hotel room availability by dates and guests. Compare rates and amenities, then book instantly online.',
+            keywords: 'Luxury Hotel search rooms, availability, hotel booking Pakistan, check-in, check-out, guests',
+          },
+          {
+            test: (p) => p.startsWith('/reservation'),
+            title: `Reservation | ${siteName}`,
+            description:
+              'Reserve your Luxury Hotel stay in minutes. Select dates and guests, choose your room, and confirm your booking securely online.',
+            keywords: 'Luxury Hotel reservation, book room Pakistan, online booking, check-in, check-out, secure reservation',
+          },
+          {
+            test: (p) => p.startsWith('/payment'),
+            title: `Payment | ${siteName}`,
+            description:
+              'Complete your Luxury Hotel booking securely. Enter your payment details to confirm your reservation and receive instant confirmation.',
+            keywords: 'Luxury Hotel payment, secure checkout, booking payment, credit card payment, reservation checkout',
+          },
+          {
+            test: (p) => p.startsWith('/thank-you'),
+            title: `Booking Confirmation | ${siteName}`,
+            description:
+              'Your Luxury Hotel booking is confirmed. View reservation details, download your confirmation, and contact support if you need assistance.',
+            keywords: 'Luxury Hotel booking confirmation, reservation confirmed, hotel booking receipt, booking details',
+          },
+          {
+            test: (p) => p.startsWith('/contact'),
+            title: `Contact Us | ${siteName}`,
+            description:
+              'Contact Luxury Hotel for reservations, corporate inquiries, events, or support. Call, email, or send us a message—we’re here to help.',
+            keywords: 'contact Luxury Hotel, hotel phone, hotel email, reservations support, booking help, customer service',
+          },
+        ];
+
+        const match = metaByPath.find((m) => m.test(path));
+        const finalTitle = match?.title || siteName;
+        const finalDescription = match?.description || defaultDescription;
+        const finalKeywords = match?.keywords || defaultKeywords;
+        const canonicalUrl = window.location.origin + path;
+
+        const upsert = (selector, create) => {
+          let el = document.head.querySelector(selector);
+          if (!el) {
+            el = create();
+            document.head.appendChild(el);
+          }
+          return el;
+        };
+
+        document.title = finalTitle;
+        upsert('meta[name="description"]', () => {
+          const m = document.createElement('meta');
+          m.setAttribute('name', 'description');
+          return m;
+        }).setAttribute('content', finalDescription);
+
+        upsert('meta[name="keywords"]', () => {
+          const m = document.createElement('meta');
+          m.setAttribute('name', 'keywords');
+          return m;
+        }).setAttribute('content', finalKeywords);
+
+        upsert('link[rel="canonical"]', () => {
+          const l = document.createElement('link');
+          l.setAttribute('rel', 'canonical');
+          return l;
+        }).setAttribute('href', canonicalUrl);
+      })();
+    </script>
+    <title>Luxury Hotel</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    
+    <!-- Sintra Hotel JavaScript - Load jQuery and essential libraries only -->
+    <script src="%PUBLIC_URL%/js/jquery-3.6.3.min.js"></script>
+    <script src="%PUBLIC_URL%/js/jquery-migrate-3.0.0.min.js"></script>
+    <script src="%PUBLIC_URL%/js/modernizr-2.6.2.min.js"></script>
+    <script src="%PUBLIC_URL%/js/popper.min.js"></script>
+    <script src="%PUBLIC_URL%/js/bootstrap.min.js"></script>
+    <script src="%PUBLIC_URL%/js/owl.carousel.min.js"></script>
+    <script src="%PUBLIC_URL%/js/select2.js"></script>
+    <script src="%PUBLIC_URL%/js/datepicker.js"></script>
+    <script src="%PUBLIC_URL%/js/sintra-init.js"></script>
+    <!-- Note: custom.js removed to prevent conflicts with React -->
+  </body>
+</html>

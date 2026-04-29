@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favicon Generator</title>
+</head>
+<body>
+    <canvas id="favicon" width="32" height="32" style="border: 1px solid #ccc;"></canvas>
+    
+    <script>
+        const canvas = document.getElementById('favicon');
+        const ctx = canvas.getContext('2d');
+        
+        // Background
+        ctx.fillStyle = '#2c5aa0';
+        ctx.beginPath();
+        ctx.arc(16, 16, 16, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        // Bed frame
+        ctx.fillStyle = 'white';
+        ctx.fillRect(6, 18, 20, 3);
+        ctx.fillRect(6, 21, 2, 4);
+        ctx.fillRect(24, 21, 2, 4);
+        
+        // Mattress
+        ctx.fillStyle = '#f0f0f0';
+        ctx.fillRect(7, 14, 18, 4);
+        
+        // Pillows
+        ctx.fillStyle = 'white';
+        ctx.beginPath();
+        ctx.ellipse(10, 12, 2.5, 1.5, 0, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.ellipse(22, 12, 2.5, 1.5, 0, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        // Headboard
+        ctx.fillStyle = '#d4af37';
+        ctx.fillRect(6, 8, 20, 6);
+        
+        // Convert to ICO (simplified approach)
+        console.log('Favicon generated! Right-click the canvas and save as image, then convert to .ico format');
+    </script>
+</body>
+</html>

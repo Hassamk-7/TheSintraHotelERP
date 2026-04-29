@@ -1,0 +1,315 @@
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace HotelERP.API.Migrations
+{
+    /// <inheritdoc />
+    public partial class AddCountriesTable : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.AlterColumn<decimal>(
+                name: "RoomSize",
+                table: "Rooms",
+                type: "decimal(10,2)",
+                precision: 10,
+                scale: 2,
+                nullable: true,
+                oldClrType: typeof(decimal),
+                oldType: "decimal(18,2)",
+                oldNullable: true);
+
+            migrationBuilder.AlterColumn<decimal>(
+                name: "Longitude",
+                table: "Hotels",
+                type: "decimal(18,6)",
+                precision: 18,
+                scale: 6,
+                nullable: true,
+                oldClrType: typeof(decimal),
+                oldType: "decimal(18,2)",
+                oldNullable: true);
+
+            migrationBuilder.AlterColumn<decimal>(
+                name: "Latitude",
+                table: "Hotels",
+                type: "decimal(18,6)",
+                precision: 18,
+                scale: 6,
+                nullable: true,
+                oldClrType: typeof(decimal),
+                oldType: "decimal(18,2)",
+                oldNullable: true);
+
+            migrationBuilder.CreateTable(
+                name: "Countries",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Code = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Countries", x => x.Id);
+                });
+
+            // Seed all countries
+            var countriesData = new[]
+            {
+                new { Name = "Afghanistan", Code = "AF", PhoneCode = "+93" },
+                new { Name = "Albania", Code = "AL", PhoneCode = "+355" },
+                new { Name = "Algeria", Code = "DZ", PhoneCode = "+213" },
+                new { Name = "Andorra", Code = "AD", PhoneCode = "+376" },
+                new { Name = "Angola", Code = "AO", PhoneCode = "+244" },
+                new { Name = "Antigua and Barbuda", Code = "AG", PhoneCode = "+1-268" },
+                new { Name = "Argentina", Code = "AR", PhoneCode = "+54" },
+                new { Name = "Armenia", Code = "AM", PhoneCode = "+374" },
+                new { Name = "Australia", Code = "AU", PhoneCode = "+61" },
+                new { Name = "Austria", Code = "AT", PhoneCode = "+43" },
+                new { Name = "Azerbaijan", Code = "AZ", PhoneCode = "+994" },
+                new { Name = "Bahamas", Code = "BS", PhoneCode = "+1-242" },
+                new { Name = "Bahrain", Code = "BH", PhoneCode = "+973" },
+                new { Name = "Bangladesh", Code = "BD", PhoneCode = "+880" },
+                new { Name = "Barbados", Code = "BB", PhoneCode = "+1-246" },
+                new { Name = "Belarus", Code = "BY", PhoneCode = "+375" },
+                new { Name = "Belgium", Code = "BE", PhoneCode = "+32" },
+                new { Name = "Belize", Code = "BZ", PhoneCode = "+501" },
+                new { Name = "Benin", Code = "BJ", PhoneCode = "+229" },
+                new { Name = "Bhutan", Code = "BT", PhoneCode = "+975" },
+                new { Name = "Bolivia", Code = "BO", PhoneCode = "+591" },
+                new { Name = "Bosnia and Herzegovina", Code = "BA", PhoneCode = "+387" },
+                new { Name = "Botswana", Code = "BW", PhoneCode = "+267" },
+                new { Name = "Brazil", Code = "BR", PhoneCode = "+55" },
+                new { Name = "Brunei", Code = "BN", PhoneCode = "+673" },
+                new { Name = "Bulgaria", Code = "BG", PhoneCode = "+359" },
+                new { Name = "Burkina Faso", Code = "BF", PhoneCode = "+226" },
+                new { Name = "Burundi", Code = "BI", PhoneCode = "+257" },
+                new { Name = "Cambodia", Code = "KH", PhoneCode = "+855" },
+                new { Name = "Cameroon", Code = "CM", PhoneCode = "+237" },
+                new { Name = "Canada", Code = "CA", PhoneCode = "+1" },
+                new { Name = "Cape Verde", Code = "CV", PhoneCode = "+238" },
+                new { Name = "Central African Republic", Code = "CF", PhoneCode = "+236" },
+                new { Name = "Chad", Code = "TD", PhoneCode = "+235" },
+                new { Name = "Chile", Code = "CL", PhoneCode = "+56" },
+                new { Name = "China", Code = "CN", PhoneCode = "+86" },
+                new { Name = "Colombia", Code = "CO", PhoneCode = "+57" },
+                new { Name = "Comoros", Code = "KM", PhoneCode = "+269" },
+                new { Name = "Congo", Code = "CG", PhoneCode = "+242" },
+                new { Name = "Costa Rica", Code = "CR", PhoneCode = "+506" },
+                new { Name = "Croatia", Code = "HR", PhoneCode = "+385" },
+                new { Name = "Cuba", Code = "CU", PhoneCode = "+53" },
+                new { Name = "Cyprus", Code = "CY", PhoneCode = "+357" },
+                new { Name = "Czech Republic", Code = "CZ", PhoneCode = "+420" },
+                new { Name = "Denmark", Code = "DK", PhoneCode = "+45" },
+                new { Name = "Djibouti", Code = "DJ", PhoneCode = "+253" },
+                new { Name = "Dominica", Code = "DM", PhoneCode = "+1-767" },
+                new { Name = "Dominican Republic", Code = "DO", PhoneCode = "+1-809" },
+                new { Name = "East Timor", Code = "TL", PhoneCode = "+670" },
+                new { Name = "Ecuador", Code = "EC", PhoneCode = "+593" },
+                new { Name = "Egypt", Code = "EG", PhoneCode = "+20" },
+                new { Name = "El Salvador", Code = "SV", PhoneCode = "+503" },
+                new { Name = "Equatorial Guinea", Code = "GQ", PhoneCode = "+240" },
+                new { Name = "Eritrea", Code = "ER", PhoneCode = "+291" },
+                new { Name = "Estonia", Code = "EE", PhoneCode = "+372" },
+                new { Name = "Ethiopia", Code = "ET", PhoneCode = "+251" },
+                new { Name = "Fiji", Code = "FJ", PhoneCode = "+679" },
+                new { Name = "Finland", Code = "FI", PhoneCode = "+358" },
+                new { Name = "France", Code = "FR", PhoneCode = "+33" },
+                new { Name = "Gabon", Code = "GA", PhoneCode = "+241" },
+                new { Name = "Gambia", Code = "GM", PhoneCode = "+220" },
+                new { Name = "Georgia", Code = "GE", PhoneCode = "+995" },
+                new { Name = "Germany", Code = "DE", PhoneCode = "+49" },
+                new { Name = "Ghana", Code = "GH", PhoneCode = "+233" },
+                new { Name = "Greece", Code = "GR", PhoneCode = "+30" },
+                new { Name = "Grenada", Code = "GD", PhoneCode = "+1-473" },
+                new { Name = "Guatemala", Code = "GT", PhoneCode = "+502" },
+                new { Name = "Guinea", Code = "GN", PhoneCode = "+224" },
+                new { Name = "Guinea-Bissau", Code = "GW", PhoneCode = "+245" },
+                new { Name = "Guyana", Code = "GY", PhoneCode = "+592" },
+                new { Name = "Haiti", Code = "HT", PhoneCode = "+509" },
+                new { Name = "Honduras", Code = "HN", PhoneCode = "+504" },
+                new { Name = "Hong Kong", Code = "HK", PhoneCode = "+852" },
+                new { Name = "Hungary", Code = "HU", PhoneCode = "+36" },
+                new { Name = "Iceland", Code = "IS", PhoneCode = "+354" },
+                new { Name = "India", Code = "IN", PhoneCode = "+91" },
+                new { Name = "Indonesia", Code = "ID", PhoneCode = "+62" },
+                new { Name = "Iran", Code = "IR", PhoneCode = "+98" },
+                new { Name = "Iraq", Code = "IQ", PhoneCode = "+964" },
+                new { Name = "Ireland", Code = "IE", PhoneCode = "+353" },
+                new { Name = "Israel", Code = "IL", PhoneCode = "+972" },
+                new { Name = "Italy", Code = "IT", PhoneCode = "+39" },
+                new { Name = "Ivory Coast", Code = "CI", PhoneCode = "+225" },
+                new { Name = "Jamaica", Code = "JM", PhoneCode = "+1-876" },
+                new { Name = "Japan", Code = "JP", PhoneCode = "+81" },
+                new { Name = "Jordan", Code = "JO", PhoneCode = "+962" },
+                new { Name = "Kazakhstan", Code = "KZ", PhoneCode = "+7" },
+                new { Name = "Kenya", Code = "KE", PhoneCode = "+254" },
+                new { Name = "Kiribati", Code = "KI", PhoneCode = "+686" },
+                new { Name = "Kuwait", Code = "KW", PhoneCode = "+965" },
+                new { Name = "Kyrgyzstan", Code = "KG", PhoneCode = "+996" },
+                new { Name = "Laos", Code = "LA", PhoneCode = "+856" },
+                new { Name = "Latvia", Code = "LV", PhoneCode = "+371" },
+                new { Name = "Lebanon", Code = "LB", PhoneCode = "+961" },
+                new { Name = "Lesotho", Code = "LS", PhoneCode = "+266" },
+                new { Name = "Liberia", Code = "LR", PhoneCode = "+231" },
+                new { Name = "Libya", Code = "LY", PhoneCode = "+218" },
+                new { Name = "Liechtenstein", Code = "LI", PhoneCode = "+423" },
+                new { Name = "Lithuania", Code = "LT", PhoneCode = "+370" },
+                new { Name = "Luxembourg", Code = "LU", PhoneCode = "+352" },
+                new { Name = "Macao", Code = "MO", PhoneCode = "+853" },
+                new { Name = "Macedonia", Code = "MK", PhoneCode = "+389" },
+                new { Name = "Madagascar", Code = "MG", PhoneCode = "+261" },
+                new { Name = "Malawi", Code = "MW", PhoneCode = "+265" },
+                new { Name = "Malaysia", Code = "MY", PhoneCode = "+60" },
+                new { Name = "Maldives", Code = "MV", PhoneCode = "+960" },
+                new { Name = "Mali", Code = "ML", PhoneCode = "+223" },
+                new { Name = "Malta", Code = "MT", PhoneCode = "+356" },
+                new { Name = "Marshall Islands", Code = "MH", PhoneCode = "+692" },
+                new { Name = "Mauritania", Code = "MR", PhoneCode = "+222" },
+                new { Name = "Mauritius", Code = "MU", PhoneCode = "+230" },
+                new { Name = "Mexico", Code = "MX", PhoneCode = "+52" },
+                new { Name = "Micronesia", Code = "FM", PhoneCode = "+691" },
+                new { Name = "Moldova", Code = "MD", PhoneCode = "+373" },
+                new { Name = "Monaco", Code = "MC", PhoneCode = "+377" },
+                new { Name = "Mongolia", Code = "MN", PhoneCode = "+976" },
+                new { Name = "Montenegro", Code = "ME", PhoneCode = "+382" },
+                new { Name = "Morocco", Code = "MA", PhoneCode = "+212" },
+                new { Name = "Mozambique", Code = "MZ", PhoneCode = "+258" },
+                new { Name = "Myanmar", Code = "MM", PhoneCode = "+95" },
+                new { Name = "Namibia", Code = "NA", PhoneCode = "+264" },
+                new { Name = "Nauru", Code = "NR", PhoneCode = "+674" },
+                new { Name = "Nepal", Code = "NP", PhoneCode = "+977" },
+                new { Name = "Netherlands", Code = "NL", PhoneCode = "+31" },
+                new { Name = "New Zealand", Code = "NZ", PhoneCode = "+64" },
+                new { Name = "Nicaragua", Code = "NI", PhoneCode = "+505" },
+                new { Name = "Niger", Code = "NE", PhoneCode = "+227" },
+                new { Name = "Nigeria", Code = "NG", PhoneCode = "+234" },
+                new { Name = "North Korea", Code = "KP", PhoneCode = "+850" },
+                new { Name = "Norway", Code = "NO", PhoneCode = "+47" },
+                new { Name = "Oman", Code = "OM", PhoneCode = "+968" },
+                new { Name = "Pakistan", Code = "PK", PhoneCode = "+92" },
+                new { Name = "Palau", Code = "PW", PhoneCode = "+680" },
+                new { Name = "Palestine", Code = "PS", PhoneCode = "+970" },
+                new { Name = "Panama", Code = "PA", PhoneCode = "+507" },
+                new { Name = "Papua New Guinea", Code = "PG", PhoneCode = "+675" },
+                new { Name = "Paraguay", Code = "PY", PhoneCode = "+595" },
+                new { Name = "Peru", Code = "PE", PhoneCode = "+51" },
+                new { Name = "Philippines", Code = "PH", PhoneCode = "+63" },
+                new { Name = "Poland", Code = "PL", PhoneCode = "+48" },
+                new { Name = "Portugal", Code = "PT", PhoneCode = "+351" },
+                new { Name = "Qatar", Code = "QA", PhoneCode = "+974" },
+                new { Name = "Romania", Code = "RO", PhoneCode = "+40" },
+                new { Name = "Russia", Code = "RU", PhoneCode = "+7" },
+                new { Name = "Rwanda", Code = "RW", PhoneCode = "+250" },
+                new { Name = "Saint Kitts and Nevis", Code = "KN", PhoneCode = "+1-869" },
+                new { Name = "Saint Lucia", Code = "LC", PhoneCode = "+1-758" },
+                new { Name = "Saint Vincent and the Grenadines", Code = "VC", PhoneCode = "+1-784" },
+                new { Name = "Samoa", Code = "WS", PhoneCode = "+685" },
+                new { Name = "San Marino", Code = "SM", PhoneCode = "+378" },
+                new { Name = "Sao Tome and Principe", Code = "ST", PhoneCode = "+239" },
+                new { Name = "Saudi Arabia", Code = "SA", PhoneCode = "+966" },
+                new { Name = "Senegal", Code = "SN", PhoneCode = "+221" },
+                new { Name = "Serbia", Code = "RS", PhoneCode = "+381" },
+                new { Name = "Seychelles", Code = "SC", PhoneCode = "+248" },
+                new { Name = "Sierra Leone", Code = "SL", PhoneCode = "+232" },
+                new { Name = "Singapore", Code = "SG", PhoneCode = "+65" },
+                new { Name = "Slovakia", Code = "SK", PhoneCode = "+421" },
+                new { Name = "Slovenia", Code = "SI", PhoneCode = "+386" },
+                new { Name = "Solomon Islands", Code = "SB", PhoneCode = "+677" },
+                new { Name = "Somalia", Code = "SO", PhoneCode = "+252" },
+                new { Name = "South Africa", Code = "ZA", PhoneCode = "+27" },
+                new { Name = "South Korea", Code = "KR", PhoneCode = "+82" },
+                new { Name = "South Sudan", Code = "SS", PhoneCode = "+211" },
+                new { Name = "Spain", Code = "ES", PhoneCode = "+34" },
+                new { Name = "Sri Lanka", Code = "LK", PhoneCode = "+94" },
+                new { Name = "Sudan", Code = "SD", PhoneCode = "+249" },
+                new { Name = "Suriname", Code = "SR", PhoneCode = "+597" },
+                new { Name = "Sweden", Code = "SE", PhoneCode = "+46" },
+                new { Name = "Switzerland", Code = "CH", PhoneCode = "+41" },
+                new { Name = "Syria", Code = "SY", PhoneCode = "+963" },
+                new { Name = "Taiwan", Code = "TW", PhoneCode = "+886" },
+                new { Name = "Tajikistan", Code = "TJ", PhoneCode = "+992" },
+                new { Name = "Tanzania", Code = "TZ", PhoneCode = "+255" },
+                new { Name = "Thailand", Code = "TH", PhoneCode = "+66" },
+                new { Name = "Togo", Code = "TG", PhoneCode = "+228" },
+                new { Name = "Tonga", Code = "TO", PhoneCode = "+676" },
+                new { Name = "Trinidad and Tobago", Code = "TT", PhoneCode = "+1-868" },
+                new { Name = "Tunisia", Code = "TN", PhoneCode = "+216" },
+                new { Name = "Turkey", Code = "TR", PhoneCode = "+90" },
+                new { Name = "Turkmenistan", Code = "TM", PhoneCode = "+993" },
+                new { Name = "Tuvalu", Code = "TV", PhoneCode = "+688" },
+                new { Name = "Uganda", Code = "UG", PhoneCode = "+256" },
+                new { Name = "Ukraine", Code = "UA", PhoneCode = "+380" },
+                new { Name = "United Arab Emirates", Code = "AE", PhoneCode = "+971" },
+                new { Name = "United Kingdom", Code = "GB", PhoneCode = "+44" },
+                new { Name = "United States", Code = "US", PhoneCode = "+1" },
+                new { Name = "Uruguay", Code = "UY", PhoneCode = "+598" },
+                new { Name = "Uzbekistan", Code = "UZ", PhoneCode = "+998" },
+                new { Name = "Vanuatu", Code = "VU", PhoneCode = "+678" },
+                new { Name = "Vatican City", Code = "VA", PhoneCode = "+379" },
+                new { Name = "Venezuela", Code = "VE", PhoneCode = "+58" },
+                new { Name = "Vietnam", Code = "VN", PhoneCode = "+84" },
+                new { Name = "Yemen", Code = "YE", PhoneCode = "+967" },
+                new { Name = "Zambia", Code = "ZM", PhoneCode = "+260" },
+                new { Name = "Zimbabwe", Code = "ZW", PhoneCode = "+263" }
+            };
+
+            foreach (var country in countriesData)
+            {
+                migrationBuilder.InsertData(
+                    table: "Countries",
+                    columns: new[] { "Name", "Code", "PhoneCode", "CreatedAt", "IsActive" },
+                    values: new object[] { country.Name, country.Code, country.PhoneCode, DateTime.UtcNow, true });
+            }
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropTable(
+                name: "Countries");
+
+            migrationBuilder.AlterColumn<decimal>(
+                name: "RoomSize",
+                table: "Rooms",
+                type: "decimal(18,2)",
+                nullable: true,
+                oldClrType: typeof(decimal),
+                oldType: "decimal(10,2)",
+                oldPrecision: 10,
+                oldScale: 2,
+                oldNullable: true);
+
+            migrationBuilder.AlterColumn<decimal>(
+                name: "Longitude",
+                table: "Hotels",
+                type: "decimal(18,2)",
+                nullable: true,
+                oldClrType: typeof(decimal),
+                oldType: "decimal(18,6)",
+                oldPrecision: 18,
+                oldScale: 6,
+                oldNullable: true);
+
+            migrationBuilder.AlterColumn<decimal>(
+                name: "Latitude",
+                table: "Hotels",
+                type: "decimal(18,2)",
+                nullable: true,
+                oldClrType: typeof(decimal),
+                oldType: "decimal(18,6)",
+                oldPrecision: 18,
+                oldScale: 6,
+                oldNullable: true);
+        }
+    }
+}

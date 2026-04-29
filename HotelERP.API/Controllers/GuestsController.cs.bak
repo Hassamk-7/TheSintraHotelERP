@@ -1,0 +1,545 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+using HotelERP.API.Data;
+using HotelERP.API.DTOs;
+using HotelERP.API.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+namespace HotelERP.API.Controllers
+{
+    [Authorize(Roles = "Admin,Manager,Receptionist")]
+    public class GuestsController : BaseController
+    {
+        private readonly HotelDbContext _context;
+        private readonly ILogger<GuestsController> _logger;
+        private readonly IWebHostEnvironment _env;
+
+        public GuestsController(
+            HotelDbContext context, 
+            ILogger<GuestsController> logger,
+            IWebHostEnvironment env)
+        {
+            _context = context;
+            _logger = logger;
+            _env = env;
+        }
+
+        // GET: api/guests
+        [HttpGet]
+        public async Task<IActionResult> GetGuests([FromQuery] string search = null)
+        {
+            try
+            {
+                var query = _context.Guests.AsQueryable();
+
+                if (!string.IsNullOrEmpty(search))
+                {
+                    var searchTerm = search.ToLower();
+                    query = query.Where(g => 
+                        g.FirstName.ToLower().Contains(searchTerm) ||
+                        g.LastName.ToLower().Contains(searchTerm) ||
+                        g.Email.ToLower().Contains(searchTerm) ||
+                        g.PhoneNumber.Contains(searchTerm) ||
+                        g.PassportNumber.ToLower().Contains(searchTerm));
+                }
+
+                var guests = await query.OrderBy(g => g.LastName).ThenBy(g => g.FirstName).ToListAsync();
+                return HandleSuccess(guests);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error retrieving guests");
+                return HandleError("An error occurred while retrieving guests");
+            }
+        }
+
+        // GET: api/guests/5
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetGuest(int id)
+        {
+            try
+            {
+                var guest = await _context.Guests
+                    .Include(g => g.Documents)
+                    .FirstOrDefaultAsync(g => g.Id == id);
+
+                if (guest == null)
+                {
+                    return HandleNotFound("Guest not found");
+                }
+
+                return HandleSuccess(guest);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error retrieving guest with ID: {id}");
+                return HandleError($"An error occurred while retrieving guest with ID: {id}");
+            }
+        }
+
+        // POST: api/guests
+        [HttpPost]
+        public async Task<IActionResult> CreateGuest([FromBody] GuestCreateDto guestDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HandleError("Invalid guest data");
+            }
+
+            try
+            {
+                // Check if email already exists
+                if (await _context.Guests.AnyAsync(g => g.Email == guestDto.Email))
+                {
+                    return HandleError("A guest with this email already exists");
+                }
+
+                var guest = new Guest
+                {
+                    FirstName = guestDto.FirstName,
+                    LastName = guestDto.LastName,
+                    Email = guestDto.Email,
+                    PhoneNumber = guestDto.PhoneNumber,
+                    DateOfBirth = guestDto.DateOfBirth,
+                    Gender = guestDto.Gender,
+                    Address = guestDto.Address,
+                    City = guestDto.City,
+                    Country = guestDto.Country,
+                    PostalCode = guestDto.PostalCode,
+                    PassportNumber = guestDto.PassportNumber,
+                    PassportExpiryDate = guestDto.PassportExpiryDate,
+                    Nationality = guestDto.Nationality,
+                    CompanyName = guestDto.CompanyName,
+                    CompanyAddress = guestDto.CompanyAddress,
+                    CompanyPhone = guestDto.CompanyPhone,
+                    VipStatus = guestDto.VipStatus,
+                    Notes = guestDto.Notes,
+                    IsBlacklisted = false,
+                    BlacklistReason = null,
+                    CreatedAt = DateTime.UtcNow
+                };
+
+                _context.Guests.Add(guest);
+                await _context.SaveChangesAsync();
+
+                return HandleCreated(guest, "Guest created successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error creating guest");
+                return HandleError("An error occurred while creating the guest");
+            }
+        }
+
+        // PUT: api/guests/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateGuest(int id, [FromBody] GuestUpdateDto guestDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HandleError("Invalid guest data");
+            }
+
+            try
+            {
+                var guest = await _context.Guests.FindAsync(id);
+                if (guest == null)
+                {
+                    return HandleNotFound("Guest not found");
+                }
+
+                // Check if email is being changed and if it's already taken
+                if (guest.Email != guestDto.Email && 
+                    await _context.Guests.AnyAsync(g => g.Id != id && g.Email == guestDto.Email))
+                {
+                    return HandleError("A guest with this email already exists");
+                }
+
+                // Update guest properties
+                guest.FirstName = guestDto.FirstName ?? guest.FirstName;
+                guest.LastName = guestDto.LastName ?? guest.LastName;
+                guest.Email = guestDto.Email ?? guest.Email;
+                guest.PhoneNumber = guestDto.PhoneNumber ?? guest.PhoneNumber;
+                guest.DateOfBirth = guestDto.DateOfBirth ?? guest.DateOfBirth;
+                guest.Gender = guestDto.Gender ?? guest.Gender;
+                guest.Address = guestDto.Address ?? guest.Address;
+                guest.City = guestDto.City ?? guest.City;
+                guest.Country = guestDto.Country ?? guest.Country;
+                guest.PostalCode = guestDto.PostalCode ?? guest.PostalCode;
+                guest.PassportNumber = guestDto.PassportNumber ?? guest.PassportNumber;
+                guest.PassportExpiryDate = guestDto.PassportExpiryDate ?? guest.PassportExpiryDate;
+                guest.Nationality = guestDto.Nationality ?? guest.Nationality;
+                guest.CompanyName = guestDto.CompanyName ?? guest.CompanyName;
+                guest.CompanyAddress = guestDto.CompanyAddress ?? guest.CompanyAddress;
+                guest.CompanyPhone = guestDto.CompanyPhone ?? guest.CompanyPhone;
+                guest.VipStatus = guestDto.VipStatus ?? guest.VipStatus;
+                guest.Notes = guestDto.Notes ?? guest.Notes;
+                guest.UpdatedAt = DateTime.UtcNow;
+
+                _context.Entry(guest).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(guest, "Guest updated successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error updating guest with ID: {id}");
+                return HandleError($"An error occurred while updating guest with ID: {id}");
+            }
+        }
+
+        // DELETE: api/guests/5
+        [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> DeleteGuest(int id)
+        {
+            try
+            {
+                var guest = await _context.Guests
+                    .Include(g => g.Documents)
+                    .FirstOrDefaultAsync(g => g.Id == id);
+
+                if (guest == null)
+                {
+                    return HandleNotFound("Guest not found");
+                }
+
+                // Check if guest has any active reservations
+                var hasActiveReservations = await _context.Reservations
+                    .AnyAsync(r => r.GuestId == id && 
+                                 (r.Status == "Confirmed" || r.Status == "CheckedIn"));
+
+                if (hasActiveReservations)
+                {
+                    return HandleError("Cannot delete guest with active reservations");
+                }
+
+                // Delete guest documents from storage
+                foreach (var doc in guest.Documents)
+                {
+                    var filePath = Path.Combine(_env.WebRootPath, "uploads", doc.DocumentPath);
+                    if (System.IO.File.Exists(filePath))
+                    {
+                        System.IO.File.Delete(filePath);
+                    }
+                }
+
+                _context.Guests.Remove(guest);
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(null, "Guest deleted successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error deleting guest with ID: {id}");
+                return HandleError($"An error occurred while deleting guest with ID: {id}");
+            }
+        }
+
+        // POST: api/guests/5/blacklist
+        [HttpPost("{id}/blacklist")]
+        [Authorize(Roles = "Admin,Manager")]
+        public async Task<IActionResult> BlacklistGuest(int id, [FromBody] BlacklistGuestDto blacklistDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HandleError("Invalid blacklist data");
+            }
+
+            try
+            {
+                var guest = await _context.Guests.FindAsync(id);
+                if (guest == null)
+                {
+                    return HandleNotFound("Guest not found");
+                }
+
+                guest.IsBlacklisted = true;
+                guest.BlacklistReason = blacklistDto.Reason;
+                guest.UpdatedAt = DateTime.UtcNow;
+
+                _context.Entry(guest).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(guest, "Guest has been blacklisted");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error blacklisting guest with ID: {id}");
+                return HandleError($"An error occurred while blacklisting guest with ID: {id}");
+            }
+        }
+
+        // POST: api/guests/5/remove-blacklist
+        [HttpPost("{id}/remove-blacklist")]
+        [Authorize(Roles = "Admin,Manager")]
+        public async Task<IActionResult> RemoveBlacklist(int id)
+        {
+            try
+            {
+                var guest = await _context.Guests.FindAsync(id);
+                if (guest == null)
+                {
+                    return HandleNotFound("Guest not found");
+                }
+
+                guest.IsBlacklisted = false;
+                guest.BlacklistReason = null;
+                guest.UpdatedAt = DateTime.UtcNow;
+
+                _context.Entry(guest).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(guest, "Guest has been removed from blacklist");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error removing guest with ID: {id} from blacklist");
+                return HandleError($"An error occurred while removing guest with ID: {id} from blacklist");
+            }
+        }
+
+        // POST: api/guests/5/documents
+        [HttpPost("{id}/documents")]
+        public async Task<IActionResult> UploadDocument(int id, IFormFile file, [FromForm] string documentType)
+        {
+            if (file == null || file.Length == 0)
+            {
+                return HandleError("No file uploaded");
+            }
+
+            try
+            {
+                var guest = await _context.Guests.FindAsync(id);
+                if (guest == null)
+                {
+                    return HandleNotFound("Guest not found");
+                }
+
+                // Create uploads directory if it doesn't exist
+                var uploadsDir = Path.Combine(_env.WebRootPath, "uploads");
+                if (!Directory.Exists(uploadsDir))
+                {
+                    Directory.CreateDirectory(uploadsDir);
+                }
+
+                // Generate unique filename
+                var fileName = $"guest_{id}_{DateTime.UtcNow:yyyyMMddHHmmss}_{Path.GetFileName(file.FileName)}";
+                var filePath = Path.Combine(uploadsDir, fileName);
+
+                // Save file
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await file.CopyToAsync(stream);
+                }
+
+                // Save document record
+                var document = new GuestDocument
+                {
+                    GuestId = id,
+                    DocumentType = documentType,
+                    DocumentPath = fileName,
+                    OriginalFileName = file.FileName,
+                    FileSize = file.Length,
+                    ContentType = file.ContentType,
+                    UploadedAt = DateTime.UtcNow,
+                    UploadedBy = UserId
+                };
+
+                _context.GuestDocuments.Add(document);
+                await _context.SaveChangesAsync();
+
+                return HandleCreated(document, "Document uploaded successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error uploading document for guest with ID: {id}");
+                return HandleError($"An error occurred while uploading document for guest with ID: {id}");
+            }
+        }
+
+        // GET: api/guests/5/documents
+        [HttpGet("{id}/documents")]
+        public async Task<IActionResult> GetGuestDocuments(int id)
+        {
+            try
+            {
+                var documents = await _context.GuestDocuments
+                    .Where(d => d.GuestId == id)
+                    .OrderByDescending(d => d.UploadedAt)
+                    .ToListAsync();
+
+                return HandleSuccess(documents);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error retrieving documents for guest with ID: {id}");
+                return HandleError($"An error occurred while retrieving documents for guest with ID: {id}");
+            }
+        }
+
+        // DELETE: api/guests/documents/5
+        [HttpDelete("documents/{documentId}")]
+        public async Task<IActionResult> DeleteDocument(int documentId)
+        {
+            try
+            {
+                var document = await _context.GuestDocuments.FindAsync(documentId);
+                if (document == null)
+                {
+                    return HandleNotFound("Document not found");
+                }
+
+                // Delete file from storage
+                var filePath = Path.Combine(_env.WebRootPath, "uploads", document.DocumentPath);
+                if (System.IO.File.Exists(filePath))
+                {
+                    System.IO.File.Delete(filePath);
+                }
+
+                _context.GuestDocuments.Remove(document);
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(null, "Document deleted successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error deleting document with ID: {documentId}");
+                return HandleError($"An error occurred while deleting document with ID: {documentId}");
+            }
+        }
+    }
+
+    public class GuestCreateDto
+    {
+        [Required]
+        [StringLength(100)]
+        public string FirstName { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        public string LastName { get; set; }
+
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
+
+        [Required]
+        [Phone]
+        public string PhoneNumber { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime? DateOfBirth { get; set; }
+
+        [StringLength(20)]
+        public string Gender { get; set; }
+
+        [StringLength(500)]
+        public string Address { get; set; }
+
+        [StringLength(100)]
+        public string City { get; set; }
+
+        [StringLength(100)]
+        public string Country { get; set; }
+
+        [StringLength(20)]
+        public string PostalCode { get; set; }
+
+        [StringLength(50)]
+        public string PassportNumber { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime? PassportExpiryDate { get; set; }
+
+        [StringLength(100)]
+        public string Nationality { get; set; }
+
+        [StringLength(200)]
+        public string CompanyName { get; set; }
+
+        [StringLength(500)]
+        public string CompanyAddress { get; set; }
+
+        [Phone]
+        public string CompanyPhone { get; set; }
+
+        [StringLength(50)]
+        public string VipStatus { get; set; }
+
+        [StringLength(1000)]
+        public string Notes { get; set; }
+    }
+
+    public class GuestUpdateDto
+    {
+        [StringLength(100)]
+        public string FirstName { get; set; }
+
+        [StringLength(100)]
+        public string LastName { get; set; }
+
+        [EmailAddress]
+        public string Email { get; set; }
+
+        [Phone]
+        public string PhoneNumber { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime? DateOfBirth { get; set; }
+
+        [StringLength(20)]
+        public string Gender { get; set; }
+
+        [StringLength(500)]
+        public string Address { get; set; }
+
+        [StringLength(100)]
+        public string City { get; set; }
+
+        [StringLength(100)]
+        public string Country { get; set; }
+
+        [StringLength(20)]
+        public string PostalCode { get; set; }
+
+        [StringLength(50)]
+        public string PassportNumber { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime? PassportExpiryDate { get; set; }
+
+        [StringLength(100)]
+        public string Nationality { get; set; }
+
+        [StringLength(200)]
+        public string CompanyName { get; set; }
+
+        [StringLength(500)]
+        public string CompanyAddress { get; set; }
+
+        [Phone]
+        public string CompanyPhone { get; set; }
+
+        [StringLength(50)]
+        public string VipStatus { get; set; }
+
+        [StringLength(1000)]
+        public string Notes { get; set; }
+    }
+
+    public class BlacklistGuestDto
+    {
+        [Required]
+        [StringLength(1000)]
+        public string Reason { get; set; }
+    }
+}

@@ -1,0 +1,1028 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
+using HotelERP.API.Data;
+using HotelERP.API.DTOs;
+using HotelERP.API.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+namespace HotelERP.API.Controllers
+{
+    [Authorize(Roles = "Admin,Manager,RestaurantStaff,Receptionist")]
+    public class RestaurantController : BaseController
+    {
+        private readonly HotelDbContext _context;
+        private readonly ILogger<RestaurantController> _logger;
+
+        public RestaurantController(
+            HotelDbContext context, 
+            ILogger<RestaurantController> logger)
+        {
+            _context = context;
+            _logger = logger;
+        }
+
+        #region Dish Categories
+
+        // GET: api/restaurant/categories
+        [HttpGet("categories")]
+        public async Task<IActionResult> GetDishCategories()
+        {
+            try
+            {
+                var categories = await _context.DishCategories
+                    .Include(c => c.Dishes)
+                    .OrderBy(c => c.Name)
+                    .ToListAsync();
+
+                return HandleSuccess(categories);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error retrieving dish categories");
+                return HandleError("An error occurred while retrieving dish categories");
+            }
+        }
+
+        // GET: api/restaurant/categories/5
+        [HttpGet("categories/{id}")]
+        public async Task<IActionResult> GetDishCategory(int id)
+        {
+            try
+            {
+                var category = await _context.DishCategories
+                    .Include(c => c.Dishes)
+                    .FirstOrDefaultAsync(c => c.Id == id);
+
+                if (category == null)
+                {
+                    return HandleNotFound("Dish category not found");
+                }
+
+                return HandleSuccess(category);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error retrieving dish category with ID: {id}");
+                return HandleError($"An error occurred while retrieving dish category with ID: {id}");
+            }
+        }
+
+        // POST: api/restaurant/categories
+        [HttpPost("categories")]
+        [Authorize(Roles = "Admin,Manager")]
+        public async Task<IActionResult> CreateDishCategory([FromBody] DishCategoryDto categoryDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HandleError("Invalid category data");
+            }
+
+            try
+            {
+                var category = new DishCategory
+                {
+                    Name = categoryDto.Name,
+                    Description = categoryDto.Description
+                };
+
+                _context.DishCategories.Add(category);
+                await _context.SaveChangesAsync();
+
+                return HandleCreated(category, "Dish category created successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error creating dish category");
+                return HandleError("An error occurred while creating the dish category");
+            }
+        }
+
+        // PUT: api/restaurant/categories/5
+        [HttpPut("categories/{id}")]
+        [Authorize(Roles = "Admin,Manager")]
+        public async Task<IActionResult> UpdateDishCategory(int id, [FromBody] DishCategoryDto categoryDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HandleError("Invalid category data");
+            }
+
+            try
+            {
+                var category = await _context.DishCategories.FindAsync(id);
+                if (category == null)
+                {
+                    return HandleNotFound("Dish category not found");
+                }
+
+                category.Name = categoryDto.Name ?? category.Name;
+                category.Description = categoryDto.Description ?? category.Description;
+                category.UpdatedAt = DateTime.UtcNow;
+
+                _context.Entry(category).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(category, "Dish category updated successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error updating dish category with ID: {id}");
+                return HandleError($"An error occurred while updating dish category with ID: {id}");
+            }
+        }
+
+        // DELETE: api/restaurant/categories/5
+        [HttpDelete("categories/{id}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> DeleteDishCategory(int id)
+        {
+            try
+            {
+                var category = await _context.DishCategories
+                    .Include(c => c.Dishes)
+                    .FirstOrDefaultAsync(c => c.Id == id);
+
+                if (category == null)
+                {
+                    return HandleNotFound("Dish category not found");
+                }
+
+                if (category.Dishes != null && category.Dishes.Any())
+                {
+                    return HandleError("Cannot delete category with associated dishes");
+                }
+
+                _context.DishCategories.Remove(category);
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(null, "Dish category deleted successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error deleting dish category with ID: {id}");
+                return HandleError($"An error occurred while deleting dish category with ID: {id}");
+            }
+        }
+
+        #endregion
+
+        #region Dishes
+
+        // GET: api/restaurant/dishes
+        [HttpGet("dishes")]
+        public async Task<IActionResult> GetDishes([FromQuery] int? categoryId = null, [FromQuery] bool? isAvailable = null)
+        {
+            try
+            {
+                var query = _context.Dishes
+                    .Include(d => d.Category)
+                    .AsQueryable();
+
+                if (categoryId.HasValue)
+                {
+                    query = query.Where(d => d.CategoryId == categoryId.Value);
+                }
+
+                if (isAvailable.HasValue)
+                {
+                    query = query.Where(d => d.IsAvailable == isAvailable.Value);
+                }
+
+                var dishes = await query.OrderBy(d => d.Name).ToListAsync();
+                return HandleSuccess(dishes);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error retrieving dishes");
+                return HandleError("An error occurred while retrieving dishes");
+            }
+        }
+
+        // GET: api/restaurant/dishes/5
+        [HttpGet("dishes/{id}")]
+        public async Task<IActionResult> GetDish(int id)
+        {
+            try
+            {
+                var dish = await _context.Dishes
+                    .Include(d => d.Category)
+                    .FirstOrDefaultAsync(d => d.Id == id);
+
+                if (dish == null)
+                {
+                    return HandleNotFound("Dish not found");
+                }
+
+                return HandleSuccess(dish);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error retrieving dish with ID: {id}");
+                return HandleError($"An error occurred while retrieving dish with ID: {id}");
+            }
+        }
+
+        // POST: api/restaurant/dishes
+        [HttpPost("dishes")]
+        [Authorize(Roles = "Admin,Manager,RestaurantManager")]
+        public async Task<IActionResult> CreateDish([FromBody] DishCreateDto dishDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HandleError("Invalid dish data");
+            }
+
+            try
+            {
+                // Check if category exists
+                var category = await _context.DishCategories.FindAsync(dishDto.CategoryId);
+                if (category == null)
+                {
+                    return HandleError("Invalid category ID");
+                }
+
+                var dish = new Dish
+                {
+                    Name = dishDto.Name,
+                    Code = dishDto.Code,
+                    CategoryId = dishDto.CategoryId,
+                    Description = dishDto.Description,
+                    Price = dishDto.Price,
+                    ImageUrl = dishDto.ImageUrl,
+                    DietaryInfo = dishDto.DietaryInfo,
+                    IsAvailable = dishDto.IsAvailable,
+                    PreparationTime = dishDto.PreparationTime,
+                    Calories = dishDto.Calories,
+                    Ingredients = dishDto.Ingredients,
+                    Allergens = dishDto.Allergens,
+                    SpiceLevel = dishDto.SpiceLevel
+                };
+
+                _context.Dishes.Add(dish);
+                await _context.SaveChangesAsync();
+
+                return HandleCreated(dish, "Dish created successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error creating dish");
+                return HandleError("An error occurred while creating the dish");
+            }
+        }
+
+        // PUT: api/restaurant/dishes/5
+        [HttpPut("dishes/{id}")]
+        [Authorize(Roles = "Admin,Manager,RestaurantManager")]
+        public async Task<IActionResult> UpdateDish(int id, [FromBody] DishUpdateDto dishDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HandleError("Invalid dish data");
+            }
+
+            try
+            {
+                var dish = await _context.Dishes.FindAsync(id);
+                if (dish == null)
+                {
+                    return HandleNotFound("Dish not found");
+                }
+
+                // Update dish properties if provided
+                dish.Name = dishDto.Name ?? dish.Name;
+                dish.Code = dishDto.Code ?? dish.Code;
+                
+                if (dishDto.CategoryId.HasValue && dishDto.CategoryId.Value != dish.CategoryId)
+                {
+                    var category = await _context.DishCategories.FindAsync(dishDto.CategoryId.Value);
+                    if (category == null)
+                    {
+                        return HandleError("Invalid category ID");
+                    }
+                    dish.CategoryId = dishDto.CategoryId.Value;
+                }
+                
+                dish.Description = dishDto.Description ?? dish.Description;
+                
+                if (dishDto.Price.HasValue)
+                {
+                    dish.Price = dishDto.Price.Value;
+                }
+                
+                dish.ImageUrl = dishDto.ImageUrl ?? dish.ImageUrl;
+                dish.DietaryInfo = dishDto.DietaryInfo ?? dish.DietaryInfo;
+                
+                if (dishDto.IsAvailable.HasValue)
+                {
+                    dish.IsAvailable = dishDto.IsAvailable.Value;
+                }
+                
+                if (dishDto.PreparationTime.HasValue)
+                {
+                    dish.PreparationTime = dishDto.PreparationTime.Value;
+                }
+                
+                if (dishDto.Calories.HasValue)
+                {
+                    dish.Calories = dishDto.Calories.Value;
+                }
+                
+                dish.Ingredients = dishDto.Ingredients ?? dish.Ingredients;
+                dish.Allergens = dishDto.Allergens ?? dish.Allergens;
+                dish.SpiceLevel = dishDto.SpiceLevel ?? dish.SpiceLevel;
+                
+                dish.UpdatedAt = DateTime.UtcNow;
+
+                _context.Entry(dish).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(dish, "Dish updated successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error updating dish with ID: {id}");
+                return HandleError($"An error occurred while updating dish with ID: {id}");
+            }
+        }
+
+        // DELETE: api/restaurant/dishes/5
+        [HttpDelete("dishes/{id}")]
+        [Authorize(Roles = "Admin,Manager,RestaurantManager")]
+        public async Task<IActionResult> DeleteDish(int id)
+        {
+            try
+            {
+                var dish = await _context.Dishes
+                    .Include(d => d.OrderedProducts)
+                    .FirstOrDefaultAsync(d => d.Id == id);
+
+                if (dish == null)
+                {
+                    return HandleNotFound("Dish not found");
+                }
+
+                if (dish.OrderedProducts != null && dish.OrderedProducts.Any())
+                {
+                    return HandleError("Cannot delete dish with associated orders");
+                }
+
+                _context.Dishes.Remove(dish);
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(null, "Dish deleted successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error deleting dish with ID: {id}");
+                return HandleError($"An error occurred while deleting dish with ID: {id}");
+            }
+        }
+
+        #endregion
+
+        #region Orders
+
+        // GET: api/restaurant/orders
+        [HttpGet("orders")]
+        public async Task<IActionResult> GetOrders(
+            [FromQuery] DateTime? fromDate = null,
+            [FromQuery] DateTime? toDate = null,
+            [FromQuery] string status = null)
+        {
+            try
+            {
+                var query = _context.RestaurantOrders
+                    .Include(o => o.OrderedProducts)
+                    .ThenInclude(op => op.Dish)
+                    .Include(o => o.Room)
+                    .Include(o => o.Table)
+                    .AsQueryable();
+
+                if (fromDate.HasValue)
+                {
+                    query = query.Where(o => o.OrderDate >= fromDate.Value);
+                }
+
+                if (toDate.HasValue)
+                {
+                    query = query.Where(o => o.OrderDate <= toDate.Value);
+                }
+
+                if (!string.IsNullOrEmpty(status))
+                {
+                    query = query.Where(o => o.Status == status);
+                }
+
+                var orders = await query.OrderByDescending(o => o.OrderDate).ToListAsync();
+                return HandleSuccess(orders);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error retrieving orders");
+                return HandleError("An error occurred while retrieving orders");
+            }
+        }
+
+        // GET: api/restaurant/orders/5
+        [HttpGet("orders/{id}")]
+        public async Task<IActionResult> GetOrder(int id)
+        {
+            try
+            {
+                var order = await _context.RestaurantOrders
+                    .Include(o => o.OrderedProducts)
+                    .ThenInclude(op => op.Dish)
+                    .Include(o => o.Room)
+                    .Include(o => o.Table)
+                    .FirstOrDefaultAsync(o => o.Id == id);
+
+                if (order == null)
+                {
+                    return HandleNotFound("Order not found");
+                }
+
+                return HandleSuccess(order);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error retrieving order with ID: {id}");
+                return HandleError($"An error occurred while retrieving order with ID: {id}");
+            }
+        }
+
+        // POST: api/restaurant/orders
+        [HttpPost("orders")]
+        public async Task<IActionResult> CreateOrder([FromBody] RestaurantOrderCreateDto orderDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HandleError("Invalid order data");
+            }
+
+            using var transaction = await _context.Database.BeginTransactionAsync();
+            try
+            {
+                // Create order
+                var order = new RestaurantOrder
+                {
+                    OrderNumber = $"ORD-{DateTime.UtcNow:yyyyMMddHHmmss}-{new Random().Next(1000, 9999)}",
+                    ReservationId = orderDto.ReservationId,
+                    RoomId = orderDto.RoomId,
+                    TableId = orderDto.TableId,
+                    OrderDate = DateTime.UtcNow,
+                    Status = "Pending",
+                    OrderType = orderDto.OrderType,
+                    SpecialInstructions = orderDto.SpecialInstructions,
+                    CreatedBy = UserId
+                };
+
+                _context.RestaurantOrders.Add(order);
+                await _context.SaveChangesAsync();
+
+                // Add order items
+                decimal totalAmount = 0;
+                foreach (var item in orderDto.OrderItems)
+                {
+                    var dish = await _context.Dishes.FindAsync(item.DishId);
+                    if (dish == null)
+                    {
+                        await transaction.RollbackAsync();
+                        return HandleError($"Dish with ID {item.DishId} not found");
+                    }
+
+                    if (!dish.IsAvailable)
+                    {
+                        await transaction.RollbackAsync();
+                        return HandleError($"Dish {dish.Name} is not available");
+                    }
+
+                    var orderItem = new RestaurantOrderedProduct
+                    {
+                        OrderId = order.Id,
+                        DishId = dish.Id,
+                        Quantity = item.Quantity,
+                        UnitPrice = dish.Price,
+                        SpecialInstructions = item.SpecialInstructions
+                    };
+
+                    totalAmount += dish.Price * item.Quantity;
+                    _context.RestaurantOrderedProducts.Add(orderItem);
+                }
+
+                // Update order total
+                order.TotalAmount = totalAmount;
+                order.TaxAmount = totalAmount * 0.1m; // 10% tax
+                order.DiscountAmount = 0; // Can be applied later
+                order.GrandTotal = order.TotalAmount + order.TaxAmount - order.DiscountAmount;
+
+                await _context.SaveChangesAsync();
+                await transaction.CommitAsync();
+
+                // Return the created order with items
+                var result = await _context.RestaurantOrders
+                    .Include(o => o.OrderedProducts)
+                    .ThenInclude(op => op.Dish)
+                    .FirstOrDefaultAsync(o => o.Id == order.Id);
+
+                return HandleCreated(result, "Order created successfully");
+            }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                _logger.LogError(ex, "Error creating order");
+                return HandleError("An error occurred while creating the order");
+            }
+        }
+
+        // PUT: api/restaurant/orders/5/status
+        [HttpPut("orders/{id}/status")]
+        public async Task<IActionResult> UpdateOrderStatus(int id, [FromBody] UpdateOrderStatusDto statusDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HandleError("Invalid status data");
+            }
+
+            try
+            {
+                var order = await _context.RestaurantOrders.FindAsync(id);
+                if (order == null)
+                {
+                    return HandleNotFound("Order not found");
+                }
+
+                // Validate status transition
+                var validStatuses = new List<string> { "Pending", "Preparing", "Ready", "Served", "Cancelled", "Completed" };
+                if (!validStatuses.Contains(statusDto.Status))
+                {
+                    return HandleError("Invalid order status");
+                }
+
+                // Additional validation for status transitions
+                if (statusDto.Status == "Cancelled" && order.Status == "Served")
+                {
+                    return HandleError("Cannot cancel an already served order");
+                }
+
+                order.Status = statusDto.Status;
+                order.UpdatedAt = DateTime.UtcNow;
+                order.UpdatedBy = UserId;
+
+                // If order is completed, update the billing info
+                if (statusDto.Status == "Completed" && order.BillingInfoId == null)
+                {
+                    var billingInfo = new RestaurantBillingInfo
+                    {
+                        OrderId = order.Id,
+                        BillingDate = DateTime.UtcNow,
+                        SubTotal = order.TotalAmount,
+                        TaxAmount = order.TaxAmount,
+                        DiscountAmount = order.DiscountAmount,
+                        GrandTotal = order.GrandTotal,
+                        PaymentStatus = "Pending",
+                        BilledBy = UserId
+                    };
+
+                    _context.RestaurantBillingInfos.Add(billingInfo);
+                    await _context.SaveChangesAsync();
+
+                    order.BillingInfoId = billingInfo.Id;
+                }
+
+                _context.Entry(order).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(order, "Order status updated successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error updating order status for order ID: {id}");
+                return HandleError($"An error occurred while updating order status for order ID: {id}");
+            }
+        }
+
+        // POST: api/restaurant/orders/5/pay
+        [HttpPost("orders/{id}/pay")]
+        public async Task<IActionResult> ProcessPayment(int id, [FromBody] RestaurantPaymentDto paymentDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HandleError("Invalid payment data");
+            }
+
+            using var transaction = await _context.Database.BeginTransactionAsync();
+            try
+            {
+                var order = await _context.RestaurantOrders
+                    .Include(o => o.BillingInfo)
+                    .FirstOrDefaultAsync(o => o.Id == id);
+
+                if (order == null)
+                {
+                    return HandleNotFound("Order not found");
+                }
+
+                if (order.BillingInfo == null)
+                {
+                    await transaction.RollbackAsync();
+                    return HandleError("Billing information not found for this order");
+                }
+
+                if (order.BillingInfo.PaymentStatus == "Paid")
+                {
+                    await transaction.RollbackAsync();
+                    return HandleError("Order has already been paid");
+                }
+
+                // Update billing info
+                order.BillingInfo.PaymentDate = DateTime.UtcNow;
+                order.BillingInfo.PaymentMethod = paymentDto.PaymentMethod;
+                order.BillingInfo.TransactionId = paymentDto.TransactionId;
+                order.BillingInfo.PaymentStatus = "Paid";
+                order.BillingInfo.Notes = paymentDto.Notes;
+                order.BillingInfo.UpdatedAt = DateTime.UtcNow;
+                order.BillingInfo.UpdatedBy = UserId;
+
+                // Update order status if not already completed
+                if (order.Status != "Completed")
+                {
+                    order.Status = "Completed";
+                    order.UpdatedAt = DateTime.UtcNow;
+                    order.UpdatedBy = UserId;
+                }
+
+                // If this is a room charge, add to guest's bill
+                if (order.RoomId.HasValue && order.ReservationId.HasValue)
+                {
+                    var reservation = await _context.Reservations
+                        .Include(r => r.Guest)
+                        .FirstOrDefaultAsync(r => r.Id == order.ReservationId.Value);
+
+                    if (reservation != null)
+                    {
+                        var guestLedger = new GuestLedger
+                        {
+                            GuestId = reservation.GuestId,
+                            TransactionDate = DateTime.UtcNow,
+                            Description = $"Restaurant Charges - Order #{order.OrderNumber}",
+                            DebitAmount = order.BillingInfo.GrandTotal,
+                            CreditAmount = 0,
+                            Balance = reservation.Guest.Balance + order.BillingInfo.GrandTotal,
+                            ReferenceId = order.Id,
+                            ReferenceType = "RestaurantOrder",
+                            CreatedBy = UserId
+                        };
+
+                        _context.GuestLedgers.Add(guestLedger);
+
+                        // Update guest balance
+                        reservation.Guest.Balance += order.BillingInfo.GrandTotal;
+                        _context.Entry(reservation.Guest).State = EntityState.Modified;
+                    }
+                }
+
+                await _context.SaveChangesAsync();
+                await transaction.CommitAsync();
+
+                return HandleSuccess(null, "Payment processed successfully");
+            }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                _logger.LogError(ex, $"Error processing payment for order ID: {id}");
+                return HandleError($"An error occurred while processing payment for order ID: {id}");
+            }
+        }
+
+        #endregion
+
+        #region Tables
+
+        // GET: api/restaurant/tables
+        [HttpGet("tables")]
+        public async Task<IActionResult> GetTables([FromQuery] bool? isAvailable = null)
+        {
+            try
+            {
+                var query = _context.RestaurantTables.AsQueryable();
+
+                if (isAvailable.HasValue)
+                {
+                    query = query.Where(t => t.IsAvailable == isAvailable.Value);
+                }
+
+                var tables = await query.OrderBy(t => t.TableNumber).ToListAsync();
+                return HandleSuccess(tables);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error retrieving tables");
+                return HandleError("An error occurred while retrieving tables");
+            }
+        }
+
+        // GET: api/restaurant/tables/5
+        [HttpGet("tables/{id}")]
+        public async Task<IActionResult> GetTable(int id)
+        {
+            try
+            {
+                var table = await _context.RestaurantTables.FindAsync(id);
+
+                if (table == null)
+                {
+                    return HandleNotFound("Table not found");
+                }
+
+                return HandleSuccess(table);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error retrieving table with ID: {id}");
+                return HandleError($"An error occurred while retrieving table with ID: {id}");
+            }
+        }
+
+        // POST: api/restaurant/tables
+        [HttpPost("tables")]
+        [Authorize(Roles = "Admin,Manager,RestaurantManager")]
+        public async Task<IActionResult> CreateTable([FromBody] RestaurantTableDto tableDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HandleError("Invalid table data");
+            }
+
+            try
+            {
+                var table = new RestaurantTable
+                {
+                    TableNumber = tableDto.TableNumber,
+                    Capacity = tableDto.Capacity,
+                    Location = tableDto.Location,
+                    Description = tableDto.Description,
+                    IsAvailable = tableDto.IsAvailable
+                };
+
+                _context.RestaurantTables.Add(table);
+                await _context.SaveChangesAsync();
+
+                return HandleCreated(table, "Table created successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error creating table");
+                return HandleError("An error occurred while creating the table");
+            }
+        }
+
+        // PUT: api/restaurant/tables/5
+        [HttpPut("tables/{id}")]
+        [Authorize(Roles = "Admin,Manager,RestaurantManager")]
+        public async Task<IActionResult> UpdateTable(int id, [FromBody] RestaurantTableDto tableDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HandleError("Invalid table data");
+            }
+
+            try
+            {
+                var table = await _context.RestaurantTables.FindAsync(id);
+                if (table == null)
+                {
+                    return HandleNotFound("Table not found");
+                }
+
+                table.TableNumber = tableDto.TableNumber ?? table.TableNumber;
+                table.Capacity = tableDto.Capacity ?? table.Capacity;
+                table.Location = tableDto.Location ?? table.Location;
+                table.Description = tableDto.Description ?? table.Description;
+                
+                if (tableDto.IsAvailable.HasValue)
+                {
+                    table.IsAvailable = tableDto.IsAvailable.Value;
+                }
+
+                table.UpdatedAt = DateTime.UtcNow;
+                _context.Entry(table).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(table, "Table updated successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error updating table with ID: {id}");
+                return HandleError($"An error occurred while updating table with ID: {id}");
+            }
+        }
+
+        // DELETE: api/restaurant/tables/5
+        [HttpDelete("tables/{id}")]
+        [Authorize(Roles = "Admin,Manager,RestaurantManager")]
+        public async Task<IActionResult> DeleteTable(int id)
+        {
+            try
+            {
+                var table = await _context.RestaurantTables
+                    .Include(t => t.Orders)
+                    .FirstOrDefaultAsync(t => t.Id == id);
+
+                if (table == null)
+                {
+                    return HandleNotFound("Table not found");
+                }
+
+                if (table.Orders != null && table.Orders.Any(o => o.Status != "Completed" && o.Status != "Cancelled"))
+                {
+                    return HandleError("Cannot delete table with active orders");
+                }
+
+                _context.RestaurantTables.Remove(table);
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(null, "Table deleted successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error deleting table with ID: {id}");
+                return HandleError($"An error occurred while deleting table with ID: {id}");
+            }
+        }
+
+        #endregion
+    }
+
+    #region DTOs
+
+    public class DishCategoryDto
+    {
+        [Required]
+        [StringLength(100)]
+        public string Name { get; set; }
+
+        [StringLength(500)]
+        public string Description { get; set; }
+    }
+
+    public class DishCreateDto
+    {
+        [Required]
+        [StringLength(200)]
+        public string Name { get; set; }
+
+        [StringLength(50)]
+        public string Code { get; set; }
+
+        [Required]
+        public int CategoryId { get; set; }
+
+        [StringLength(500)]
+        public string Description { get; set; }
+
+        [Required]
+        [Range(0, double.MaxValue)]
+        public decimal Price { get; set; }
+
+        [StringLength(255)]
+        public string ImageUrl { get; set; }
+
+        [StringLength(50)]
+        public string DietaryInfo { get; set; }
+
+        public bool IsAvailable { get; set; } = true;
+
+        [Range(0, 1440)] // Max 24 hours in minutes
+        public int PreparationTime { get; set; } = 30; // Default 30 minutes
+
+        [Range(0, 10000)]
+        public int Calories { get; set; }
+
+        [StringLength(1000)]
+        public string Ingredients { get; set; }
+
+        [StringLength(1000)]
+        public string Allergens { get; set; }
+
+        [StringLength(50)]
+        public string SpiceLevel { get; set; }
+    }
+
+    public class DishUpdateDto
+    {
+        [StringLength(200)]
+        public string Name { get; set; }
+
+        [StringLength(50)]
+        public string Code { get; set; }
+
+        public int? CategoryId { get; set; }
+
+        [StringLength(500)]
+        public string Description { get; set; }
+
+        [Range(0, double.MaxValue)]
+        public decimal? Price { get; set; }
+
+        [StringLength(255)]
+        public string ImageUrl { get; set; }
+
+        [StringLength(50)]
+        public string DietaryInfo { get; set; }
+
+        public bool? IsAvailable { get; set; }
+
+        [Range(0, 1440)]
+        public int? PreparationTime { get; set; }
+
+        [Range(0, 10000)]
+        public int? Calories { get; set; }
+
+        [StringLength(1000)]
+        public string Ingredients { get; set; }
+
+        [StringLength(1000)]
+        public string Allergens { get; set; }
+
+        [StringLength(50)]
+        public string SpiceLevel { get; set; }
+    }
+
+    public class RestaurantOrderCreateDto
+    {
+        public int? ReservationId { get; set; }
+        public int? RoomId { get; set; }
+        public int? TableId { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string OrderType { get; set; } // DineIn, TakeAway, RoomService
+
+        [StringLength(1000)]
+        public string SpecialInstructions { get; set; }
+
+        [Required]
+        [MinLength(1)]
+        public List<OrderItemDto> OrderItems { get; set; }
+    }
+
+    public class OrderItemDto
+    {
+        [Required]
+        public int DishId { get; set; }
+
+        [Required]
+        [Range(1, 100)]
+        public int Quantity { get; set; } = 1;
+
+        [StringLength(500)]
+        public string SpecialInstructions { get; set; }
+    }
+
+    public class UpdateOrderStatusDto
+    {
+        [Required]
+        [StringLength(50)]
+        public string Status { get; set; }
+
+        [StringLength(500)]
+        public string Notes { get; set; }
+    }
+
+    public class RestaurantPaymentDto
+    {
+        [Required]
+        [StringLength(50)]
+        public string PaymentMethod { get; set; }
+
+        [StringLength(100)]
+        public string TransactionId { get; set; }
+
+        [StringLength(500)]
+        public string Notes { get; set; }
+    }
+
+    public class RestaurantTableDto
+    {
+        [StringLength(50)]
+        public string TableNumber { get; set; }
+
+        [Range(1, 50)]
+        public int? Capacity { get; set; }
+
+        [StringLength(100)]
+        public string Location { get; set; }
+
+        [StringLength(500)]
+        public string Description { get; set; }
+
+        public bool? IsAvailable { get; set; } = true;
+    }
+
+    #endregion
+}

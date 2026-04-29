@@ -1,0 +1,474 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
+using HotelERP.API.Data;
+using HotelERP.API.DTOs;
+using HotelERP.API.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+namespace HotelERP.API.Controllers
+{
+    [Authorize(Roles = "Admin,Manager,Receptionist")]
+    public class ReservationsController : BaseController
+    {
+        private readonly HotelDbContext _context;
+        private readonly ILogger<ReservationsController> _logger;
+
+        public ReservationsController(
+            HotelDbContext context, 
+            ILogger<ReservationsController> logger)
+        {
+            _context = context;
+            _logger = logger;
+        }
+
+        // GET: api/reservations
+        [HttpGet]
+        public async Task<IActionResult> GetReservations(
+            [FromQuery] DateTime? fromDate = null,
+            [FromQuery] DateTime? toDate = null,
+            [FromQuery] string status = null)
+        {
+            try
+            {
+                var query = _context.Reservations
+                    .Include(r => r.Guest)
+                    .Include(r => r.Room)
+                    .ThenInclude(room => room.RoomType)
+                    .AsQueryable();
+
+                if (fromDate.HasValue)
+                {
+                    query = query.Where(r => r.CheckInDate >= fromDate.Value);
+                }
+
+                if (toDate.HasValue)
+                {
+                    query = query.Where(r => r.CheckOutDate <= toDate.Value);
+                }
+
+                if (!string.IsNullOrEmpty(status))
+                {
+                    query = query.Where(r => r.Status == status);
+                }
+
+                var reservations = await query.ToListAsync();
+                return HandleSuccess(reservations);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error retrieving reservations");
+                return HandleError("An error occurred while retrieving reservations");
+            }
+        }
+
+        // GET: api/reservations/5
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetReservation(int id)
+        {
+            try
+            {
+                var reservation = await _context.Reservations
+                    .Include(r => r.Guest)
+                    .Include(r => r.Room)
+                    .ThenInclude(room => room.RoomType)
+                    .Include(r => r.Details)
+                    .Include(r => r.Payments)
+                    .FirstOrDefaultAsync(r => r.Id == id);
+
+                if (reservation == null)
+                {
+                    return HandleNotFound("Reservation not found");
+                }
+
+                return HandleSuccess(reservation);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error retrieving reservation with ID: {id}");
+                return HandleError($"An error occurred while retrieving reservation with ID: {id}");
+            }
+        }
+
+        // POST: api/reservations
+        [HttpPost]
+        public async Task<IActionResult> CreateReservation([FromBody] ReservationCreateDto reservationDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HandleError("Invalid reservation data");
+            }
+
+            using var transaction = await _context.Database.BeginTransactionAsync();
+            try
+            {
+                // Check if guest exists
+                var guest = await _context.Guests.FindAsync(reservationDto.GuestId);
+                if (guest == null)
+                {
+                    return HandleError("Guest not found");
+                }
+
+                // Check room availability
+                var isRoomAvailable = await IsRoomAvailableAsync(reservationDto.RoomId, reservationDto.CheckInDate, reservationDto.CheckOutDate);
+                if (!isRoomAvailable)
+                {
+                    return HandleError("The selected room is not available for the specified dates");
+                }
+
+                var room = await _context.Rooms
+                    .Include(r => r.RoomType)
+                    .FirstOrDefaultAsync(r => r.Id == reservationDto.RoomId);
+
+                if (room == null)
+                {
+                    return HandleError("Room not found");
+                }
+
+                // Calculate total amount
+                var nights = (reservationDto.CheckOutDate - reservationDto.CheckInDate).Days;
+                var totalAmount = room.BasePrice * nights;
+
+                // Create reservation
+                var reservation = new Reservation
+                {
+                    GuestId = reservationDto.GuestId,
+                    RoomId = reservationDto.RoomId,
+                    CheckInDate = reservationDto.CheckInDate,
+                    CheckOutDate = reservationDto.CheckOutDate,
+                    NumberOfAdults = reservationDto.NumberOfAdults,
+                    NumberOfChildren = reservationDto.NumberOfChildren,
+                    Status = "Confirmed",
+                    SpecialRequests = reservationDto.SpecialRequests,
+                    TotalAmount = totalAmount,
+                    TotalPaid = 0,
+                    PaymentStatus = "Pending"
+                };
+
+                _context.Reservations.Add(reservation);
+                await _context.SaveChangesAsync();
+
+                // Create reservation details
+                var reservationDetail = new ReservationDetail
+                {
+                    ReservationId = reservation.Id,
+                    RoomId = reservation.RoomId,
+                    CheckInDate = reservation.CheckInDate,
+                    CheckOutDate = reservation.CheckOutDate,
+                    Rate = room.BasePrice,
+                    TotalAmount = totalAmount,
+                    SpecialRequest = reservation.SpecialRequests
+                };
+
+                _context.ReservationDetails.Add(reservationDetail);
+                await _context.SaveChangesAsync();
+
+                await transaction.CommitAsync();
+
+                return HandleCreated(reservation, "Reservation created successfully");
+            }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                _logger.LogError(ex, "Error creating reservation");
+                return HandleError("An error occurred while creating the reservation");
+            }
+        }
+
+        // PUT: api/reservations/5/cancel
+        [HttpPut("{id}/cancel")]
+        public async Task<IActionResult> CancelReservation(int id)
+        {
+            try
+            {
+                var reservation = await _context.Reservations.FindAsync(id);
+                if (reservation == null)
+                {
+                    return HandleNotFound("Reservation not found");
+                }
+
+                if (reservation.Status == "Cancelled")
+                {
+                    return HandleError("Reservation is already cancelled");
+                }
+
+                if (reservation.Status == "CheckedIn")
+                {
+                    return HandleError("Cannot cancel a reservation that is already checked in");
+                }
+
+                if (reservation.Status == "CheckedOut")
+                {
+                    return HandleError("Cannot cancel a reservation that is already checked out");
+                }
+
+                // Check if cancellation is allowed (e.g., within 24 hours of check-in)
+                if (DateTime.Now.AddHours(24) > reservation.CheckInDate)
+                {
+                    return HandleError("Cancellation is not allowed within 24 hours of check-in");
+                }
+
+                // Update reservation status
+                reservation.Status = "Cancelled";
+                reservation.UpdatedAt = DateTime.UtcNow;
+
+                // Process refund if payment was made
+                if (reservation.TotalPaid > 0)
+                {
+                    // Create a refund record
+                    var refund = new ReservationPayment
+                    {
+                        ReservationId = reservation.Id,
+                        PaymentDate = DateTime.UtcNow,
+                        Amount = reservation.TotalPaid,
+                        PaymentMethod = "Refund",
+                        PaymentStatus = "Refunded",
+                        Notes = "Refund for cancelled reservation"
+                    };
+
+                    _context.ReservationPayments.Add(refund);
+                    reservation.TotalPaid = 0;
+                    reservation.PaymentStatus = "Refunded";
+                }
+
+                _context.Entry(reservation).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(reservation, "Reservation cancelled successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error cancelling reservation with ID: {id}");
+                return HandleError($"An error occurred while cancelling reservation with ID: {id}");
+            }
+        }
+
+        // POST: api/reservations/5/checkin
+        [HttpPost("{id}/checkin")]
+        public async Task<IActionResult> CheckIn(int id)
+        {
+            try
+            {
+                var reservation = await _context.Reservations.FindAsync(id);
+                if (reservation == null)
+                {
+                    return HandleNotFound("Reservation not found");
+                }
+
+                if (reservation.Status == "CheckedIn")
+                {
+                    return HandleError("Guest is already checked in");
+                }
+
+                if (reservation.Status == "CheckedOut")
+                {
+                    return HandleError("Cannot check in a guest who has already checked out");
+                }
+
+                if (reservation.Status == "Cancelled")
+                {
+                    return HandleError("Cannot check in a cancelled reservation");
+                }
+
+                // Check if it's too early to check in
+                if (DateTime.Now < reservation.CheckInDate.AddHours(-2)) // Allow check-in 2 hours before the scheduled time
+                {
+                    return HandleError("It's too early to check in. Please wait until " + reservation.CheckInDate.AddHours(-2).ToString("g"));
+                }
+
+                // Update reservation status
+                reservation.Status = "CheckedIn";
+                reservation.UpdatedAt = DateTime.UtcNow;
+
+                // Create check-in record
+                var checkIn = new CheckIn
+                {
+                    ReservationId = reservation.Id,
+                    CheckInDateTime = DateTime.UtcNow,
+                    CheckedInBy = UserId,
+                    Notes = "Checked in by " + UserName
+                };
+
+                _context.CheckIns.Add(checkIn);
+
+                // Update room status
+                var room = await _context.Rooms.FindAsync(reservation.RoomId);
+                if (room != null)
+                {
+                    room.Status = "Occupied";
+                    _context.Entry(room).State = EntityState.Modified;
+                }
+
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(reservation, "Guest checked in successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error checking in reservation with ID: {id}");
+                return HandleError($"An error occurred while checking in reservation with ID: {id}");
+            }
+        }
+
+        // POST: api/reservations/5/checkout
+        [HttpPost("{id}/checkout")]
+        public async Task<IActionResult> CheckOut(int id)
+        {
+            using var transaction = await _context.Database.BeginTransactionAsync();
+            try
+            {
+                var reservation = await _context.Reservations
+                    .Include(r => r.Room)
+                    .FirstOrDefaultAsync(r => r.Id == id);
+
+                if (reservation == null)
+                {
+                    return HandleNotFound("Reservation not found");
+                }
+
+                if (reservation.Status != "CheckedIn")
+                {
+                    return HandleError("Guest must be checked in before checking out");
+                }
+
+                // Calculate total bill
+                var actualCheckOutDate = DateTime.UtcNow;
+                var nightsStayed = (actualCheckOutDate - reservation.CheckInDate).Days;
+                if (nightsStayed < 1) nightsStayed = 1; // Minimum charge for 1 night
+
+                var roomRate = reservation.Room?.BasePrice ?? 0;
+                var totalBill = roomRate * nightsStayed;
+
+                // Update reservation
+                reservation.Status = "CheckedOut";
+                reservation.UpdatedAt = DateTime.UtcNow;
+
+                // Create check-out record
+                var checkOut = new CheckOut
+                {
+                    ReservationId = reservation.Id,
+                    CheckOutDateTime = actualCheckOutDate,
+                    CheckedOutBy = UserId,
+                    TotalBill = totalBill,
+                    TotalPaid = reservation.TotalPaid,
+                    Balance = totalBill - reservation.TotalPaid,
+                    PaymentStatus = reservation.TotalPaid >= totalBill ? "Paid" : "Pending",
+                    Notes = "Checked out by " + UserName
+                };
+
+                _context.CheckOuts.Add(checkOut);
+
+                // Update room status
+                if (reservation.Room != null)
+                {
+                    reservation.Room.Status = "Dirty"; // Or "Available" if housekeeping is not needed
+                    _context.Entry(reservation.Room).State = EntityState.Modified;
+                }
+
+                await _context.SaveChangesAsync();
+                await transaction.CommitAsync();
+
+                return HandleSuccess(new 
+                { 
+                    ReservationId = reservation.Id,
+                    CheckOutDate = actualCheckOutDate,
+                    TotalBill = totalBill,
+                    AmountPaid = reservation.TotalPaid,
+                    Balance = totalBill - reservation.TotalPaid,
+                    PaymentStatus = checkOut.PaymentStatus
+                }, "Guest checked out successfully");
+            }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                _logger.LogError(ex, $"Error checking out reservation with ID: {id}");
+                return HandleError($"An error occurred while checking out reservation with ID: {id}");
+            }
+        }
+
+        // POST: api/reservations/5/payments
+        [HttpPost("{id}/payments")]
+        public async Task<IActionResult> AddPayment(int id, [FromBody] AddPaymentDto paymentDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HandleError("Invalid payment data");
+            }
+
+            using var transaction = await _context.Database.BeginTransactionAsync();
+            try
+            {
+                var reservation = await _context.Reservations.FindAsync(id);
+                if (reservation == null)
+                {
+                    return HandleNotFound("Reservation not found");
+                }
+
+                if (reservation.Status == "Cancelled")
+                {
+                    return HandleError("Cannot add payment to a cancelled reservation");
+                }
+
+                // Create payment record
+                var payment = new ReservationPayment
+                {
+                    ReservationId = reservation.Id,
+                    PaymentDate = DateTime.UtcNow,
+                    Amount = paymentDto.Amount,
+                    PaymentMethod = paymentDto.PaymentMethod,
+                    TransactionId = paymentDto.TransactionId,
+                    PaymentStatus = "Completed",
+                    Notes = paymentDto.Notes
+                };
+
+                _context.ReservationPayments.Add(payment);
+
+                // Update reservation payment info
+                reservation.TotalPaid += paymentDto.Amount;
+                reservation.PaymentStatus = reservation.TotalPaid >= reservation.TotalAmount ? "Paid" : "Partial";
+                reservation.UpdatedAt = DateTime.UtcNow;
+
+                await _context.SaveChangesAsync();
+                await transaction.CommitAsync();
+
+                return HandleSuccess(payment, "Payment added successfully");
+            }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                _logger.LogError(ex, $"Error adding payment to reservation with ID: {id}");
+                return HandleError($"An error occurred while adding payment to reservation with ID: {id}");
+            }
+        }
+
+        private async Task<bool> IsRoomAvailableAsync(int roomId, DateTime checkInDate, DateTime checkOutDate)
+        {
+            return !await _context.Reservations
+                .AnyAsync(r => r.RoomId == roomId &&
+                             r.Status != "Cancelled" &&
+                             r.Status != "CheckedOut" &&
+                             !(checkInDate >= r.CheckOutDate || checkOutDate <= r.CheckInDate));
+        }
+    }
+
+    public class AddPaymentDto
+    {
+        [Required]
+        [Range(0.01, double.MaxValue)]
+        public decimal Amount { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string PaymentMethod { get; set; } // Cash, Credit Card, Debit Card, etc.
+
+        [StringLength(100)]
+        public string TransactionId { get; set; }
+
+        [StringLength(500)]
+        public string Notes { get; set; }
+    }
+}

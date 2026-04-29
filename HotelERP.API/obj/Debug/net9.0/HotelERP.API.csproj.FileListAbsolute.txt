@@ -1,0 +1,1599 @@
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\publish\web.config
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\appsettings.Development.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\appsettings.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\appsettings.Production.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\publish\appsettings.Development.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\publish\appsettings.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\publish\appsettings.Production.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\publish\HotelERP.API.deps.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\publish\HotelERP.API.runtimeconfig.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\publish\test-hotel.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\test-hotel.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.staticwebassets.runtime.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.staticwebassets.endpoints.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.exe
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.deps.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.runtimeconfig.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.pdb
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\AutoMapper.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Azure.Core.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Azure.Identity.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Humanizer.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.OpenApi.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Mono.TextTemplating.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\System.ClientModel.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\System.CodeDom.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\System.Composition.Convention.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\System.Composition.Hosting.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\System.Composition.Runtime.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\System.Composition.TypedParts.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\System.Drawing.Common.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\System.Memory.Data.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\System.Runtime.Caching.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\System.Security.Permissions.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\System.Windows.Extensions.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.csproj.AssemblyReference.cache
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\rpswa.dswa.cache.json
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.GeneratedMSBuildEditorConfig.editorconfig
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.AssemblyInfoInputs.cache
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.AssemblyInfo.cs
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.csproj.CoreCompileInputs.cache
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.MvcApplicationPartsAssemblyInfo.cs
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.MvcApplicationPartsAssemblyInfo.cache
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\rjimswa.dswa.cache.json
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\scopedcss\bundle\HotelERP.API.styles.css
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\staticwebassets.build.json
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\staticwebassets.build.json.cache
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\staticwebassets.development.json
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.4658C5D0.Up2Date
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.dll
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\refint\HotelERP.API.dll
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.pdb
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.genruntimeconfig.cache
+E:\HotelERP\HotelERP.API\obj\Debug\net9.0\ref\HotelERP.API.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\SixLabors.ImageSharp.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\Newtonsoft.Json.dll
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\web.config
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\publish\wwwroot\web.config
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\appsettings.Development.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\appsettings.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\appsettings.Production.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\HotelERP.API.deps.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\HotelERP.API.runtimeconfig.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\HotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\test-hotel.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\web.config
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\web.config
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\wwwroot\web.config
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\appsettings.Development.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\appsettings.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\appsettings.Production.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\appsettings.Development.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\appsettings.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\appsettings.Production.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\HotelERP.API.deps.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\HotelERP.API.runtimeconfig.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\HotelERP.API.staticwebassets.endpoints.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\appsettings.Development.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\appsettings.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\appsettings.Production.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\HotelERP.API.deps.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\HotelERP.API.runtimeconfig.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\test-hotel.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\test-hotel.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\test-hotel.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.staticwebassets.runtime.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.staticwebassets.endpoints.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.exe
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.deps.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.runtimeconfig.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.pdb
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\AutoMapper.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Azure.Core.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Azure.Identity.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Humanizer.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.OpenApi.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Mono.TextTemplating.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Newtonsoft.Json.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\SixLabors.ImageSharp.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.CodeDom.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.Composition.Convention.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.Composition.Hosting.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.Composition.Runtime.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.Composition.TypedParts.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.Memory.Data.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.Runtime.Caching.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.csproj.AssemblyReference.cache
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\rpswa.dswa.cache.json
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.GeneratedMSBuildEditorConfig.editorconfig
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.AssemblyInfoInputs.cache
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.AssemblyInfo.cs
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.csproj.CoreCompileInputs.cache
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.MvcApplicationPartsAssemblyInfo.cs
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.MvcApplicationPartsAssemblyInfo.cache
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\rjimswa.dswa.cache.json
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\scopedcss\bundle\HotelERP.API.styles.css
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\staticwebassets.build.json
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\staticwebassets.build.json.cache
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\staticwebassets.development.json
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.4658C5D0.Up2Date
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.dll
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\refint\HotelERP.API.dll
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.pdb
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.genruntimeconfig.cache
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\ref\HotelERP.API.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.Data.SqlClient.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.Data.SqlClient.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.Data.SqlClient.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.Data.SqlClient.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.Data.SqlClient.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.Data.SqlClient.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.Data.SqlClient.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\web.config
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\wwwroot\web.config
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\appsettings.Development.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\appsettings.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\appsettings.Production.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\HotelERP.API.deps.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\HotelERP.API.runtimeconfig.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\test-hotel.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\web.config
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\wwwroot\web.config
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\appsettings.Development.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\appsettings.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\appsettings.Production.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\HotelERP.API.deps.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\HotelERP.API.runtimeconfig.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+F:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\test-hotel.json
+F:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\swae.build.ex.cache
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\web.config
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\web.config
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\wwwroot\web.config
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\web.config
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\wwwroot\web.config
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\web.config
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\wwwroot\web.config
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\appsettings.Development.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\appsettings.Production.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\appsettings.Development.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\appsettings.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\appsettings.Production.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\HotelERP.API.deps.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\HotelERP.API.runtimeconfig.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\appsettings.Development.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\appsettings.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\appsettings.Production.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\HotelERP.API.deps.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\HotelERP.API.runtimeconfig.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\appsettings.Development.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\appsettings.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\appsettings.Production.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\HotelERP.API.deps.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\HotelERP.API.runtimeconfig.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\appsettings.Development.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\appsettings.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\appsettings.Production.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\HotelERP.API.deps.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\HotelERP.API.runtimeconfig.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\test-hotel.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\test-hotel.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\test-hotel.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\publish\test-hotel.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\test-hotel.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\appsettings.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.staticwebassets.runtime.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.staticwebassets.endpoints.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.exe
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.deps.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.runtimeconfig.json
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.pdb
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\AutoMapper.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Azure.Core.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Azure.Identity.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Humanizer.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.OpenApi.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Mono.TextTemplating.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Newtonsoft.Json.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\SixLabors.ImageSharp.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.CodeDom.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.Composition.Convention.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.Composition.Hosting.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.Composition.Runtime.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.Composition.TypedParts.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.Memory.Data.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.Runtime.Caching.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.Data.SqlClient.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.Data.SqlClient.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.Data.SqlClient.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.Data.SqlClient.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.Data.SqlClient.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.Data.SqlClient.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.Data.SqlClient.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\PMSHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.csproj.AssemblyReference.cache
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\rpswa.dswa.cache.json
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.GeneratedMSBuildEditorConfig.editorconfig
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.AssemblyInfoInputs.cache
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.AssemblyInfo.cs
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.csproj.CoreCompileInputs.cache
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.MvcApplicationPartsAssemblyInfo.cs
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.MvcApplicationPartsAssemblyInfo.cache
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\rjimswa.dswa.cache.json
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\scopedcss\bundle\HotelERP.API.styles.css
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\staticwebassets.build.json
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\staticwebassets.build.json.cache
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\staticwebassets.development.json
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.4658C5D0.Up2Date
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.dll
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\refint\HotelERP.API.dll
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.pdb
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.genruntimeconfig.cache
+E:\PMSHotelERP\HotelERP.API\obj\Debug\net9.0\ref\HotelERP.API.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\wwwroot\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\wwwroot\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\wwwroot\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\appsettings.Development.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\appsettings.Development.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\appsettings.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\appsettings.Production.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\HotelERP.API.deps.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\HotelERP.API.runtimeconfig.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\appsettings.Development.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\appsettings.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\appsettings.Production.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\HotelERP.API.deps.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\HotelERP.API.runtimeconfig.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\appsettings.Development.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\appsettings.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\appsettings.Production.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\HotelERP.API.deps.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\HotelERP.API.runtimeconfig.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\appsettings.Development.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\appsettings.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\appsettings.Production.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\HotelERP.API.deps.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\HotelERP.API.runtimeconfig.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\test-hotel.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\test-hotel.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\test-hotel.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\test-hotel.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\test-hotel.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\HotelERP.API.staticwebassets.endpoints.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\appsettings.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\appsettings.Production.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\HotelERP.API.staticwebassets.runtime.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\HotelERP.API.exe
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\HotelERP.API.deps.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\HotelERP.API.runtimeconfig.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\HotelERP.API.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\HotelERP.API.pdb
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\AutoMapper.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Azure.Core.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Azure.Identity.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Humanizer.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.OpenApi.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Mono.TextTemplating.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Newtonsoft.Json.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\SixLabors.ImageSharp.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.CodeDom.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.Composition.Convention.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.Composition.Hosting.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.Composition.Runtime.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.Composition.TypedParts.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.Memory.Data.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.Runtime.Caching.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\de\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\es\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\it\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.API.csproj.AssemblyReference.cache
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\rpswa.dswa.cache.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.API.GeneratedMSBuildEditorConfig.editorconfig
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.API.AssemblyInfoInputs.cache
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.API.AssemblyInfo.cs
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.API.csproj.CoreCompileInputs.cache
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.API.MvcApplicationPartsAssemblyInfo.cs
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.API.MvcApplicationPartsAssemblyInfo.cache
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\rjimswa.dswa.cache.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\scopedcss\bundle\HotelERP.API.styles.css
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\staticwebassets.build.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\staticwebassets.build.json.cache
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\staticwebassets.development.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.API.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\refint\HotelERP.API.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.API.pdb
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.API.genruntimeconfig.cache
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\ref\HotelERP.API.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\web.config
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\web.config
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\wwwroot\web.config
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\web.config
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\wwwroot\web.config
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\web.config
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\wwwroot\web.config
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\appsettings.Development.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\appsettings.Production.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\appsettings.Development.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\appsettings.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\appsettings.Production.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\HotelERP.API.deps.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\HotelERP.API.runtimeconfig.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\HotelERP.API.staticwebassets.endpoints.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\appsettings.Development.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\appsettings.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\appsettings.Production.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\HotelERP.API.deps.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\HotelERP.API.runtimeconfig.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\appsettings.Development.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\appsettings.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\appsettings.Production.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\HotelERP.API.deps.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\HotelERP.API.runtimeconfig.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\appsettings.Development.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\appsettings.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\appsettings.Production.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\HotelERP.API.deps.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\HotelERP.API.runtimeconfig.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\test-hotel.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\test-hotel.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\test-hotel.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\test-hotel.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\test-hotel.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\appsettings.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\HotelERP.API.staticwebassets.runtime.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\HotelERP.API.staticwebassets.endpoints.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\HotelERP.API.exe
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\HotelERP.API.deps.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\HotelERP.API.runtimeconfig.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\HotelERP.API.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\HotelERP.API.pdb
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\AutoMapper.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Azure.Core.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Azure.Identity.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Humanizer.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.OpenApi.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Mono.TextTemplating.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Newtonsoft.Json.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\SixLabors.ImageSharp.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.CodeDom.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.Composition.Convention.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.Composition.Hosting.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.Composition.Runtime.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.Composition.TypedParts.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.Memory.Data.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.Runtime.Caching.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\de\Microsoft.Data.SqlClient.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\es\Microsoft.Data.SqlClient.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.Data.SqlClient.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\it\Microsoft.Data.SqlClient.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.Data.SqlClient.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.Data.SqlClient.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.Data.SqlClient.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.API.csproj.AssemblyReference.cache
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\rpswa.dswa.cache.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.API.GeneratedMSBuildEditorConfig.editorconfig
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.API.AssemblyInfoInputs.cache
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.API.AssemblyInfo.cs
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.API.csproj.CoreCompileInputs.cache
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.API.MvcApplicationPartsAssemblyInfo.cs
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.API.MvcApplicationPartsAssemblyInfo.cache
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\rjimswa.dswa.cache.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\scopedcss\bundle\HotelERP.API.styles.css
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\staticwebassets.build.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\staticwebassets.build.json.cache
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\staticwebassets.development.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\swae.build.ex.cache
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.4658C5D0.Up2Date
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.API.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\refint\HotelERP.API.dll
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.API.pdb
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.API.genruntimeconfig.cache
+D:\Growbiz\Hassamk-7\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\ref\HotelERP.API.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\obj\Debug\net9.0\HotelERP.4658C5D0.Up2Date
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\publish\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\wwwroot\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\publish\appsettings.Development.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\publish\appsettings.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\publish\appsettings.Production.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\publish\HotelERP.API.deps.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\publish\HotelERP.API.runtimeconfig.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\publish\test-hotel.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-Black.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-BlackItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-Bold.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-BoldItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-ExtraBold.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-ExtraBoldItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-ExtraLight.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-ExtraLightItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-Italic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-Light.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-LightItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-Medium.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-MediumItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-Regular.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-SemiBold.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-SemiBoldItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-Thin.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-ThinItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\LatoFont\OFL.txt
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\QuestPDF.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\linux-arm64\native\libQuestPdfSkia.so
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\linux-arm64\native\libqpdf.so
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\linux-musl-x64\native\libQuestPdfSkia.so
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\linux-musl-x64\native\libqpdf.so
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\linux-x64\native\libQuestPdfSkia.so
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\linux-x64\native\libqpdf.so
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\osx-arm64\native\libQuestPdfSkia.dylib
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\osx-arm64\native\libqpdf.dylib
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\osx-x64\native\libQuestPdfSkia.dylib
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\osx-x64\native\libqpdf.dylib
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win-x64\native\QuestPdfSkia.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win-x64\native\libgcc_s_seh-1.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win-x64\native\libstdc++-6.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win-x64\native\libwinpthread-1.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win-x64\native\qpdf.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win-x86\native\QuestPdfSkia.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win-x86\native\libgcc_s_dw2-1.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win-x86\native\libstdc++-6.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win-x86\native\libwinpthread-1.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelUpd\HotelERP.API\bin\Debug\net9.0\runtimes\win-x86\native\qpdf.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\publish\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\wwwroot\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\wwwroot\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\wwwroot\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\wwwroot\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\appsettings.Development.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\appsettings.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\appsettings.Production.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\appsettings.Development.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\appsettings.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\appsettings.Production.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\HotelERP.API.deps.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\HotelERP.API.runtimeconfig.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\appsettings.Development.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\appsettings.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\appsettings.Production.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\HotelERP.API.deps.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\HotelERP.API.runtimeconfig.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\appsettings.Development.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\appsettings.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\appsettings.Production.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\HotelERP.API.deps.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\HotelERP.API.runtimeconfig.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\appsettings.Development.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\appsettings.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\appsettings.Production.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\HotelERP.API.deps.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\HotelERP.API.runtimeconfig.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\publish\appsettings.Development.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\publish\appsettings.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\publish\appsettings.Production.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\publish\HotelERP.API.deps.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\publish\HotelERP.API.runtimeconfig.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\publish\test-hotel.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\publish\test-hotel.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\publish\test-hotel.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\publish\test-hotel.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\publish\test-hotel.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\test-hotel.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.staticwebassets.endpoints.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-Black.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-BlackItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-Bold.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-BoldItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-ExtraBold.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-ExtraBoldItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-ExtraLight.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-ExtraLightItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-Italic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-Light.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-LightItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-Medium.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-MediumItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-Regular.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-SemiBold.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-SemiBoldItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-Thin.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\LatoFont\Lato-ThinItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\LatoFont\OFL.txt
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.staticwebassets.runtime.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.exe
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.deps.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.runtimeconfig.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\HotelERP.API.pdb
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\AutoMapper.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Azure.Core.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Azure.Identity.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Humanizer.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.OpenApi.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Mono.TextTemplating.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Newtonsoft.Json.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\QuestPDF.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\SixLabors.ImageSharp.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\System.CodeDom.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\System.Composition.Convention.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\System.Composition.Hosting.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\System.Composition.Runtime.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\System.Composition.TypedParts.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\System.Memory.Data.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\System.Runtime.Caching.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\de\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\es\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\fr\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\it\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\ja\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\ko\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\ru\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\linux-arm64\native\libQuestPdfSkia.so
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\linux-arm64\native\libqpdf.so
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\linux-musl-x64\native\libQuestPdfSkia.so
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\linux-musl-x64\native\libqpdf.so
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\linux-x64\native\libQuestPdfSkia.so
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\linux-x64\native\libqpdf.so
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\osx-arm64\native\libQuestPdfSkia.dylib
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\osx-arm64\native\libqpdf.dylib
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\osx-x64\native\libQuestPdfSkia.dylib
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\osx-x64\native\libqpdf.dylib
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-x64\native\QuestPdfSkia.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-x64\native\libgcc_s_seh-1.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-x64\native\libstdc++-6.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-x64\native\libwinpthread-1.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-x64\native\qpdf.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-x86\native\QuestPdfSkia.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-x86\native\libgcc_s_dw2-1.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-x86\native\libstdc++-6.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-x86\native\libwinpthread-1.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win-x86\native\qpdf.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\Debug\net9.0\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.csproj.AssemblyReference.cache
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\rpswa.dswa.cache.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.GeneratedMSBuildEditorConfig.editorconfig
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.AssemblyInfoInputs.cache
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.AssemblyInfo.cs
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.csproj.CoreCompileInputs.cache
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.MvcApplicationPartsAssemblyInfo.cs
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.MvcApplicationPartsAssemblyInfo.cache
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\rjimswa.dswa.cache.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\scopedcss\bundle\HotelERP.API.styles.css
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\staticwebassets.build.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\staticwebassets.build.json.cache
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\staticwebassets.development.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.4658C5D0.Up2Date
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\refint\HotelERP.API.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.pdb
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\HotelERP.API.genruntimeconfig.cache
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\obj\Debug\net9.0\ref\HotelERP.API.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\publish\publish\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\publish\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\publish\wwwroot\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\wwwroot\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\wwwroot\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\wwwroot\web.config
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\appsettings.Development.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\appsettings.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\appsettings.Production.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\appsettings.Development.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\appsettings.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\appsettings.Production.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\HotelERP.API.deps.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\HotelERP.API.runtimeconfig.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\appsettings.Development.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\appsettings.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\appsettings.Production.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\HotelERP.API.deps.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\HotelERP.API.runtimeconfig.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\appsettings.Development.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\appsettings.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\appsettings.Production.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\HotelERP.API.deps.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\HotelERP.API.runtimeconfig.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\publish\appsettings.Development.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\publish\appsettings.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\publish\appsettings.Production.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\publish\HotelERP.API.deps.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\publish\HotelERP.API.runtimeconfig.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\publish\publish\appsettings.Development.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\publish\publish\appsettings.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\publish\publish\appsettings.Production.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\publish\publish\HotelERP.API.deps.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\publish\publish\HotelERP.API.runtimeconfig.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\publish\publish\HotelERP.API.staticwebassets.endpoints.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\publish\publish\test-hotel.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\publish\test-hotel.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\publish\test-hotel.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\publish\test-hotel.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\publish\test-hotel.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\test-hotel.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\HotelERP.API.staticwebassets.runtime.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\HotelERP.API.staticwebassets.endpoints.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\LatoFont\Lato-Black.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\LatoFont\Lato-BlackItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\LatoFont\Lato-Bold.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\LatoFont\Lato-BoldItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\LatoFont\Lato-ExtraBold.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\LatoFont\Lato-ExtraBoldItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\LatoFont\Lato-ExtraLight.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\LatoFont\Lato-ExtraLightItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\LatoFont\Lato-Italic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\LatoFont\Lato-Light.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\LatoFont\Lato-LightItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\LatoFont\Lato-Medium.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\LatoFont\Lato-MediumItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\LatoFont\Lato-Regular.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\LatoFont\Lato-SemiBold.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\LatoFont\Lato-SemiBoldItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\LatoFont\Lato-Thin.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\LatoFont\Lato-ThinItalic.ttf
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\LatoFont\OFL.txt
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\HotelERP.API.deps.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\HotelERP.API.runtimeconfig.json
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\HotelERP.API.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\HotelERP.API.pdb
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\AutoMapper.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Azure.Core.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Azure.Identity.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Humanizer.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.AspNetCore.OpenApi.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.Bcl.AsyncInterfaces.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.Build.Locator.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.CodeAnalysis.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.CodeAnalysis.CSharp.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.CodeAnalysis.Workspaces.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.Data.SqlClient.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.EntityFrameworkCore.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.EntityFrameworkCore.Design.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.EntityFrameworkCore.Relational.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.Extensions.Caching.Abstractions.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.Extensions.Caching.Memory.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.Extensions.DependencyInjection.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.Extensions.DependencyModel.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.Extensions.Identity.Core.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.Extensions.Identity.Stores.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.Extensions.Logging.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.Extensions.Logging.Abstractions.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.Extensions.Options.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.Extensions.Primitives.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.Identity.Client.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.IdentityModel.Abstractions.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.IdentityModel.Logging.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.IdentityModel.Protocols.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.IdentityModel.Tokens.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.OpenApi.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Microsoft.SqlServer.Server.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Mono.TextTemplating.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Newtonsoft.Json.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\QuestPDF.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\SixLabors.ImageSharp.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Swashbuckle.AspNetCore.Swagger.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\System.CodeDom.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\System.Composition.AttributedModel.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\System.Composition.Convention.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\System.Composition.Hosting.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\System.Composition.Runtime.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\System.Composition.TypedParts.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\System.Configuration.ConfigurationManager.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\System.IdentityModel.Tokens.Jwt.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\System.Memory.Data.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\System.Runtime.Caching.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\System.Security.Cryptography.ProtectedData.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\cs\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\de\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\es\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\fr\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\it\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\ja\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\ko\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\pl\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\ru\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\tr\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\de\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\es\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\fr\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\it\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\ja\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\ko\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\pt-BR\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\ru\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\linux-arm64\native\libQuestPdfSkia.so
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\linux-arm64\native\libqpdf.so
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\linux-musl-x64\native\libQuestPdfSkia.so
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\linux-musl-x64\native\libqpdf.so
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\linux-x64\native\libQuestPdfSkia.so
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\linux-x64\native\libqpdf.so
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\osx-arm64\native\libQuestPdfSkia.dylib
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\osx-arm64\native\libqpdf.dylib
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\osx-x64\native\libQuestPdfSkia.dylib
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\osx-x64\native\libqpdf.dylib
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\win-x64\native\QuestPdfSkia.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\win-x64\native\libgcc_s_seh-1.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\win-x64\native\libstdc++-6.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\win-x64\native\libwinpthread-1.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\win-x64\native\qpdf.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\win-x86\native\QuestPdfSkia.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\win-x86\native\libgcc_s_dw2-1.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\win-x86\native\libstdc++-6.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\win-x86\native\libwinpthread-1.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\win-x86\native\qpdf.dll
+E:\GrowBiz Project\GrowBizLatestProects\TheSintraHotelERP\HotelERP.API\bin\codex-check\runtimes\win\lib\net8.0\System.Runtime.Caching.dll

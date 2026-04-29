@@ -1,0 +1,1419 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+using HotelERP.API.Data;
+using HotelERP.API.DTOs;
+using HotelERP.API.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+namespace HotelERP.API.Controllers
+{
+    [Authorize(Roles = "Admin,Manager,HR")]
+    public class EmployeesController : BaseController
+    {
+        private readonly HotelDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly ILogger<EmployeesController> _logger;
+        private readonly IWebHostEnvironment _env;
+
+        public EmployeesController(
+            HotelDbContext context,
+            UserManager<ApplicationUser> userManager,
+            ILogger<EmployeesController> logger,
+            IWebHostEnvironment env)
+        {
+            _context = context;
+            _userManager = userManager;
+            _logger = logger;
+            _env = env;
+        }
+
+        #region Employees
+
+        // GET: api/employees
+        [HttpGet]
+        public async Task<IActionResult> GetEmployees([FromQuery] string search = null, [FromQuery] string department = null)
+        {
+            try
+            {
+                var query = _context.Employees
+                    .Include(e => e.Department)
+                    .Include(e => e.Designation)
+                    .AsQueryable();
+
+                if (!string.IsNullOrEmpty(search))
+                {
+                    var searchTerm = search.ToLower();
+                    query = query.Where(e => 
+                        e.FirstName.ToLower().Contains(searchTerm) ||
+                        e.LastName.ToLower().Contains(searchTerm) ||
+                        e.Email.ToLower().Contains(searchTerm) ||
+                        e.PhoneNumber.Contains(searchTerm) ||
+                        e.EmployeeId.ToLower().Contains(searchTerm));
+                }
+
+                if (!string.IsNullOrEmpty(department))
+                {
+                    query = query.Where(e => e.Department.Name == department);
+                }
+
+                var employees = await query.OrderBy(e => e.FirstName).ThenBy(e => e.LastName).ToListAsync();
+                return HandleSuccess(employees);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error retrieving employees");
+                return HandleError("An error occurred while retrieving employees");
+            }
+        }
+
+        // GET: api/employees/5
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetEmployee(int id)
+        {
+            try
+            {
+                var employee = await _context.Employees
+                    .Include(e => e.Department)
+                    .Include(e => e.Designation)
+                    .Include(e => e.Documents)
+                    .FirstOrDefaultAsync(e => e.Id == id);
+
+                if (employee == null)
+                {
+                    return HandleNotFound("Employee not found");
+                }
+
+                return HandleSuccess(employee);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error retrieving employee with ID: {id}");
+                return HandleError($"An error occurred while retrieving employee with ID: {id}");
+            }
+        }
+
+        // POST: api/employees
+        [HttpPost]
+        [Authorize(Roles = "Admin,HR")]
+        public async Task<IActionResult> CreateEmployee([FromBody] EmployeeCreateDto employeeDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HandleError("Invalid employee data");
+            }
+
+            using var transaction = await _context.Database.BeginTransactionAsync();
+            try
+            {
+                // Check if email already exists
+                if (await _context.Employees.AnyAsync(e => e.Email == employeeDto.Email))
+                {
+                    return HandleError("An employee with this email already exists");
+                }
+
+                // Check if employee ID already exists
+                if (await _context.Employees.AnyAsync(e => e.EmployeeId == employeeDto.EmployeeId))
+                {
+                    return HandleError("An employee with this ID already exists");
+                }
+
+                // Check if department exists
+                var department = await _context.Departments.FindAsync(employeeDto.DepartmentId);
+                if (department == null)
+                {
+                    return HandleError("Invalid department ID");
+                }
+
+                // Check if designation exists
+                var designation = await _context.Designations.FindAsync(employeeDto.DesignationId);
+                if (designation == null)
+                {
+                    return HandleError("Invalid designation ID");
+                }
+
+                // Create employee
+                var employee = new Employee
+                {
+                    EmployeeId = employeeDto.EmployeeId,
+                    FirstName = employeeDto.FirstName,
+                    LastName = employeeDto.LastName,
+                    Email = employeeDto.Email,
+                    PhoneNumber = employeeDto.PhoneNumber,
+                    DateOfBirth = employeeDto.DateOfBirth,
+                    Gender = employeeDto.Gender,
+                    Address = employeeDto.Address,
+                    City = employeeDto.City,
+                    Country = employeeDto.Country,
+                    PostalCode = employeeDto.PostalCode,
+                    Nationality = employeeDto.Nationality,
+                    NationalId = employeeDto.NationalId,
+                    PassportNumber = employeeDto.PassportNumber,
+                    TaxId = employeeDto.TaxId,
+                    MaritalStatus = employeeDto.MaritalStatus,
+                    EmergencyContactName = employeeDto.EmergencyContactName,
+                    EmergencyContactNumber = employeeDto.EmergencyContactNumber,
+                    EmergencyContactRelation = employeeDto.EmergencyContactRelation,
+                    DepartmentId = employeeDto.DepartmentId,
+                    DesignationId = employeeDto.DesignationId,
+                    JoiningDate = employeeDto.JoiningDate,
+                    ContractType = employeeDto.ContractType,
+                    EmploymentStatus = employeeDto.EmploymentStatus,
+                    WorkEmail = employeeDto.WorkEmail,
+                    WorkPhone = employeeDto.WorkPhone,
+                    WorkLocation = employeeDto.WorkLocation,
+                    ReportingToId = employeeDto.ReportingToId,
+                    BankName = employeeDto.BankName,
+                    BankAccountNumber = employeeDto.BankAccountNumber,
+                    BankBranch = employeeDto.BankBranch,
+                    IFSCCode = employeeDto.IFSCCode,
+                    PANNumber = employeeDto.PANNumber,
+                    AadharNumber = employeeDto.AadharNumber,
+                    PFNumber = employeeDto.PFNumber,
+                    ESINumber = employeeDto.ESINumber,
+                    UANNumber = employeeDto.UANNumber,
+                    BasicSalary = employeeDto.BasicSalary,
+                    HRA = employeeDto.HRA,
+                    DA = employeeDto.DA,
+                    LTA = employeeDto.LTA,
+                    MedicalAllowance = employeeDto.MedicalAllowance,
+                    SpecialAllowance = employeeDto.SpecialAllowance,
+                    OtherAllowances = employeeDto.OtherAllowances,
+                    ProfessionalTax = employeeDto.ProfessionalTax,
+                    IncomeTax = employeeDto.IncomeTax,
+                    OtherDeductions = employeeDto.OtherDeductions,
+                    IsActive = true,
+                    CreatedAt = DateTime.UtcNow,
+                    CreatedBy = UserId
+                };
+
+                _context.Employees.Add(employee);
+                await _context.SaveChangesAsync();
+
+                // Create user account if requested
+                if (employeeDto.CreateUserAccount)
+                {
+                    var user = new ApplicationUser
+                    {
+                        UserName = employee.Email,
+                        Email = employee.Email,
+                        FirstName = employee.FirstName,
+                        LastName = employee.LastName,
+                        EmployeeId = employee.Id,
+                        EmailConfirmed = true
+                    };
+
+                    var password = employeeDto.Password ?? "Default@123";
+                    var result = await _userManager.CreateAsync(user, password);
+
+                    if (!result.Succeeded)
+                    {
+                        await transaction.RollbackAsync();
+                        return HandleError(string.Join(", ", result.Errors.Select(e => e.Description)));
+                    }
+
+                    // Assign default role if specified
+                    if (!string.IsNullOrEmpty(employeeDto.DefaultRole))
+                    {
+                        await _userManager.AddToRoleAsync(user, employeeDto.DefaultRole);
+                    }
+
+                    // Update employee with user ID
+                    employee.UserId = user.Id;
+                    _context.Entry(employee).State = EntityState.Modified;
+                    await _context.SaveChangesAsync();
+                }
+
+                await transaction.CommitAsync();
+
+                // Return the created employee with additional details
+                var resultEmployee = await _context.Employees
+                    .Include(e => e.Department)
+                    .Include(e => e.Designation)
+                    .FirstOrDefaultAsync(e => e.Id == employee.Id);
+
+                return HandleCreated(resultEmployee, "Employee created successfully");
+            }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                _logger.LogError(ex, "Error creating employee");
+                return HandleError("An error occurred while creating the employee");
+            }
+        }
+
+        // PUT: api/employees/5
+        [HttpPut("{id}")]
+        [Authorize(Roles = "Admin,HR")]
+        public async Task<IActionResult> UpdateEmployee(int id, [FromBody] EmployeeUpdateDto employeeDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HandleError("Invalid employee data");
+            }
+
+            try
+            {
+                var employee = await _context.Employees.FindAsync(id);
+                if (employee == null)
+                {
+                    return HandleNotFound("Employee not found");
+                }
+
+                // Check if email is being changed and if it's already taken
+                if (employee.Email != employeeDto.Email && 
+                    await _context.Employees.AnyAsync(e => e.Id != id && e.Email == employeeDto.Email))
+                {
+                    return HandleError("An employee with this email already exists");
+                }
+
+                // Check if employee ID is being changed and if it's already taken
+                if (employee.EmployeeId != employeeDto.EmployeeId && 
+                    await _context.Employees.AnyAsync(e => e.Id != id && e.EmployeeId == employeeDto.EmployeeId))
+                {
+                    return HandleError("An employee with this ID already exists");
+                }
+
+                // Check if department exists
+                if (employeeDto.DepartmentId.HasValue && employeeDto.DepartmentId.Value != employee.DepartmentId)
+                {
+                    var department = await _context.Departments.FindAsync(employeeDto.DepartmentId.Value);
+                    if (department == null)
+                    {
+                        return HandleError("Invalid department ID");
+                    }
+                    employee.DepartmentId = employeeDto.DepartmentId.Value;
+                }
+
+                // Check if designation exists
+                if (employeeDto.DesignationId.HasValue && employeeDto.DesignationId.Value != employee.DesignationId)
+                {
+                    var designation = await _context.Designations.FindAsync(employeeDto.DesignationId.Value);
+                    if (designation == null)
+                    {
+                        return HandleError("Invalid designation ID");
+                    }
+                    employee.DesignationId = employeeDto.DesignationId.Value;
+                }
+
+                // Update employee properties
+                employee.EmployeeId = employeeDto.EmployeeId ?? employee.EmployeeId;
+                employee.FirstName = employeeDto.FirstName ?? employee.FirstName;
+                employee.LastName = employeeDto.LastName ?? employee.LastName;
+                employee.Email = employeeDto.Email ?? employee.Email;
+                employee.PhoneNumber = employeeDto.PhoneNumber ?? employee.PhoneNumber;
+                employee.DateOfBirth = employeeDto.DateOfBirth ?? employee.DateOfBirth;
+                employee.Gender = employeeDto.Gender ?? employee.Gender;
+                employee.Address = employeeDto.Address ?? employee.Address;
+                employee.City = employeeDto.City ?? employee.City;
+                employee.Country = employeeDto.Country ?? employee.Country;
+                employee.PostalCode = employeeDto.PostalCode ?? employee.PostalCode;
+                employee.Nationality = employeeDto.Nationality ?? employee.Nationality;
+                employee.NationalId = employeeDto.NationalId ?? employee.NationalId;
+                employee.PassportNumber = employeeDto.PassportNumber ?? employee.PassportNumber;
+                employee.TaxId = employeeDto.TaxId ?? employee.TaxId;
+                employee.MaritalStatus = employeeDto.MaritalStatus ?? employee.MaritalStatus;
+                employee.EmergencyContactName = employeeDto.EmergencyContactName ?? employee.EmergencyContactName;
+                employee.EmergencyContactNumber = employeeDto.EmergencyContactNumber ?? employee.EmergencyContactNumber;
+                employee.EmergencyContactRelation = employeeDto.EmergencyContactRelation ?? employee.EmergencyContactRelation;
+                employee.ReportingToId = employeeDto.ReportingToId ?? employee.ReportingToId;
+                employee.JoiningDate = employeeDto.JoiningDate ?? employee.JoiningDate;
+                employee.ContractType = employeeDto.ContractType ?? employee.ContractType;
+                employee.EmploymentStatus = employeeDto.EmploymentStatus ?? employee.EmploymentStatus;
+                employee.WorkEmail = employeeDto.WorkEmail ?? employee.WorkEmail;
+                employee.WorkPhone = employeeDto.WorkPhone ?? employee.WorkPhone;
+                employee.WorkLocation = employeeDto.WorkLocation ?? employee.WorkLocation;
+                employee.BankName = employeeDto.BankName ?? employee.BankName;
+                employee.BankAccountNumber = employeeDto.BankAccountNumber ?? employee.BankAccountNumber;
+                employee.BankBranch = employeeDto.BankBranch ?? employee.BankBranch;
+                employee.IFSCCode = employeeDto.IFSCCode ?? employee.IFSCCode;
+                employee.PANNumber = employeeDto.PANNumber ?? employee.PANNumber;
+                employee.AadharNumber = employeeDto.AadharNumber ?? employee.AadharNumber;
+                employee.PFNumber = employeeDto.PFNumber ?? employee.PFNumber;
+                employee.ESINumber = employeeDto.ESINumber ?? employee.ESINumber;
+                employee.UANNumber = employeeDto.UANNumber ?? employee.UANNumber;
+                employee.BasicSalary = employeeDto.BasicSalary ?? employee.BasicSalary;
+                employee.HRA = employeeDto.HRA ?? employee.HRA;
+                employee.DA = employeeDto.DA ?? employee.DA;
+                employee.LTA = employeeDto.LTA ?? employee.LTA;
+                employee.MedicalAllowance = employeeDto.MedicalAllowance ?? employee.MedicalAllowance;
+                employee.SpecialAllowance = employeeDto.SpecialAllowance ?? employee.SpecialAllowance;
+                employee.OtherAllowances = employeeDto.OtherAllowances ?? employee.OtherAllowances;
+                employee.ProfessionalTax = employeeDto.ProfessionalTax ?? employee.ProfessionalTax;
+                employee.IncomeTax = employeeDto.IncomeTax ?? employee.IncomeTax;
+                employee.OtherDeductions = employeeDto.OtherDeductions ?? employee.OtherDeductions;
+                
+                if (employeeDto.IsActive.HasValue)
+                {
+                    employee.IsActive = employeeDto.IsActive.Value;
+                }
+
+                employee.UpdatedAt = DateTime.UtcNow;
+                employee.UpdatedBy = UserId;
+
+                _context.Entry(employee).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                // Update user account if it exists
+                if (!string.IsNullOrEmpty(employee.UserId))
+                {
+                    var user = await _userManager.FindByIdAsync(employee.UserId);
+                    if (user != null)
+                    {
+                        user.FirstName = employee.FirstName;
+                        user.LastName = employee.LastName;
+                        user.Email = employee.Email;
+                        user.UserName = employee.Email;
+                        user.NormalizedEmail = employee.Email.ToUpper();
+                        user.NormalizedUserName = employee.Email.ToUpper();
+                        
+                        await _userManager.UpdateAsync(user);
+                    }
+                }
+
+                return HandleSuccess(employee, "Employee updated successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error updating employee with ID: {id}");
+                return HandleError($"An error occurred while updating employee with ID: {id}");
+            }
+        }
+
+        // DELETE: api/employees/5
+        [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> DeleteEmployee(int id)
+        {
+            try
+            {
+                var employee = await _context.Employees
+                    .Include(e => e.Documents)
+                    .FirstOrDefaultAsync(e => e.Id == id);
+
+                if (employee == null)
+                {
+                    return HandleNotFound("Employee not found");
+                }
+
+                // Check if employee has any active records (attendance, payments, etc.)
+                var hasActiveRecords = await _context.EmployeeAttendances
+                    .AnyAsync(a => a.EmployeeId == id && a.Status != "CheckedOut");
+
+                if (hasActiveRecords)
+                {
+                    return HandleError("Cannot delete employee with active records");
+                }
+
+                // Delete employee documents from storage
+                foreach (var doc in employee.Documents)
+                {
+                    var filePath = Path.Combine(_env.WebRootPath, "uploads", doc.DocumentPath);
+                    if (System.IO.File.Exists(filePath))
+                    {
+                        System.IO.File.Delete(filePath);
+                    }
+                }
+
+                // Delete user account if it exists
+                if (!string.IsNullOrEmpty(employee.UserId))
+                {
+                    var user = await _userManager.FindByIdAsync(employee.UserId);
+                    if (user != null)
+                    {
+                        await _userManager.DeleteAsync(user);
+                    }
+                }
+
+                _context.Employees.Remove(employee);
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(null, "Employee deleted successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error deleting employee with ID: {id}");
+                return HandleError($"An error occurred while deleting employee with ID: {id}");
+            }
+        }
+
+        // POST: api/employees/5/activate
+        [HttpPost("{id}/activate")]
+        [Authorize(Roles = "Admin,HR")]
+        public async Task<IActionResult> ActivateEmployee(int id)
+        {
+            try
+            {
+                var employee = await _context.Employees.FindAsync(id);
+                if (employee == null)
+                {
+                    return HandleNotFound("Employee not found");
+                }
+
+                if (employee.IsActive)
+                {
+                    return HandleError("Employee is already active");
+                }
+
+                employee.IsActive = true;
+                employee.UpdatedAt = DateTime.UtcNow;
+                employee.UpdatedBy = UserId;
+
+                _context.Entry(employee).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(employee, "Employee activated successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error activating employee with ID: {id}");
+                return HandleError($"An error occurred while activating employee with ID: {id}");
+            }
+        }
+
+        // POST: api/employees/5/deactivate
+        [HttpPost("{id}/deactivate")]
+        [Authorize(Roles = "Admin,HR")]
+        public async Task<IActionResult> DeactivateEmployee(int id, [FromBody] string reason)
+        {
+            if (string.IsNullOrEmpty(reason))
+            {
+                return HandleError("Reason for deactivation is required");
+            }
+
+            try
+            {
+                var employee = await _context.Employees.FindAsync(id);
+                if (employee == null)
+                {
+                    return HandleNotFound("Employee not found");
+                }
+
+                if (!employee.IsActive)
+                {
+                    return HandleError("Employee is already inactive");
+                }
+
+                employee.IsActive = false;
+                employee.DeactivationReason = reason;
+                employee.DeactivationDate = DateTime.UtcNow;
+                employee.UpdatedAt = DateTime.UtcNow;
+                employee.UpdatedBy = UserId;
+
+                _context.Entry(employee).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(employee, "Employee deactivated successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error deactivating employee with ID: {id}");
+                return HandleError($"An error occurred while deactivating employee with ID: {id}");
+            }
+        }
+
+        #endregion
+
+        #region Documents
+
+        // POST: api/employees/5/documents
+        [HttpPost("{id}/documents")]
+        public async Task<IActionResult> UploadDocument(int id, IFormFile file, [FromForm] string documentType, [FromForm] string description = null)
+        {
+            if (file == null || file.Length == 0)
+            {
+                return HandleError("No file uploaded");
+            }
+
+            try
+            {
+                var employee = await _context.Employees.FindAsync(id);
+                if (employee == null)
+                {
+                    return HandleNotFound("Employee not found");
+                }
+
+                // Create uploads directory if it doesn't exist
+                var uploadsDir = Path.Combine(_env.WebRootPath, "uploads");
+                if (!Directory.Exists(uploadsDir))
+                {
+                    Directory.CreateDirectory(uploadsDir);
+                }
+
+                // Generate unique filename
+                var fileName = $"emp_{id}_{DateTime.UtcNow:yyyyMMddHHmmss}_{Path.GetFileName(file.FileName)}";
+                var filePath = Path.Combine(uploadsDir, fileName);
+
+                // Save file
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await file.CopyToAsync(stream);
+                }
+
+                // Save document record
+                var document = new EmployeeDocument
+                {
+                    EmployeeId = id,
+                    DocumentType = documentType,
+                    DocumentPath = fileName,
+                    OriginalFileName = file.FileName,
+                    Description = description,
+                    FileSize = file.Length,
+                    ContentType = file.ContentType,
+                    UploadedAt = DateTime.UtcNow,
+                    UploadedBy = UserId
+                };
+
+                _context.EmployeeDocuments.Add(document);
+                await _context.SaveChangesAsync();
+
+                return HandleCreated(document, "Document uploaded successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error uploading document for employee with ID: {id}");
+                return HandleError($"An error occurred while uploading document for employee with ID: {id}");
+            }
+        }
+
+        // GET: api/employees/5/documents
+        [HttpGet("{id}/documents")]
+        public async Task<IActionResult> GetEmployeeDocuments(int id)
+        {
+            try
+            {
+                var documents = await _context.EmployeeDocuments
+                    .Where(d => d.EmployeeId == id)
+                    .OrderByDescending(d => d.UploadedAt)
+                    .ToListAsync();
+
+                return HandleSuccess(documents);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error retrieving documents for employee with ID: {id}");
+                return HandleError($"An error occurred while retrieving documents for employee with ID: {id}");
+            }
+        }
+
+        // DELETE: api/employees/documents/5
+        [HttpDelete("documents/{documentId}")]
+        public async Task<IActionResult> DeleteDocument(int documentId)
+        {
+            try
+            {
+                var document = await _context.EmployeeDocuments.FindAsync(documentId);
+                if (document == null)
+                {
+                    return HandleNotFound("Document not found");
+                }
+
+                // Delete file from storage
+                var filePath = Path.Combine(_env.WebRootPath, "uploads", document.DocumentPath);
+                if (System.IO.File.Exists(filePath))
+                {
+                    System.IO.File.Delete(filePath);
+                }
+
+                _context.EmployeeDocuments.Remove(document);
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(null, "Document deleted successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error deleting document with ID: {documentId}");
+                return HandleError($"An error occurred while deleting document with ID: {documentId}");
+            }
+        }
+
+        #endregion
+
+        #region Attendance
+
+        // POST: api/employees/5/checkin
+        [HttpPost("{id}/checkin")]
+        [Authorize(Roles = "Admin,HR,Manager")]
+        public async Task<IActionResult> CheckInEmployee(int id, [FromBody] CheckInOutDto checkInDto)
+        {
+            try
+            {
+                var employee = await _context.Employees.FindAsync(id);
+                if (employee == null)
+                {
+                    return HandleNotFound("Employee not found");
+                }
+
+                // Check if employee is already checked in
+                var activeAttendance = await _context.EmployeeAttendances
+                    .FirstOrDefaultAsync(a => a.EmployeeId == id && a.Status != "CheckedOut");
+
+                if (activeAttendance != null)
+                {
+                    return HandleError("Employee is already checked in");
+                }
+
+                var attendance = new EmployeeAttendance
+                {
+                    EmployeeId = id,
+                    CheckInTime = DateTime.UtcNow,
+                    CheckInNotes = checkInDto.Notes,
+                    Status = "CheckedIn",
+                    CreatedBy = UserId,
+                    CreatedAt = DateTime.UtcNow
+                };
+
+                _context.EmployeeAttendances.Add(attendance);
+                await _context.SaveChangesAsync();
+
+                return HandleCreated(attendance, "Employee checked in successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error checking in employee with ID: {id}");
+                return HandleError($"An error occurred while checking in employee with ID: {id}");
+            }
+        }
+
+        // POST: api/employees/5/checkout
+        [HttpPost("{id}/checkout")]
+        [Authorize(Roles = "Admin,HR,Manager")]
+        public async Task<IActionResult> CheckOutEmployee(int id, [FromBody] CheckInOutDto checkOutDto)
+        {
+            try
+            {
+                var employee = await _context.Employees.FindAsync(id);
+                if (employee == null)
+                {
+                    return HandleNotFound("Employee not found");
+                }
+
+                // Find the active attendance record
+                var attendance = await _context.EmployeeAttendances
+                    .FirstOrDefaultAsync(a => a.EmployeeId == id && a.Status != "CheckedOut");
+
+                if (attendance == null)
+                {
+                    return HandleError("No active check-in found for this employee");
+                }
+
+                attendance.CheckOutTime = DateTime.UtcNow;
+                attendance.CheckOutNotes = checkOutDto.Notes;
+                attendance.Status = "CheckedOut";
+                attendance.UpdatedAt = DateTime.UtcNow;
+                attendance.UpdatedBy = UserId;
+
+                // Calculate working hours
+                if (attendance.CheckInTime.HasValue)
+                {
+                    attendance.WorkingHours = (decimal)(attendance.CheckOutTime.Value - attendance.CheckInTime.Value).TotalHours;
+                }
+
+                _context.Entry(attendance).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(attendance, "Employee checked out successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error checking out employee with ID: {id}");
+                return HandleError($"An error occurred while checking out employee with ID: {id}");
+            }
+        }
+
+        // GET: api/employees/5/attendance
+        [HttpGet("{id}/attendance")]
+        public async Task<IActionResult> GetEmployeeAttendance(int id, [FromQuery] DateTime? fromDate = null, [FromQuery] DateTime? toDate = null)
+        {
+            try
+            {
+                var query = _context.EmployeeAttendances
+                    .Where(a => a.EmployeeId == id)
+                    .AsQueryable();
+
+                if (fromDate.HasValue)
+                {
+                    query = query.Where(a => a.CheckInTime >= fromDate.Value);
+                }
+
+                if (toDate.HasValue)
+                {
+                    var endDate = toDate.Value.AddDays(1);
+                    query = query.Where(a => a.CheckInTime < endDate);
+                }
+
+                var attendance = await query
+                    .OrderByDescending(a => a.CheckInTime)
+                    .ToListAsync();
+
+                return HandleSuccess(attendance);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error retrieving attendance for employee with ID: {id}");
+                return HandleError($"An error occurred while retrieving attendance for employee with ID: {id}");
+            }
+        }
+
+        #endregion
+
+        #region Payroll
+
+        // POST: api/employees/5/payments
+        [HttpPost("{id}/payments")]
+        [Authorize(Roles = "Admin,HR,Accountant")]
+        public async Task<IActionResult> ProcessPayment(int id, [FromBody] ProcessPaymentDto paymentDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HandleError("Invalid payment data");
+            }
+
+            using var transaction = await _context.Database.BeginTransactionAsync();
+            try
+            {
+                var employee = await _context.Employees.FindAsync(id);
+                if (employee == null)
+                {
+                    return HandleNotFound("Employee not found");
+                }
+
+                // Calculate payment period
+                DateTime paymentDate = paymentDto.PaymentDate ?? DateTime.UtcNow;
+                DateTime startDate, endDate;
+
+                if (paymentDto.PaymentPeriod == "Monthly")
+                {
+                    startDate = new DateTime(paymentDate.Year, paymentDate.Month, 1);
+                    endDate = startDate.AddMonths(1).AddDays(-1);
+                }
+                else if (paymentDto.PaymentPeriod == "BiWeekly")
+                {
+                    // Assuming bi-weekly payment on 1st and 16th of each month
+                    if (paymentDate.Day <= 15)
+                    {
+                        startDate = new DateTime(paymentDate.Year, paymentDate.Month, 1);
+                        endDate = new DateTime(paymentDate.Year, paymentDate.Month, 15);
+                    }
+                    else
+                    {
+                        startDate = new DateTime(paymentDate.Year, paymentDate.Month, 16);
+                        endDate = new DateTime(paymentDate.Year, paymentDate.Month, 
+                            DateTime.DaysInMonth(paymentDate.Year, paymentDate.Month));
+                    }
+                }
+                else // Weekly
+                {
+                    // Get the start of the week (Sunday)
+                    int diff = (7 + (paymentDate.DayOfWeek - DayOfWeek.Sunday)) % 7;
+                    startDate = paymentDate.AddDays(-1 * diff).Date;
+                    endDate = startDate.AddDays(6);
+                }
+
+                // Calculate working days and hours for the period
+                var attendance = await _context.EmployeeAttendances
+                    .Where(a => a.EmployeeId == id && 
+                              a.CheckInTime >= startDate && 
+                              a.CheckInTime <= endDate.AddDays(1) &&
+                              a.Status == "CheckedOut")
+                    .ToListAsync();
+
+                int workingDays = attendance.Count;
+                decimal totalHours = attendance.Sum(a => a.WorkingHours) ?? 0;
+
+                // Calculate basic pay based on working days/hours
+                decimal basicPay = 0;
+                decimal dailyRate = employee.BasicSalary / 30; // Assuming 30 days in a month
+                decimal hourlyRate = employee.BasicSalary / (30 * 8); // 8 hours per day
+
+                if (paymentDto.PaymentType == "Daily")
+                {
+                    basicPay = workingDays * dailyRate;
+                }
+                else if (paymentDto.PaymentType == "Hourly")
+                {
+                    basicPay = totalHours * hourlyRate;
+                }
+                else // Monthly
+                {
+                    basicPay = employee.BasicSalary;
+                }
+
+                // Calculate allowances
+                decimal hra = basicPay * (employee.HRA / 100);
+                decimal da = basicPay * (employee.DA / 100);
+                decimal lta = employee.LTA / 12; // Annual LTA divided by 12
+                decimal medicalAllowance = employee.MedicalAllowance;
+                decimal specialAllowance = employee.SpecialAllowance;
+                decimal otherAllowances = employee.OtherAllowances;
+
+                // Calculate total earnings
+                decimal totalEarnings = basicPay + hra + da + lta + medicalAllowance + 
+                                      specialAllowance + otherAllowances;
+
+                // Calculate deductions
+                decimal professionalTax = employee.ProfessionalTax;
+                decimal incomeTax = employee.IncomeTax;
+                decimal pfDeduction = basicPay * 0.12m; // 12% of basic pay for PF
+                decimal esiDeduction = basicPay * 0.0175m; // 1.75% of basic pay for ESI
+                decimal otherDeductions = employee.OtherDeductions;
+
+                // Calculate total deductions
+                decimal totalDeductions = professionalTax + incomeTax + pfDeduction + 
+                                        esiDeduction + otherDeductions;
+
+                // Calculate net pay
+                decimal netPay = totalEarnings - totalDeductions;
+
+                // Create payment record
+                var payment = new EmployeePayment
+                {
+                    EmployeeId = id,
+                    PaymentDate = paymentDate,
+                    PaymentPeriod = paymentDto.PaymentPeriod,
+                    PaymentType = paymentDto.PaymentType,
+                    StartDate = startDate,
+                    EndDate = endDate,
+                    BasicPay = basicPay,
+                    HRA = hra,
+                    DA = da,
+                    LTA = lta,
+                    MedicalAllowance = medicalAllowance,
+                    SpecialAllowance = specialAllowance,
+                    OtherAllowances = otherAllowances,
+                    ProfessionalTax = professionalTax,
+                    IncomeTax = incomeTax,
+                    PFDeduction = pfDeduction,
+                    ESIDeduction = esiDeduction,
+                    OtherDeductions = otherDeductions,
+                    TotalEarnings = totalEarnings,
+                    TotalDeductions = totalDeductions,
+                    NetPay = netPay,
+                    PaymentStatus = "Pending",
+                    PaymentMethod = paymentDto.PaymentMethod,
+                    BankName = employee.BankName,
+                    AccountNumber = employee.BankAccountNumber,
+                    IFSC = employee.IFSCCode,
+                    UAN = employee.UANNumber,
+                    PAN = employee.PANNumber,
+                    WorkingDays = workingDays,
+                    WorkingHours = totalHours,
+                    Notes = paymentDto.Notes,
+                    CreatedBy = UserId,
+                    CreatedAt = DateTime.UtcNow
+                };
+
+                _context.EmployeePayments.Add(payment);
+                await _context.SaveChangesAsync();
+
+                await transaction.CommitAsync();
+
+                return HandleCreated(payment, "Payment processed successfully");
+            }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                _logger.LogError(ex, $"Error processing payment for employee with ID: {id}");
+                return HandleError($"An error occurred while processing payment for employee with ID: {id}");
+            }
+        }
+
+        // GET: api/employees/5/payments
+        [HttpGet("{id}/payments")]
+        public async Task<IActionResult> GetEmployeePayments(int id, [FromQuery] int? year = null, [FromQuery] int? month = null)
+        {
+            try
+            {
+                var query = _context.EmployeePayments
+                    .Where(p => p.EmployeeId == id)
+                    .AsQueryable();
+
+                if (year.HasValue)
+                {
+                    query = query.Where(p => p.PaymentDate.Year == year.Value);
+                }
+
+                if (month.HasValue)
+                {
+                    query = query.Where(p => p.PaymentDate.Month == month.Value);
+                }
+
+                var payments = await query
+                    .OrderByDescending(p => p.PaymentDate)
+                    .ToListAsync();
+
+                return HandleSuccess(payments);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error retrieving payments for employee with ID: {id}");
+                return HandleError($"An error occurred while retrieving payments for employee with ID: {id}");
+            }
+        }
+
+        // POST: api/employees/payments/5/approve
+        [HttpPost("payments/{paymentId}/approve")]
+        [Authorize(Roles = "Admin,HR,Accountant")]
+        public async Task<IActionResult> ApprovePayment(int paymentId, [FromBody] ApprovePaymentDto approveDto)
+        {
+            try
+            {
+                var payment = await _context.EmployeePayments.FindAsync(paymentId);
+                if (payment == null)
+                {
+                    return HandleNotFound("Payment not found");
+                }
+
+                if (payment.PaymentStatus == "Approved")
+                {
+                    return HandleError("Payment is already approved");
+                }
+
+                payment.PaymentStatus = "Approved";
+                payment.ApprovedBy = UserId;
+                payment.ApprovalDate = DateTime.UtcNow;
+                payment.TransactionId = approveDto.TransactionId;
+                payment.TransactionDate = approveDto.TransactionDate ?? DateTime.UtcNow;
+                payment.Notes = approveDto.Notes;
+                payment.UpdatedAt = DateTime.UtcNow;
+                payment.UpdatedBy = UserId;
+
+                _context.Entry(payment).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(payment, "Payment approved successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error approving payment with ID: {paymentId}");
+                return HandleError($"An error occurred while approving payment with ID: {paymentId}");
+            }
+        }
+
+        // POST: api/employees/payments/5/reject
+        [HttpPost("payments/{paymentId}/reject")]
+        [Authorize(Roles = "Admin,HR,Accountant")]
+        public async Task<IActionResult> RejectPayment(int paymentId, [FromBody] RejectPaymentDto rejectDto)
+        {
+            if (string.IsNullOrEmpty(rejectDto.Reason))
+            {
+                return HandleError("Rejection reason is required");
+            }
+
+            try
+            {
+                var payment = await _context.EmployeePayments.FindAsync(paymentId);
+                if (payment == null)
+                {
+                    return HandleNotFound("Payment not found");
+                }
+
+                if (payment.PaymentStatus == "Rejected")
+                {
+                    return HandleError("Payment is already rejected");
+                }
+
+                payment.PaymentStatus = "Rejected";
+                payment.RejectionReason = rejectDto.Reason;
+                payment.RejectedBy = UserId;
+                payment.RejectionDate = DateTime.UtcNow;
+                payment.Notes = rejectDto.Notes;
+                payment.UpdatedAt = DateTime.UtcNow;
+                payment.UpdatedBy = UserId;
+
+                _context.Entry(payment).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return HandleSuccess(payment, "Payment rejected successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error rejecting payment with ID: {paymentId}");
+                return HandleError($"An error occurred while rejecting payment with ID: {paymentId}");
+            }
+        }
+
+        #endregion
+    }
+
+    #region DTOs
+
+    public class EmployeeCreateDto
+    {
+        // Basic Information
+        [Required]
+        [StringLength(50)]
+        public string EmployeeId { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        public string FirstName { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        public string LastName { get; set; }
+
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
+
+        [Required]
+        [Phone]
+        public string PhoneNumber { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime DateOfBirth { get; set; }
+
+        [Required]
+        [StringLength(20)]
+        public string Gender { get; set; }
+
+        // Address Information
+        [StringLength(500)]
+        public string Address { get; set; }
+
+        [StringLength(100)]
+        public string City { get; set; }
+
+        [StringLength(100)]
+        public string Country { get; set; }
+
+        [StringLength(20)]
+        public string PostalCode { get; set; }
+
+        // Identification
+        [StringLength(100)]
+        public string Nationality { get; set; }
+
+        [StringLength(50)]
+        public string NationalId { get; set; }
+
+        [StringLength(50)]
+        public string PassportNumber { get; set; }
+
+        [StringLength(50)]
+        public string TaxId { get; set; }
+
+        [StringLength(20)]
+        public string MaritalStatus { get; set; }
+
+        // Emergency Contact
+        [StringLength(100)]
+        public string EmergencyContactName { get; set; }
+
+        [StringLength(20)]
+        public string EmergencyContactNumber { get; set; }
+
+        [StringLength(50)]
+        public string EmergencyContactRelation { get; set; }
+
+        // Employment Details
+        [Required]
+        public int DepartmentId { get; set; }
+
+        [Required]
+        public int DesignationId { get; set; }
+
+        public int? ReportingToId { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime JoiningDate { get; set; }
+
+        [StringLength(50)]
+        public string ContractType { get; set; } // Permanent, Contract, Probation, Intern
+
+        [StringLength(50)]
+        public string EmploymentStatus { get; set; } // Active, On Leave, Suspended, Terminated
+
+        // Work Information
+        [EmailAddress]
+        public string WorkEmail { get; set; }
+
+        [Phone]
+        public string WorkPhone { get; set; }
+
+        [StringLength(100)]
+        public string WorkLocation { get; set; }
+
+        // Bank Details
+        [StringLength(100)]
+        public string BankName { get; set; }
+
+        [StringLength(50)]
+        public string BankAccountNumber { get; set; }
+
+        [StringLength(100)]
+        public string BankBranch { get; set; }
+
+        [StringLength(20)]
+        public string IFSCCode { get; set; }
+
+        // Tax and Benefits
+        [StringLength(20)]
+        public string PANNumber { get; set; }
+
+        [StringLength(20)]
+        public string AadharNumber { get; set; }
+
+        [StringLength(50)]
+        public string PFNumber { get; set; }
+
+        [StringLength(50)]
+        public string ESINumber { get; set; }
+
+        [StringLength(50)]
+        public string UANNumber { get; set; }
+
+        // Salary Details
+        [Range(0, double.MaxValue)]
+        public decimal BasicSalary { get; set; }
+
+        [Range(0, 100)]
+        public decimal HRA { get; set; }
+
+        [Range(0, 100)]
+        public decimal DA { get; set; }
+
+        [Range(0, double.MaxValue)]
+        public decimal LTA { get; set; }
+
+        [Range(0, double.MaxValue)]
+        public decimal MedicalAllowance { get; set; }
+
+        [Range(0, double.MaxValue)]
+        public decimal SpecialAllowance { get; set; }
+
+        [Range(0, double.MaxValue)]
+        public decimal OtherAllowances { get; set; }
+
+        [Range(0, double.MaxValue)]
+        public decimal ProfessionalTax { get; set; }
+
+        [Range(0, double.MaxValue)]
+        public decimal IncomeTax { get; set; }
+
+        [Range(0, double.MaxValue)]
+        public decimal OtherDeductions { get; set; }
+
+        // User Account
+        public bool CreateUserAccount { get; set; } = false;
+
+        [StringLength(100, MinimumLength = 6)]
+        public string Password { get; set; }
+
+        [StringLength(50)]
+        public string DefaultRole { get; set; } // Role to assign to the user
+    }
+
+    public class EmployeeUpdateDto
+    {
+        // Basic Information
+        [StringLength(50)]
+        public string EmployeeId { get; set; }
+
+        [StringLength(100)]
+        public string FirstName { get; set; }
+
+        [StringLength(100)]
+        public string LastName { get; set; }
+
+        [EmailAddress]
+        public string Email { get; set; }
+
+        [Phone]
+        public string PhoneNumber { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime? DateOfBirth { get; set; }
+
+        [StringLength(20)]
+        public string Gender { get; set; }
+
+        // Address Information
+        [StringLength(500)]
+        public string Address { get; set; }
+
+        [StringLength(100)]
+        public string City { get; set; }
+
+        [StringLength(100)]
+        public string Country { get; set; }
+
+        [StringLength(20)]
+        public string PostalCode { get; set; }
+
+        // Identification
+        [StringLength(100)]
+        public string Nationality { get; set; }
+
+        [StringLength(50)]
+        public string NationalId { get; set; }
+
+        [StringLength(50)]
+        public string PassportNumber { get; set; }
+
+        [StringLength(50)]
+        public string TaxId { get; set; }
+
+        [StringLength(20)]
+        public string MaritalStatus { get; set; }
+
+        // Emergency Contact
+        [StringLength(100)]
+        public string EmergencyContactName { get; set; }
+
+        [StringLength(20)]
+        public string EmergencyContactNumber { get; set; }
+
+        [StringLength(50)]
+        public string EmergencyContactRelation { get; set; }
+
+        // Employment Details
+        public int? DepartmentId { get; set; }
+        public int? DesignationId { get; set; }
+        public int? ReportingToId { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime? JoiningDate { get; set; }
+
+        [StringLength(50)]
+        public string ContractType { get; set; }
+
+        [StringLength(50)]
+        public string EmploymentStatus { get; set; }
+
+        // Work Information
+        [EmailAddress]
+        public string WorkEmail { get; set; }
+
+        [Phone]
+        public string WorkPhone { get; set; }
+
+        [StringLength(100)]
+        public string WorkLocation { get; set; }
+
+        // Bank Details
+        [StringLength(100)]
+        public string BankName { get; set; }
+
+        [StringLength(50)]
+        public string BankAccountNumber { get; set; }
+
+        [StringLength(100)]
+        public string BankBranch { get; set; }
+
+        [StringLength(20)]
+        public string IFSCCode { get; set; }
+
+        // Tax and Benefits
+        [StringLength(20)]
+        public string PANNumber { get; set; }
+
+        [StringLength(20)]
+        public string AadharNumber { get; set; }
+
+        [StringLength(50)]
+        public string PFNumber { get; set; }
+
+        [StringLength(50)]
+        public string ESINumber { get; set; }
+
+        [StringLength(50)]
+        public string UANNumber { get; set; }
+
+        // Salary Details
+        [Range(0, double.MaxValue)]
+        public decimal? BasicSalary { get; set; }
+
+        [Range(0, 100)]
+        public decimal? HRA { get; set; }
+
+        [Range(0, 100)]
+        public decimal? DA { get; set; }
+
+        [Range(0, double.MaxValue)]
+        public decimal? LTA { get; set; }
+
+        [Range(0, double.MaxValue)]
+        public decimal? MedicalAllowance { get; set; }
+
+        [Range(0, double.MaxValue)]
+        public decimal? SpecialAllowance { get; set; }
+
+        [Range(0, double.MaxValue)]
+        public decimal? OtherAllowances { get; set; }
+
+        [Range(0, double.MaxValue)]
+        public decimal? ProfessionalTax { get; set; }
+
+        [Range(0, double.MaxValue)]
+        public decimal? IncomeTax { get; set; }
+
+        [Range(0, double.MaxValue)]
+        public decimal? OtherDeductions { get; set; }
+
+        // Status
+        public bool? IsActive { get; set; }
+    }
+
+    public class CheckInOutDto
+    {
+        [StringLength(500)]
+        public string Notes { get; set; }
+    }
+
+    public class ProcessPaymentDto
+    {
+        [Required]
+        [StringLength(20)]
+        public string PaymentPeriod { get; set; } // Monthly, BiWeekly, Weekly
+
+        [Required]
+        [StringLength(20)]
+        public string PaymentType { get; set; } // Monthly, Daily, Hourly
+
+        [StringLength(50)]
+        public string PaymentMethod { get; set; } // Bank Transfer, Cash, Cheque
+
+        [DataType(DataType.Date)]
+        public DateTime? PaymentDate { get; set; }
+
+        [StringLength(500)]
+        public string Notes { get; set; }
+    }
+
+    public class ApprovePaymentDto
+    {
+        [Required]
+        [StringLength(100)]
+        public string TransactionId { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime? TransactionDate { get; set; }
+
+        [StringLength(500)]
+        public string Notes { get; set; }
+    }
+
+    public class RejectPaymentDto
+    {
+        [Required]
+        [StringLength(500)]
+        public string Reason { get; set; }
+
+        [StringLength(500)]
+        public string Notes { get; set; }
+    }
+
+    #endregion
+}

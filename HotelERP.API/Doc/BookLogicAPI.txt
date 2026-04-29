@@ -1,0 +1,1679 @@
+Changelog
+
+Version	Changes	Date	Updater
+4	Added Hotels & HotelInfo methods	26/07/2022	Onour Mourteza
+4.1	Added SubSource and New fields in HotelInfo Method	15/10/2022	Onour Mourteza
+
+
+
+
+
+5.0	●	Refactored all methods for case consistency and correct value types.
+●	Rate Request: Switched to date range in request.
+●	Availability Request: Switched to date range in request.
+●	Hotel Info Response: Added new information.
+●	SendReservation Request: Refactoring
+●	SendReservation Request: Added taxes array for sending definitive taxes.
+●	SendReservation Response: Added validation messages.
+●	Added our statically defined types for mapping purposes.	
+
+
+
+
+22/11/2022	
+
+
+
+Onour Mourteza Chousein Chasan
+5.1	●	Added hotel and room facilities in the HotelInfo method.	02/12/2022	Chousein Chasan
+
+5.2	●	Added channel hotel codes in HotelInfo method for mapping purposes. (Agoda, Booking.com, Expedia, Hotelbeds)	
+23/01/2023	
+Chousein Chasan
+
+
+5.3	●	Added rate market information in the HotelInfo method.
+●	Added pricing type in the GetRoomRates method.
+●	Removed validation RP002 in the SendReservation method. This enables partners to send a reservation payment type as Hotel Collect without sending credit card information.	
+
+11/05/2023	
+Onour Mourteza Chousein Chasan
+ 
+Table of Contents
+1.	GetRoomRates (Mandatory)	1
+2.	RateSync (Mandatory)	4
+3.	AllotmentSync (Mandatory)	8
+4.	CCInValid (Optional)	11
+5.	NoShow (Optional)	13
+6.	SendReservation (Mandatory)	15
+7.	HotelList (Optional)	23
+8.	HotelInfo (Optional)	27
+9.	BookLogic Static Types	35
+9.1.	Credit Card Types	35
+9.2.	Guest Types	35
+9.3.	Hotel Class Types	35
+9.4.	Hotel Types	36
+9.5.	Room View Types	37
+9.6.	Room Category Types	38
+9.7.	Meal Types	39
+9.8.	Image Category Types	40
+9.9.	Facility Types	41
+ 
+1.	GetRoomRates (Mandatory)
+Description: This method is used for getting room details and rate information of a mapped hotel.
+Prerequisites:
+●	Hotels have to be mapped.
+URL: http://partnerURL?action=GetRooms
+Type: POST
+Request Parameters:
+
+Data Field	Description	Data Type	Occurrences
+roomRatesRequest	Root object	Object	1
+roomRatesRequest/hotelId	Mapped hotel id	String	1
+roomRatesRequest/password	Supplier password	String	1
+roomRatesRequest/username	Supplier username	String	1
+Request Body:
+
+ 
+Response Parameters:
+
+Data Field	Description	Data Type	Occurrences
+roomRatesResponse	Root object of the response	Object	1
+roomRatesResponse/successful	Status of the response	Boolean	1
+roomRatesResponse/errors	Error message. Required if successful is set to false.	String	0..1
+roomRatesResponse/rooms	Rooms array	Array	1
+roomRatesResponse/roomRates/ roomRateObject	RoomRate Object	Object	1..n
+roomRatesResponse/roomRates/ roomRateObject/roomId	Room ID	String	1
+roomRatesResponse/roomRates/ roomRateObject/roomName	Room Name	String	1
+roomRatesResponse/roomRates/ roomRateObject/rateId	Rate ID	String	1
+roomRatesResponse/roomRates/ roomRateObject/rateName	Rate Name	String	1
+roomRatesResponse/roomRates/ roomRateObject/maxPerson	Maximum Persons Allowed	Integer	1
+roomRatesResponse/roomRates/ roomRateObject/minPerson	Minimum Persons Allowed	Integer	1
+roomRatesResponse/roomRates/ roomRateObject/pricingType	Pricing type of the room rate	Integer	1
+ 
+Response Body:
+
+Errors:
+
+Error #1	Authentication failed.
+Error #2	Hotel not found.
+ 
+2.	RateSync (Mandatory)
+Description: This method updates the rates.
+Prerequisites:
+●	Hotels have to be mapped.
+●	Rooms have to be mapped.
+●	Rates have to be mapped.
+URL: http://partnerURL?action=RateSync
+Type: POST
+Request Parameters:
+
+Data Field	Description	Data type	Occurrences
+rateRequest	Root Object for Rate Sync	Object	1
+rateRequest/hotelId	Mapped hotel id	String	1
+rateRequest/username	Supplier username	String	1
+rateRequest/password	Supplier password	String	1
+rateRequest/room	Room object	Object	1
+rateRequest/room/roomID	Mapped roomID	String	1
+rateRequest/room/rates	Rates array	Array	1
+rateRequest/room/rates/ratesObject	Rates object	Object	1..n
+rateRequest/room/rates/ratesObject/ rateID	Mapped RateID	String	1
+rateRequest/room/rates/ratesObject/ dates	Dates object array (contains date range objects)	Array	1
+rateRequest/room/rates/ratesObject/ dates/dateObject	Date range object	Object	1..n
+rateRequest/room/rates/ratesObject/ dates/dateObject/startDate	Start date of date range	String date (yyyy-mm-dd)	1
+rateRequest/room/rates/ratesObject/ dates/dateObject/endDate	End date of date range	String date (yyyy-mm-dd)	1
+rateRequest/room/rates/ratesObject/ dates/dateObject/minimumStay	Minimum stay	Integer	1
+rateRequest/room/rates/ratesObject/ dates/dateObject/advanceBookingDays	Advance booking days	Integer	1
+rateRequest/room/rates/ratesObject/ dates/dateObject/stopSell	Stop sell	Boolean	1
+rateRequest/room/rates/ratesObject/ dates/dateObject/closedOnArrival	Closed on arrival	Boolean	1
+rateRequest/room/rates/ratesObject/ dates/dateObject/closedOnDeparture	Closed on departure	Boolean	1
+ 
+Data Field	Description	Data type	Occurrences
+rateRequest/room/rates/ratesObject/ dates/dateObject/prices	Prices array for occupancies	Array	1
+rateRequest/room/rates/ratesObject/ dates/dateObject/prices/priceObject	Price object for each occupancy combination	Object	1..n
+rateRequest/room/rates/ratesObject/ dates/dateObject/prices/priceObject/ adult	
+Adult count	Integer (1 or more)	
+1
+rateRequest/room/rates/ratesObject/ dates/dateObject/prices/priceObject/ childB	
+Big child count	Integer (0 or more)	
+1
+rateRequest/room/rates/ratesObject/ dates/dateObject/prices/priceObject/ childA	
+Small child count	Integer (0 or more)	
+1
+rateRequest/room/rates/ratesObject/ dates/dateObject/prices/priceObject/ infant	
+Infant Count	Integer (0 or more)	
+1
+rateRequest/room/rates/ratesObject/ dates/dateObject/prices/priceObject/ price	Price for given occupancy combination	
+Float	
+1
+ 
+Request Body:
+{
+"rateRequest": { "hotelId": "hotelId", "username": "username", "password": "password", "room": {
+"roomId": "0445698b", "rates": [
+{
+"rateId": "2fe644d6", "dates": [
+{
+"startDate": "2020-12-21",
+"endDate": "2020-12-25",
+"minimumStay": 1,
+"advanceBookingDays": 0, "stopSell": false, "closedOnArrival": false, "closedOnDeparture": false, "prices": [
+{
+"adult": 2,
+"childB": 0,
+"childA": 0,
+"infant": 0,
+"price": 230.5
+},
+{
+"adult": 2,
+"childB": 1,
+"childA": 0,
+"infant": 0,
+"price": 250
+}
+]
+}
+]
+}
+]
+}
+}
+}
+ 
+Response Parameters:
+
+Data Field	Description	Data Type	Occurrences
+rateResponse	Root object of the response	Object	1
+rateResponse/successful	Status of the response	Boolean	1
+rateResponse/errors	Error message. Required if successful is set to false.	String	0..1
+Response Body:
+
+Errors:
+
+Error #1	Authentication failed.
+Error #2	Hotel does not exist.
+Error #3	Date is not valid.
+Error #4	Room does not exist.
+Error #5	Rate does not exist.
+ 
+3.	AllotmentSync (Mandatory)
+Description: This method sets the allotment of the target rooms.
+Prerequisites:
+●	Hotels have to be mapped.
+●	Rooms have to be mapped.
+URL: http://partnerURL?action=AllotmentSync
+Type: POST
+Request Parameters:
+
+Data Field	Description	Data type	Occurrences
+availabilityRequest	Root Object for Allotment Sync	Object	1
+availabilityRequest/hotelId	Mapped hotel id	String	1
+availabilityRequest/password	Supplier password	String	1
+availabilityRequest/username	Supplier username	String	1
+availabilityRequest/room	Room Object	Object	1
+availabilityRequest/room/roomID	Mapped roomID	String	1
+availabilityRequest/room/dates	Date objects array	Array	1
+availabilityRequest/room/dates/ dateObject	Date object	Object	1..n
+availabilityRequest/room/dates/ dateObject/startDate	Start date of date range	String Date (yyyy-mm-dd)	1
+availabilityRequest/room/dates/ dateObject/endDate	End date of date range	String Date (yyyy-mm-dd)	1
+availabilityRequest/room/dates/ dateObject/allotment	Allotment	Integer	1
+availabilityRequest/room/dates/ dateObject/minimumStay	Minimum stay	Integer	1
+availabilityRequest/room/dates/ dateObject/closedOnArrival	Closed on arrival	Boolean	1
+availabilityRequest/room/dates/ dateObject/closedOnDeparture	Closed on departure	Boolean	1
+availabilityRequest/room/dates/ dateObject/stopSell	Stop sell	Boolean	1
+availabilityRequest/room/dates/ dateObject/advanceBookingDays	Advance booking days	Integer	1
+ 
+Request Body:
+
+ 
+Response Parameters:
+
+Data Field	Description	Data Type	Occurrences
+availabilityResponse	Root object of the response	Object	1
+availabilityResponse/successful	Status of the response	Boolean	1
+availabilityResponse/errors	Error message. Required if successful is set to false.	String	0..1
+Response Body:
+
+Errors:
+
+Error #1	Authentication failed.
+Error #2	Hotel does not exist.
+Error #3	Date is not valid.
+Error #4	Room does not exist.
+Error #5	Rate does not exist.
+ 
+4.	CCInValid (Optional)
+Description: This method informs the channel that the given credit card information is not valid and reservation canceled due to that reason by the property owner. Is sent by the property owner.
+Important Notes:
+●	This method does not guarantee the given credit card is valid or not, in terms of rejection from bank transaction. It is the asseveration and responsibility of the property owner.
+Prerequisites:
+●	Reservation has been created.
+●	Reservation must include credit card information.
+URL: http://partnerURL?action=CCInValid
+Type: POST
+Request Parameters:
+
+Data Field	Description	Data type	Occurrences
+invalidCreditCardRequest	Root object of request	Object	1
+invalidCreditCardRequest/username	Supplier username	String	1
+invalidCreditCardRequest/password	Supplier password	String	1
+invalidCreditCardRequest/hotelId	Mapped hotel id	String	1
+invalidCreditCardRequest/reservationId	Supplier Reservation ID	String	1
+invalidCreditCardRequest/report	Definitive information	String	1
+Request Body:
+
+ 
+Response Parameters:
+
+Data Field	Description	Data type	Occurrences
+invalidCreditCardResponse	Root object of response	Object	1
+invalidCreditCardResponse/process	Process information	String	1
+invalidCreditCardResponse/successful	Status of the response	Boolean	1
+invalidCreditCardResponse/errors	Error message. Required if successful is set to false.	String	0..1
+Response Body:
+
+ 
+5.	NoShow (Optional)
+
+Description: This method informs the channel that the guest(s) of the reservation are / are not checked-in or not attended the exact check-in date.
+Important Notes:
+●	No Show Is sent by property owners and it is their asseveration and responsibility for the claim.
+Prerequisites:
+●	Reservation has been created.
+●	Reservation check-in date should be passed or on the same exact day.
+URL: http://partnerURL?action=NoShow
+Type: POST
+Request Parameters:
+
+Data Field	Description	Data type	Occurrences
+noShowRequest	Root object of request	Object	1
+noShowRequest/username	Supplier username	String	1
+noShowRequest/password	Supplier password	String	1
+noShowRequest/hotelId	Mapped hotel id	String	1
+noShowRequest/reservationId	Supplier Reservation ID	String	1
+noShowRequest/report	Definitive information	String	1
+Request Body:
+
+ 
+Response Parameters:
+
+Data Field	Description	Data type	Occurrences
+noShowResponse	Root object of response	Object	1
+noShowResponse/process	Process information	String	1
+noShowResponse/successful	Status of the response	Boolean	1
+noShowResponse/errors	Error message. Required if successful is set to false.	String	0..1
+Response Body:
+
+ 
+6.	SendReservation (Mandatory)
+Description: This method sends the reservation.
+Important Notes:
+●	In the production environment; when all prerequisites met; If property has legacy bookings before activation of the integration, these past reservations are expected to be sent via this method with setting multiple reservations in Reservations[] array object.
+●	System will not respond with error or warning messages if the reservation dates are past dates, and will recognize them as past reservations in the central reservation system.
+Prerequisites:
+●	Hotels have to be mapped.
+●	Rooms have to be mapped.
+●	Rates have to be mapped.
+●	Rates for the target rates should be sent.
+●	Allotment should be set and available.
+Development URL:https://stage-xrs.booklogic.net/ws/maxi-channel/sync/reservation/xrs-channel/v5.3 Production URL: https://xrs.booklogic.net/ws/maxi-channel/sync/reservation/xrs-channel/v5.3
+Type: POST
+Request Parameters:
+
+Data Field	Description	Data type	Occurrences
+channelId	Channel id	Integer	1
+username	Distributor username	String	1
+password	Distributor password	String	1
+
+subSource	In case of switch channel, the original source of reservation should be provided	
+String	
+0..1
+reservations	Reservation Objects Array	Array	1
+reservations/reservationObject	Reservation Object	Object	1..n
+reservations/reservationObject/ reservationID	Reservation reference number	String	1
+reservations/reservationObject/ hotelCode	Mapped hotel code	String	1
+reservations/reservationObject/ hotelName	Name of the hotel of reservation	String	0..1
+reservations/reservationObject/ currencyCode	Currency Code (ISO 4217)	String	1
+ 
+Data Field	Description	Data type	Occurrences
+
+reservations/reservationObject/time	
+Date Time of the booking	String
+(yyyy-mm-dd hh:mm:ss)	
+1
+
+reservations/reservationObject/total	Total amount of the reservation (all taxes (included/excluded) should be included in this)	
+Float	
+1
+reservations/reservationObject/ comissionAmount	Commission amount	Float	0..1
+reservations/reservationObject/status	Status of the reservation.
+N: New, M: Modified, C: Canceled	String Enum (N|M|C)	1
+reservations/reservationObject/ paymentType	Payment type. H for hotel collect and C for channel collect	String Enum (H|C)	1
+reservations/reservationObject/ creditCard	Credit card object.	Object	0..1
+reservations/reservationObject/ creditCard/number	Client Credit Card Number	String	1
+reservations/reservationObject/ creditCard/cvc	Cvc of the credit card	String	0..1
+reservations/reservationObject/ creditCard/owner	Card Holders Name	String	1
+reservations/reservationObject/ creditCard/type	Credit Card Type Code. Refer to table 9.1. for card type codes	String Enum	1
+reservations/reservationObject/ creditCard/expireMonth	Credit card expire month	String(mm)	1
+reservations/reservationObject/ creditCard/expireYear	Credit card expire year	String(yyyy)	1
+reservations/reservationObject/info	Reservation info object.	Object	0..1
+reservations/reservationObject/info/ remarks	Notes of the reservation	String	0..1
+reservations/reservationObject/info/ arrivalTime	Arrival time of guests	String (hh:mm)	0..1
+reservations/reservationObject/info/ departureTime	Departure time of guests	String (hh:mm)	0..1
+reservations/reservationObject/client	Client Object	Object	1
+reservations/reservationObject/client/ firstName	First name of the client	String	1
+reservations/reservationObject/client/ lastName	Last name of the client	String	1
+reservations/reservationObject/client/ countryCode	Resident Country ISO 3166 ALPHA-2 Code of the client	String	1
+reservations/reservationObject/client/ address	Address of the client	String	0..1
+ 
+Data Field	Description	Data type	Occurrences
+reservations/reservationObject/client/ zip	Postal Code of the client	String	0..1
+reservations/reservationObject/client/ city	Resident city of the client	String	0..1
+reservations/reservationObject/client/ email	Email information of the client	String	0..1
+reservations/reservationObject/ client/phone	Contact phone number of client	String	0..1
+reservations/reservationObject/ rooms	Room list as an Array of the reservation	Array	1
+reservations/reservationObject/ rooms/roomObject	Room object	Object	1..n
+reservations/reservationObject/ rooms/roomObject/id	Mapped room id of the room	String	1
+reservations/reservationObject/ rooms/roomObject/name	Room name	String	1
+reservations/reservationObject/ rooms/roomObject/adult	Adult count of the room	Integer (at least 1)	1
+reservations/reservationObject/ rooms/roomObject/childB	Older child count of the room	Integer	1
+
+reservations/reservationObject/ rooms/roomObject/childA	Younger child count of the room. If no 2 child categories are supported, then send this one always as 0.	
+Integer	
+1
+reservations/reservationObject/ rooms/roomObject/infant	Infant count of the room	Integer	1
+reservations/reservationObject/ rooms/roomObject/checkInDate	Check–in date	String
+(yyyy-mm-dd)	1
+reservations/reservationObject/ rooms/roomObject/checkOutDate	Check-out date	String
+(yyyy-mm-dd)	1
+reservations/reservationObject/ rooms/roomObject/total	Total cost of the room (all taxes (included/excluded) should be included in this)	
+Float	
+1
+reservations/reservationObject/ rooms/roomObject/currencyCode	Currency Code (ISO 4217)	String	1
+reservations/reservationObject/ rooms/roomObject/info	Room information object	Object	0..1
+reservations/reservationObject/ rooms/roomObject/info/notes	Room notes	String	0..1
+reservations/reservationObject/ rooms/roomObject/info/isSmoking	Is smoking room	Boolean	0..1
+reservations/reservationObject/ rooms/roomObject/guests	Guests array	Array	1
+ 
+Data Field	Description	Data type	Occurrences
+reservations/reservationObject/ rooms/roomObject/guests/ guestObject	Guest object. Must be one for each guest.	
+Object	
+1..n
+reservations/reservationObject/ rooms/roomObject/guests/ guestObject/firstName	
+First name of guest	
+String	
+1
+reservations/reservationObject/ rooms/roomObject/guests/ guestObject/lastName	
+Last name of guest	
+String	
+1
+reservations/reservationObject/ rooms/roomObject/guests/ guestObject/type	Type code of guest. Refer to table
+9.2. for guest type codes	
+String Enum	
+1
+reservations/reservationObject/ rooms/roomObject/rate/id	Rate id	String	1
+reservations/reservationObject/ rooms/roomObject/rate/dailyPrices	Daily prices array	Array	1
+reservations/reservationObject/ rooms/roomObject/rate/dailyPrices/ dailyPriceObject	Daily price object. There must be one for every stay day.	
+Object	
+1..n
+reservations/reservationObject/ rooms/roomObject/rate/dailyPrices/ dailyPriceObject/date	
+Date of daily price	String
+(yyyy-mm-dd)	
+1
+reservations/reservationObject/ rooms/roomObject/rate/dailyPrices/ dailyPriceObject/price	Price of day (should include included taxes and exclude excluded taxes)	
+Float	
+1
+reservations/reservationObject/ rooms/roomObject/taxes	Tax objects array	Array	0..1
+reservations/reservationObject/ rooms/roomObject/taxes/taxesObject	Tax object	Object	1..n
+reservations/reservationObject/ rooms/roomObject/taxes/ taxesObject/name	
+Tax name	
+String	
+1
+reservations/reservationObject/ rooms/roomObject/taxes/ taxesObject/amount	
+Tax amount	
+Float	
+1
+reservations/reservationObject/ rooms/roomObject/taxes/ taxesObject/included	
+Is tax included	
+Boolean	
+1
+ 
+Request Body:
+{
+"channelId": 411, "username": "username", "password": "password", "reservations": [
+{
+"reservationId": "22221", "hotelCode": "Hotel01", "hotelName": "Hotel 001", "currencyCode": "EUR", "time": "2022-11-17 03:29:14",
+"total": 182.0,
+"comissionAmount": 10.2, "status": "N",
+"paymentType": "H", "creditCard": {
+"number": "4111411141114111",
+"cvc": "331",
+"owner": "John Doe",
+"type": "VIS",
+"expireMonth": "03",
+"expireYear": "2023"
+},
+"info": {
+"remarks": "remarks", "arrivalTime": "16:30",
+"departureTime": "13:30"
+},
+"client": {
+"firstName": "Chousein", "lastName": "Chasan", "countryCode": "TR", "address": "Elm Street 1", "zip": "34034",
+"city": "Istanbul",
+"email": "chousein.chasan@booklogic.net", "phone": "+905395395321"
+},
+"rooms": [
+{
+"id": "11589",
+"name": "Standard Room - Double", "adult": 1,
+"childB": 1,
+"childA": 0,
+"infant": 0,
+"checkInDate": "2022-12-07",
+"checkOutDate": "2022-12-09",
+"total": 182.0, "currencyCode": "EUR", "info": {
+ 
+"notes": "notes", "isSmoking": true
+},
+"guests": [
+{
+"firstName": "Chousein", "lastName": "Chasan", "type": "ADULT"
+},
+{
+"firstName": "John",
+"lastName": "Doe",
+"type": "CHILDB"
+}
+],
+"rate": {
+"id": "24173",
+"dailyPrices": [
+{
+"date": "2022-12-07",
+"price": 92.0
+},
+{
+"date": "2022-12-08",
+"price": 90.0
+}
+]
+},
+"taxes": [
+{
+"name": "Tax Name",
+"amount": 32.35, "included": true
+},
+{
+"name": "Municipality Tax", "amount": 2.35, "included": false
+}
+]
+}
+]
+}
+]
+}
+ 
+Response Parameters:
+
+Data Field	Description	Data type	Occurrences
+syncReservationsResponse	Root object of response	Object	1
+syncReservationsResponse/successful	Status of the response	Boolean	1
+syncReservationsResponse/message	Present in case of successful is true	String	0..1
+syncReservationsResponse/error	Error object. Present in case of successful is false	Object	0..1
+syncReservationsResponse/error/code	Error code (Refer to table below response for possible errors)	String	1
+syncReservationsResponse/error/message	Error message	String	1
+Response Body:
+
+Errors:
+
+Code	Message
+C001	Channel not found.
+C002	Authentication failed.
+C003	Channel - hotel relation not found.
+H001	No hotels found.
+H002	Hotel not found.
+R001	Invalid request.
+R002	Reservation ID is missing or in incorrect format.
+R003	Hotel Code is missing or in incorrect format.
+R004	Currency code is missing or in incorrect format.
+R005	Time is missing or in incorrect format.
+R006	Total is missing or in incorrect format.
+R007	Status is missing or in incorrect format.
+R010	Invalid request.
+RC001	Required client information is missing.
+RG001	Missing guest information.
+ 
+Code	Message
+RG002	Missing required guest information.
+RG003	Invalid guest type.
+RG004	Guest count mismatch. Please provide information for each guest of every guest type.
+RM001	Room information is missing.
+RM002	Room id is missing or in incorrect format.
+RM003	Room name is missing or in incorrect format.
+RM004	Room adult count is missing or in incorrect format. It should be at least 1.
+RM005	Room child/infant count is missing or in incorrect format.
+RM006	Room check in date is missing or in incorrect format.
+RM007	Room check out date is missing or in incorrect format.
+RM008	Room total is missing or in incorrect format.
+RM009	Room currency code is missing or in incorrect format.
+RP001	Payment type is missing or in incorrect format.
+RP003	Card number is missing or in incorrect format.
+RP004	Card owner is missing or in incorrect format.
+RP005	Card type is missing or in incorrect format.
+RP006	Card cvc is in incorrect format.
+RP007	Card expire year is missing or in incorrect format.
+RP008	Card expire month is missing or in incorrect format.
+RP009	Invalid card. Card expired.
+RR001	Rate information is missing.
+RR002	Required rate information is missing or in incorrect format.
+RR003	Daily rate date is missing or in incorrect format.
+RT001	Taxes are in incorrect format.
+RT002	A tax name is missing or in incorrect format.
+RT003	A tax amount is missing or in incorrect format.
+RT004	A tax included info is missing or in incorrect format.
+ 
+7.	HotelList (Optional)
+Description: This method returns the hotel list.
+Prerequisites:
+●	Hotels have to be mapped.
+Development URL: https://stage-xrs.booklogic.net/ws/maxi-channel/xrs/v5.3/hotels
+Production URL: https://xrs.booklogic.net/ws/maxi-channel/xrs/v5.3/hotels
+Type: POST
+Request Parameters:
+
+Data Field	Description	Data type	Occurrences
+channelId	Channel Id you will get from BookLogic	Integer	1
+username	Distributor password	String	1
+password	Distributor username	String	1
+Request Body:
+
+ 
+Response Parameters:
+
+Data Field	Description	Data type	Occurrences
+hotelsResponse	Root object of response	Object	1
+hotelsResponse/successful	Status of the response	Boolean	1
+hotelsResponse/error	Error object. Present in case of successful is false	Object	0..1
+hotelsResponse/error/code	Error code (Refer to table below response for possible errors)	String	1
+hotelsResponse/error/message	Error message	String	1
+hotelsResponse/hotels	Hotels array in case of successful response	Array	1
+hotelsResponse/hotels/hotelObject	Hotel object	Object	1..n
+hotelsResponse/hotels/hotelObject/name	Hotel name	String	1
+hotelsResponse/hotels/hotelObject/code	Hotel code	String	1
+hotelsResponse/hotels/hotelObject/class	Class object	Object	1
+hotelsResponse/hotels/hotelObject/ class/code	Hotel class code (refer to table 9.3. for class codes)	String	1
+hotelsResponse/hotels/hotelObject/ class/name	Hotel class name	String	1
+hotelsResponse/hotels/hotelObject/type	Hotel type object	Object	1
+hotelsResponse/hotels/hotelObject/ type/code	Type code (refer to table 9.4. For type codes)	String	1
+hotelsResponse/hotels/hotelObject/ type/name	Type name	String	1
+hotelsResponse/hotels/hotelObject/ location	Location object	Object	1
+hotelsResponse/hotels/hotelObject/ location/address	Address	String	1
+hotelsResponse/hotels/hotelObject/ location/city	City	String	1
+hotelsResponse/hotels/hotelObject/ location/country	Country object	Object	1
+hotelsResponse/hotels/hotelObject/ location/country/code	Country code (ISO 3166 ALPHA-2 Code)	String	1
+hotelsResponse/hotels/hotelObject/ location/country/name	Country name	String	1
+hotelsResponse/hotels/hotelObject/ location/zip	Zip of hotel	String	1
+hotelsResponse/hotels/hotelObject/ location/latitude	Latitude of hotel location	String	1
+hotelsResponse/hotels/hotelObject/ location/longitude	Longitude of hotel location	String	1
+ 
+Response Body:
+{
+"hotelsResponse": { "successful": true, "error": {
+"code": "code", "message": "message"
+},
+"hotels": [
+{
+"name": "Hotel 000002", "code": "IST1",
+"class": { "code": "5*",
+"name": "5 Star"
+},
+"type": { "code": "5",
+"name": "Cabin or Bungalow"
+},
+"location": {
+"address": "Address 000001", "city": "Istanbul", "country": {
+"code": "TR",
+"name": "Turkey"
+},
+"zip": "0001",
+"latitude": "42.777471023423",
+"longitude": "22.337731671464"
+}
+},
+{
+"name": "Hotel 000002", "code": "IST2",
+"class": { "code": "NS",
+"name": "No Star"
+},
+"type": { "code": "51",
+"name": "Charm Hotel"
+},
+"location": {
+"address": "Address 000002", "city": "Central And North Greece", "country": {
+"code": "GR",
+"name": "Greece"
+},
+"zip": "0002",
+"latitude": "16.946857681159",
+ 
+ 
+Errors:
+
+Code	Message
+C001	Channel not found.
+C002	Authentication failed.
+H001	No hotels found.
+R001	Invalid request.
+ 
+8.	HotelInfo (Optional)
+Description: This method returns the hotel data.
+Prerequisites:
+●	Hotels have to be mapped.
+Development URL: https://stage-xrs.booklogic.net/ws/maxi-channel/xrs/v5.3/hotel/hotelCode
+Production URL: https://xrs.booklogic.net/ws/maxi-channel/xrs/v5.3/hotel/hotelCode
+Type: POST
+Parameters:
+
+Data Field	Description	Data type	Occurrences
+channelId	Channel Id you will get from BookLogic	Integer	1
+username	Distributor password	String	1
+password	Distributor username	String	1
+Request:
+
+ 
+Response Parameters:
+
+Data Field	Description	Data type	Occurrences
+hotelInfoResponse	Root object of response	Object	1
+hotelInfoResponse/successful	Status of the response	Boolean	1
+hotelInfoResponse/error	Error object. Present in case of successful is false	Object	0..1
+
+hotelInfoResponse/error/code	Error code (Refer to table below response for possible errors)	
+String	
+1
+hotelInfoResponse/error/message	Error message	String	1
+hotelInfoResponse/hotel	Hotel object	Object	1
+hotelInfoResponse/hotel/name	Hotel name	String	1
+hotelInfoResponse/hotel/code	Hotel code	String	1
+hotelInfoResponse/hotel/channelCodes	Channel Hotel Codes Object	Object	1
+hotelInfoResponse/hotel/channelCodes/ agodaCode	Hotel’s Agoda Code	String	0..1
+hotelInfoResponse/hotel/channelCodes/ bookingCode	Hotel’s Booking Code	String	0..1
+hotelInfoResponse/hotel/channelCodes/ expediaCode	Hotel’s Expedia Code	String	0..1
+hotelInfoResponse/hotel/channelCodes/ hotelbedsCode	Hotel’s Hotelbeds Code	String	0..1
+hotelInfoResponse/hotel/class	Class object	Object	1
+hotelInfoResponse/hotel/class/code	Hotel class code (refer to table 9.3. for class codes)	String	1
+hotelInfoResponse/hotel/class/name	Hotel class name	String	1
+hotelInfoResponse/hotel/type	Hotel type object	Object	1
+hotelInfoResponse/hotel/type/code	Type code (refer to table 9.4. For type codes)	String	1
+hotelInfoResponse/hotel/type/name	Type name	String	1
+hotelInfoResponse/hotel/location	Location object	Object	1
+hotelInfoResponse/hotel/location/address	Address	String	1
+hotelInfoResponse/hotel/location/city	City	String	1
+hotelInfoResponse/hotel/location/country	Country object	Object	1
+hotelInfoResponse/hotel/location/country/ code	Country code (ISO 3166 ALPHA-2 Code)	String	1
+hotelInfoResponse/hotel/location/country/ name	Country name	String	1
+hotelInfoResponse/hotel/location/zip	Zip of hotel	String	1
+hotelInfoResponse/hotel/location/latitude	Latitude of hotel location	String	1
+hotelInfoResponse/hotel/location/longitude	Longitude of hotel location	String	1
+ 
+Data Field	Description	Data type	Occurrences
+hotelInfoResponse/hotel/contact	Contact object	Object	1
+hotelInfoResponse/hotel/contact/phone	Hotel contact phone number	String	1
+hotelInfoResponse/hotel/contact/email	Hotel contact email adress	String	1
+hotelInfoResponse/hotel/contact/website	Hotel website	String	0..1
+hotelInfoResponse/hotel/currencyCode	Hotel currency Code (ISO 4217)	Integer	1
+hotelInfoResponse/hotel/childBMaxAge	Hotel maximum older child age	Integer	0..1
+hotelInfoResponse/hotel/childAMaxAge	Hotel maximum younger child age	Integer	0..1
+hotelInfoResponse/hotel/infantMaxAge	Hotel maximum infant age	Integer	0..1
+hotelInfoResponse/hotel/images	Images array	Array	0..1
+hotelInfoResponse/hotel/images/ imageObject	Image object	Object	1..n
+hotelInfoResponse/hotel/images/ imageObject/url	Image url	String	1
+hotelInfoResponse/hotel/images/ imageObject/type	Image type object	Object	1
+hotelInfoResponse/hotel/images/ imageObject/type/code	Image category type code. Refer to table 9.8. For category types)	
+String	
+1
+hotelInfoResponse/hotel/images/ imageObject/type/name	Image type name	String	1
+hotelInfoResponse/hotel/facilities	Facilities array	Array	0..1
+hotelInfoResponse/hotel/facilities/ facilityObject	Facility object	Object	1..n
+hotelInfoResponse/hotel/facilities/ facilityObject/code	Facility code. Refer to table 9.9. For facility types)	String	1
+hotelInfoResponse/hotel/facilities/ facilityObject/name	Facility name	String	1
+hotelInfoResponse/hotel/rooms	Rooms array	Array	1
+hotelInfoResponse/hotel/rooms/ roomObject	Room object	Object	1..n
+hotelInfoResponse/hotel/rooms/ roomObject/id	Room id	Integer	1
+hotelInfoResponse/hotel/rooms/ roomObject/name	Room name	String	1
+hotelInfoResponse/hotel/rooms/ roomObject/minPerson	Room minimum person	Integer	1
+hotelInfoResponse/hotel/rooms/ roomObject/maxAdultCount	Room maximum adults	Integer	1
+hotelInfoResponse/hotel/rooms/ roomObject/maxChildBCount	Room maximum older child	Integer	1
+ 
+Data Field	Description	Data type	Occurrences
+hotelInfoResponse/hotel/rooms/ roomObject/maxChildACount	Room maximum young child	Integer	1
+hotelInfoResponse/hotel/rooms/ roomObject/maxInfantCount	Room maximum infants	Integer	1
+hotelInfoResponse/hotel/rooms/ roomObject/view	Room view type object	Object	1
+hotelInfoResponse/hotel/rooms/ roomObject/view/code	Room view type code. Refer to table 9.5. for room view types)	String	1
+hotelInfoResponse/hotel/rooms/ roomObject/view/name	Room view type name	String	1
+hotelInfoResponse/hotel/rooms/ roomObject/category	Room category object	Object	1
+hotelInfoResponse/hotel/rooms/ roomObject/category/code	Room category type code. Refer to table 9.6. for room category types)	
+String	
+1
+hotelInfoResponse/hotel/rooms/ roomObject/category/name	Room category name	String	1
+hotelInfoResponse/hotel/rooms/ roomObject/images	Images array	Array	0..1
+hotelInfoResponse/hotel/rooms/ roomObject/images/image	Image url	String	1..n
+hotelInfoResponse/hotel/rooms/ roomObject/facilities	Room facilities array	Array	0..1
+hotelInfoResponse/hotel/rooms/ roomObject/facilities/facilityObject	Facility object	Object	1..n
+hotelInfoResponse/hotel/rooms/ roomObject/facilities/facilityObject/code	Facility code. Refer to table 9.9. For facility types)	String	1
+hotelInfoResponse/hotel/rooms/ roomObject/facilities/facilityObject/name	Facility name	String	1
+hotelInfoResponse/hotel/rates	Rates array	Array	1
+hotelInfoResponse/hotel/rates/rateObject	Rate object	Object	1..n
+hotelInfoResponse/hotel/rates/rateObject/ id	Rate id	Integer	1
+hotelInfoResponse/hotel/rates/rateObject/ name	Rate name	String	1
+hotelInfoResponse/hotel/rates/rateObject/ roomId	ID of the room to which the rate level belongs	Integer	1
+hotelInfoResponse/hotel/rates/rateObject/ currencyCode	Rate currency Code (ISO 4217)	String	1
+hotelInfoResponse/hotel/rates/rateObject/ type	Rate type object	Object	1
+hotelInfoResponse/hotel/rates/rateObject/ type/b2b	Is rate B2B (can be both B2C and B2B at the same time)	Boolean	1
+ 
+Data Field	Description	Data type	Occurrences
+hotelInfoResponse/hotel/rates/rateObject/ type/b2c	Is rate B2C (can be both B2C and B2B at the same time)	Boolean	1
+hotelInfoResponse/hotel/rates/rateObject/ cancellationPolicy	Cancellation policy object	Object	1
+hotelInfoResponse/hotel/rates/rateObject/ cancellationPolicy/id	Cancellation policy id	Integer	1
+hotelInfoResponse/hotel/rates/rateObject/ cancellationPolicy/name	Cancellation policy name	String	1
+hotelInfoResponse/hotel/rates/rateObject/ cancellationPolicy/rules	Cancellation policy rules array	Array	1
+
+hotelInfoResponse/hotel/rates/rateObject/ cancellationPolicy/rules/ruleObject	Rule object. It will contain a remaining hours value and one of percentage, fixed amount, night value.	
+Object	
+1..n
+hotelInfoResponse/hotel/rates/rateObject/ cancellationPolicy/rules/ruleObject/ remainingHours	The remaining hours after which the penalty will be applied.	
+Integer	
+1
+hotelInfoResponse/hotel/rates/rateObject/ cancellationPolicy/rules/ruleObject/ percentage	
+Penalty percentage	
+Float	
+0..1
+hotelInfoResponse/hotel/rates/rateObject/ cancellationPolicy/rules/ruleObject/ fixedAmount	
+Penalty fixed amount	
+Float	
+0..1
+hotelInfoResponse/hotel/rates/rateObject/ cancellationPolicy/rules/ruleObject/nights	Penalty nights	Integer	0..1
+hotelInfoResponse/hotel/rates/rateObject/ nationalities	Rate allowed nationalities array	Array	1
+hotelInfoResponse/hotel/rates/rateObject/ nationalities/nationality	Nationality country ISO 3166 ALPHA-2 Code	String	0..n
+ 
+Response Body:
+{
+"hotelInfoResponse": { "successful": true, "error": {
+"code": "ER001",
+"message": "message"
+},
+"hotel": {
+"name": "Hotel0001",
+"code": "IST1",
+"channelCodes": { "agodaCode": "12345",
+"bookingCode": "12345",
+"expediaCode": "12345",
+"hotelbedsCode": "12345"
+},
+"class": { "code": "5*",
+"name": "5 Star"
+},
+"type": { "code": "5",
+"name": "Cabin or Bungalow"
+},
+"location": {
+"address": "Address0001", "city": "Istanbul", "country": {
+"code": "TR",
+"name": "Turkey"
+},
+"zip": "ZIP0001",
+"latitude": "42.777471023423",
+"longitude": "22.337731671464"
+},
+"contact": {
+"phone": "+908508850900",
+"email": "support@booklogic.net", "website": "websiteUrl"
+},
+"currencyCode": "EUR", "childBMaxAge": 5,
+"childAMaxAge": 3,
+"infantMaxAge": 2, "images": [
+{
+"url": "photoUrl", "type": {
+"code": "CON", "name": "Conferences"
+}
+ 
+},
+{
+"url": "photoUrl", "type": {
+"code": "GEN", "name": "General view"
+}
+}
+],
+"facilities": [
+{
+"code": "FC1", "name": "Facility 1"
+}
+],
+"rooms": [
+{
+"id": 2,
+"name": "Double Room", "minPerson": 1,
+"maxAdultCount": 2,
+"maxChildBCount": 1,
+"maxChildACount": 1,
+"maxInfantCount": 1, "view": {
+"code": "16", "name": "Garden View"
+},
+"category": { "code": "JSU",
+"name": "Junior Suite"
+},
+"images":    [ "https://	3e6.jpg",
+"https://	0e3.jpg",
+"https://	0e1.jpg"
+],
+"facilities": [
+{
+"code": "RFC1",
+"name": "Room Facility 1"
+}
+]
+}
+],
+"rates": [
+{
+"id": 3,
+"name": "Fully Flexible RO TRY", "roomId": 2,
+"currencyCode": "TRY", "type": {
+"b2b": true,
+ 
+ 
+Errors:
+
+Code	Message
+C001	Channel not found.
+C002	Authentication failed.
+H002	Hotel not found.
+R001	Invalid request.
+ 
+9.	BookLogic Static Types
+Tables in sections below indicate BookLogic’s static data types.
+9.1.	Credit Card Types
+
+Code	Name
+AMX	American Express
+DIN	DinersClub
+DSC	Discover
+JBE	JBE
+JCB	JCB
+MAE	Maestro
+MCA	MasterCard
+VIS	Visa
+9.2.	Guest Types
+
+Code	Name
+ADULT	Adult
+CHILDB	Old Child
+CHILDA	Young Child
+INFANT	Infant
+9.3.	Hotel Class Types
+
+Code	Name
+1*	1 Star
+2*	2 Star
+3*	3 Star
+4*	4 Star
+5*	5 Star
+NS	No Star
+ 
+9.4.	Hotel Types
+
+Code	Name
+1	All Suite
+2	All Inclusive Resort
+3	Apartment
+5	Cabin or Bungalow
+6	Campground
+7	Chalet
+15	Guest Farm
+16	Guest House, Limited Service
+17	Health Spa
+18	Holiday Resort
+19	Hostel
+20	Hotel
+22	Lodge
+27	Motel
+30	Resort
+33	Tent
+34	Vacation Home
+35	Villa
+40	Pension
+45	Boutique
+51	Charm Hotel
+53	Vacation Rental
+ 
+9.5.	Room View Types
+
+Code	Name
+1	Airport View
+2	Bay View
+3	City View
+4	Courtyard View
+5	Golf View
+6	Harbor View
+7	Intercoastal View
+8	Lake View
+9	Marina View
+10	Mountain View
+11	Ocean View
+12	Pool View
+13	River View
+14	Water View
+15	Beach View
+16	Garden View
+17	Park View
+18	Forest View
+19	Rain Forest View
+20	Various Views
+21	Limited View
+22	Slope View
+23	Strip View
+24	Countryside View
+25	Sea View
+50	Land View
+78	Side Sea View
+ 
+9.6.	Room Category Types
+
+Code	Name
+DLX	Deluxe Room
+ECO	Economy Room
+EXC	Executive Room
+FAM	Family Room
+JSU	Junior Suite
+MIN	Minimum Room
+MOD	Moderate Room
+ROH	Run of the House
+STD	Standard Room
+STU	Studio
+SUI	Suite
+SUP	Superior Room
+VIL	Villa
+ 
+9.7.	Meal Types
+
+Code	Name
+1	All Inclusive
+2	American
+3	Bed & Breakfast
+4	Buffet Breakfast
+5	Caribbean Breakfast
+6	Continental Breakfast
+7	English Breakfast
+8	European Plan
+9	Family Plan
+10	Full Board
+11	Full Breakfast
+12	Half Board
+14	Room Only
+15	Self Catering
+16	Bermuda
+17	Dinner Bed and Breakfast Plan
+18	Family American
+19	Breakfast
+20	Modified
+21	Lunch
+22	Dinner
+23	Breakfast & Lunch
+ 
+9.8.	Image Category Types
+
+Code	Name
+BAR	Bar
+BEA	Beach
+CON	Conferences
+GEN	General view
+LOB	Lobby
+POO	Pool
+RAT	Rate
+RES	Restaurant
+ROO	Room
+SPA	SPA
+SPO	Sports and Entertainment
+TER	Terrace
+ 
+9.9.	Facility Types
+Note: Some properties may include some room amenities in their hotel facilities that apply to all rooms of the property.
+Code	Name	Type
+BCH	Beach	Beach & Pool Facilities
+BCHCHR	Beach chairs	Beach & Pool Facilities
+BSB	Beach Sunbeds & Umbrellas	Beach & Pool Facilities
+BCHTWL	Beach Towels	Beach & Pool Facilities
+BEACH	Beachfront	Beach & Pool Facilities
+CPOL	Children Swimming Pool	Beach & Pool Facilities
+FWPOL	Fresh Water Pool	Beach & Pool Facilities
+HISWPL	Heated Infinity Swimming Pool	Beach & Pool Facilities
+HTEPOL	Heated Pool	Beach & Pool Facilities
+HPOL	Indoor Heated Swimming Pool	Beach & Pool Facilities
+INPOOL	Indoor Swimming Pool	Beach & Pool Facilities
+IFPOOL	Infinity Pool	Beach & Pool Facilities
+JCOZPL	Jacuzzi Swimming Pool	Beach & Pool Facilities
+OAB	Open-Air Bath	Beach & Pool Facilities
+OUTPOL	Outdoor Swimming Pool	Beach & Pool Facilities
+OUTJAC	Outside jacuzzi	Beach & Pool Facilities
+OUTSHW	Outside Shower	Beach & Pool Facilities
+PLCEW	Pool Countercurrent Swimming	Beach & Pool Facilities
+SNBED	Pool Sunbeds and Umbrellas	Beach & Pool Facilities
+PTWL	Pool Towel	Beach & Pool Facilities
+PVTB	Private Beach Area	Beach & Pool Facilities
+SWP	Salt Water Pool	Beach & Pool Facilities
+SHSWPL	Shared Swimming Pool	Beach & Pool Facilities
+SUNBDS	Sun Beds	Beach & Pool Facilities
+SUNUMB	Sun Umbrellas	Beach & Pool Facilities
+CHPOL	Swimming Pool with Children Area	Beach & Pool Facilities
+TLSPOL	Thalasso Pool	Beach & Pool Facilities
+THPOL	Thermal Water Pool	Beach & Pool Facilities
+WPARK	Water Park	Beach & Pool Facilities
+WSLID	Water Slide	Beach & Pool Facilities
+CHROM	Children Rooms	Children Facilities
+CTV	Children Television Networks	Children Facilities
+PLYA	Indoor Play Area	Children Facilities
+ 
+Code	Name	Type
+MNCLB	Mini Club	Children Facilities
+KDZM	Music for Children	Children Facilities
+PLAY	Playground	Children Facilities
+STRL	Strollers	Children Facilities
+BNQT	Banquet	Conference & Meeting
+MEET	Meeting Room / Banquet	Conference & Meeting
+BLROM	Ballroom	Entertainment Facilities
+BTRIP	Boat Trip	Entertainment Facilities
+CSINO	Casino	Entertainment Facilities
+CIN	Cinema	Entertainment Facilities
+CNMRM	Cinema Room	Entertainment Facilities
+DIS	Dancing, Night Club, Disco	Entertainment Facilities
+DISC	Dancing, Night Club, Disco (On Request)	Entertainment Facilities
+DIVE	Diving	Entertainment Facilities
+DVONRE	Diving (On Request)	Entertainment Facilities
+ESTF	Entertainment Staff	Entertainment Facilities
+EVEACT	Evening Entertainment	Entertainment Facilities
+KROK	Karaoke	Entertainment Facilities
+ARBC	Aerobic	Health & Wellness
+FINSAU	Finnish Sauna	Health & Wellness
+FIT	Fitness Centre	Health & Wellness
+HMAM	Hammam	Health & Wellness
+HTUBH	Hot Tub	Health & Wellness
+MSSG	Massage	Health & Wellness
+MSSG1	Massage (Paid)	Health & Wellness
+SNA	Sauna	Health & Wellness
+SOL	Solarium	Health & Wellness
+SPA	Spa	Health & Wellness
+SPAOR	Spa (On Request)	Health & Wellness
+TRBATH	Turkish Bath	Health & Wellness
+ALA	À la Carte Restaurant	Hotel Departments
+ALACAR	À la carte Restaurant (Paid)	Hotel Departments
+BAR	Bar	Hotel Departments
+BBAR	Beach Bar	Hotel Departments
+BOW	Bottle of Water	Hotel Departments
+BREAKF	Breakfast (surcharge)	Hotel Departments
+ 
+Code	Name	Type
+BFRM	Breakfast In The Room	Hotel Departments
+BRKD	Breakfast in the Room (Paid)	Hotel Departments
+BUFT	Buffet Restaurant	Hotel Departments
+CAFE	Cafeteria	Hotel Departments
+CCSSRV	Chef/cook Service (surcharge)	Hotel Departments
+COOKIE	Chocolate or Cookies	Hotel Departments
+COCTBA	Cocktail Bar	Hotel Departments
+FRT	Fruits	Hotel Departments
+FULLBR	Fullboard (surcharge)	Hotel Departments
+GROC	Grocery Deliveries	Hotel Departments
+HLFBRD	Halfboard (surcharge)	Hotel Departments
+KIDSB	Kids-Friendly Buffet	Hotel Departments
+MARKT	Mini Market	Hotel Departments
+MNIBAR	Mini-Bar	Hotel Departments
+PBAR	Pool Bar	Hotel Departments
+RES	Restaurant	Hotel Departments
+SBAR	Snack Bar	Hotel Departments
+SNCKT	Snacks - 17:00 Tea	Hotel Departments
+WINE	Wine / Champagne	Hotel Departments
+WCHSRG	Wine/Champagne (Surcharge)	Hotel Departments
+RCPT	24 Hours Front Desk	Hotel Facilities
+HOTELS	24 Hours Room Service (Paid)	Hotel Facilities
+ACCRMS	Accessible Rooms	Hotel Facilities
+AC	Air Conditioning	Hotel Facilities
+APSHTL	Airport Shuttle (Free)	Hotel Facilities
+AIRSHT	Airport Shuttle (Surcharge)	Hotel Facilities
+AFRM	Allergy Free Room	Hotel Facilities
+ATM	ATM / Cash Machine (On Site)	Hotel Facilities
+COT	Baby Cot	Hotel Facilities
+BYB	Baby Cot (On Request)	Hotel Facilities
+BABY	Baby Sitting (On Request)	Hotel Facilities
+BSTSRC	Baby Sitting (Surcharge)	Hotel Facilities
+BALCON	Balcony	Hotel Facilities
+BNK	Bank	Hotel Facilities
+BARRE	Bar / Refrigerator	Hotel Facilities
+BRB	Barber / Beauty Shop	Hotel Facilities
+BBQ	BBQ Facilities	Hotel Facilities
+ 
+Code	Name	Type
+BCHFRT	Beachfront	Hotel Facilities
+SALON	Beauty Salon	Hotel Facilities
+BUTY	Beauty Treatment (On Request)	Hotel Facilities
+BELL	Bell-Boy Service	Hotel Facilities
+CYCLE	Bicycle Rental	Hotel Facilities
+F5002	Bikes Available (Free)	Hotel Facilities
+BREAK	Breakfast In The Room	Hotel Facilities
+BRK	Breakfast In The Room (On request, Paid)	Hotel Facilities
+BSUT	Bridal Suite	Hotel Facilities
+BUSCEN	Business Center	Hotel Facilities
+CAFFEB	Caffe bar	Hotel Facilities
+CARENT	Car & Motorbike Rental	Hotel Facilities
+CM	Car Rental	Hotel Facilities
+CCTV	CCTV Security System	Hotel Facilities
+CLEANP	Cleaning Products	Hotel Facilities
+COLSTV	Colour Satellite TV	Hotel Facilities
+COMFAC	Computer Facilities	Hotel Facilities
+CONCRG	Concierge Service	Hotel Facilities
+CONSRV	Concierge Service (Surcharge)	Hotel Facilities
+CORIER	Courier Service	Hotel Facilities
+CUREX	Currency Exchange	Hotel Facilities
+MAID	Daily Maid Service	Hotel Facilities
+DLMSRV	Daily Maid Service (on request)	Hotel Facilities
+DLMYSR	Daily Maid Service (Surcharge)	Hotel Facilities
+SMOK	Designated Smoking Area	Hotel Facilities
+DOC	Doctor (Upon Request)	Hotel Facilities
+DRYCS	Dry Ceaning (Surcharge)	Hotel Facilities
+DRY	Dry Cleaning	Hotel Facilities
+ELOCK	Electronic Locks	Hotel Facilities
+EMRLIT	Emergency Lighting / Generator	Hotel Facilities
+EXIN	Express Check-in	Hotel Facilities
+EXOUT	Express Check-out	Hotel Facilities
+DSBLE	Facilities for Disabled People	Hotel Facilities
+FMLRM	Family Rooms	Hotel Facilities
+FAXCOM	FAX, Photocopying & Computer Hook-up	Hotel Facilities
+SPRNK	Fire Sprinkler	Hotel Facilities
+ 
+Code	Name	Type
+FTEQPM	Fitness Equipment	Hotel Facilities
+GAME	Games Room	Hotel Facilities
+GRG	Garage	Hotel Facilities
+GRDN	Garden	Hotel Facilities
+GASBBQ	Gas Barbeque	Hotel Facilities
+SHOP	Gift Shop	Hotel Facilities
+GROCE	Grocery Deliveries	Hotel Facilities
+HAMAM	Hammam	Hotel Facilities
+FLOOR	Hardwood / Parquet Floor	Hotel Facilities
+HEAT	Heating	Hotel Facilities
+HONEYM	Honeymoon Suite	Hotel Facilities
+ICEM	Ice Machine	Hotel Facilities
+INROM	In Room Coffee / Tea	Hotel Facilities
+INTRNT	Internet Access (Surcharge)	Hotel Facilities
+IRNSRV	Ironing Service (Surcharge)	Hotel Facilities
+KOSK	Kiosk Check-in	Hotel Facilities
+LNIRN	Laundry & Ironing Service	Hotel Facilities
+LNDONR	Laundry Service (On Request)	Hotel Facilities
+LNDSRV	Laundry Service (Surcharge)	Hotel Facilities
+LIBR	Library	Hotel Facilities
+LFT	Lift / Elevator	Hotel Facilities
+LNG	Lobby Lounge	Hotel Facilities
+LOCK	Lockers	Hotel Facilities
+LOUBAR	Lounge bar	Hotel Facilities
+BGST	Luggage Storage	Hotel Facilities
+LUGSTO	Luggage Storage (on request)	Hotel Facilities
+MLS	Multilingual Staff	Hotel Facilities
+NEP	Newspaper (Paid)	Hotel Facilities
+NEWS	Newspapers	Hotel Facilities
+NSMOK	Non-Smoking Rooms	Hotel Facilities
+F5004	Outdoor Fireplace	Hotel Facilities
+F5003	Outdoor Furniture	Hotel Facilities
+PLNCH	Packed Lunches	Hotel Facilities
+POST	Parcel & Postal Services	Hotel Facilities
+PARKVW	Park view	Hotel Facilities
+FPARK	Parking (Free)	Hotel Facilities
+HPARK	Parking Area	Hotel Facilities
+ 
+Code	Name	Type
+PRK	Parking Lot (Paid)	Hotel Facilities
+F5013	Pet Basket	Hotel Facilities
+PETAL	Pets Allowed	Hotel Facilities
+PET	Petsitting Services	Hotel Facilities
+PORTR	Porter / Bellmen	Hotel Facilities
+GNRTR	Power Generator	Hotel Facilities
+PVTIN	Private Check-in	Hotel Facilities
+PVTOUT	Private Check-out	Hotel Facilities
+F5001	Public Transport Tickets	Hotel Facilities
+PTTSRC	Public Transport Tickets (Surchage)	Hotel Facilities
+RECEPT	Reception	Hotel Facilities
+RMS	Room Service	Hotel Facilities
+RMSOR	Room Service (On Request)	Hotel Facilities
+RMSRS	Room Service (surcharge)	Hotel Facilities
+SAFE	Safe Deposit Box	Hotel Facilities
+SAFES	Safe Deposit Box (Surcharge)	Hotel Facilities
+SB	Satellite Broadcasting	Hotel Facilities
+SATTV	Satellite TV	Hotel Facilities
+SEAVIE	Sea View	Hotel Facilities
+SHKCHN	Shared Kitchen	Hotel Facilities
+STVA	Shared Lounge / TV Area	Hotel Facilities
+SHIN	Shoeshine	Hotel Facilities
+SHP	Shop	Hotel Facilities
+CHANG	Shower and Changing Room	Hotel Facilities
+SHTL	Shuttle Service (Chargeable)	Hotel Facilities
+SHTLFR	Shuttle Service (Free of Cost)	Hotel Facilities
+SKIEQ	Ski Equipment Hire	Hotel Facilities
+SKIEQM	Ski Equipment Hire (On Site)	Hotel Facilities
+SKIS	Ski School	Hotel Facilities
+A5656	Slippers	Hotel Facilities
+SMKF	Smoke Free Only Terrace / Balcony Rooms	Hotel Facilities
+SMOKE	Smoking Rooms Only Terrace and Balcony	Hotel Facilities
+SPATR	Spa treatment	Hotel Facilities
+SPTRT	Spa Treatment (surcharge)	Hotel Facilities
+DIET	Special Diet Menus (On Request)	Hotel Facilities
+SPRESS	Suit Press	Hotel Facilities
+ 
+Code	Name	Type
+SUMKTC	Summer Kitchen	Hotel Facilities
+STRS	Sun Terrace	Hotel Facilities
+TERCE	Terrace	Hotel Facilities
+TIKT	Theatre Ticket Reservation	Hotel Facilities
+TCKT	Ticket Service	Hotel Facilities
+TDSK	Tour Desk	Hotel Facilities
+VLTPRK	Valet Parking (Free)	Hotel Facilities
+VEND	Vending Machine for Drinks	Hotel Facilities
+VENDS	Vending Machine for Snacks	Hotel Facilities
+VPSORQ	Villa pre-stocking (On Request)	Hotel Facilities
+VLPST	Villa Pre-Stocking (Surcharge)	Hotel Facilities
+VIPS	VIP Room Services	Hotel Facilities
+WKUP	Wake-Up Calls	Hotel Facilities
+WD	Water Dispenser	Hotel Facilities
+WCA	Wheelchair Accessible	Hotel Facilities
+WIFI	Wi-fi Internet Access (Free)	Hotel Facilities
+WNCLR	Wine Cellar	Hotel Facilities
+WOODBB	Wood Barbeque	Hotel Facilities
+PK3	Cruise Packages	Package Type
+PK4	Game Lodges	Package Type
+PK2	Island Packages	Package Type
+PK1	Resort Packages	Package Type
+APARK	Accessible Parking	Parking / Shuttle
+AISHU	Airport Shuttle Service	Parking / Shuttle
+BCYCRN	Bicycle Rental	Parking / Shuttle
+BUPARK	Bus Parking	Parking / Shuttle
+CARRNT	Car Rental (Surcharge)	Parking / Shuttle
+DISPAK	Disabled Parking	Parking / Shuttle
+P316	Electric Vehicle Charging Station	Parking / Shuttle
+FRE1	Free Airport Shuttle	Parking / Shuttle
+FREEPA	Free Parking	Parking / Shuttle
+INDOOR	Indoor Parking	Parking / Shuttle
+LIPARK	Limited Parking	Parking / Shuttle
+LOPARK	Long Term Parking	Parking / Shuttle
+MOPARK	Motorcycle Parking	Parking / Shuttle
+NOPARK	No Parking Available	Parking / Shuttle
+OFPARK	Off-Site Parking	Parking / Shuttle
+ 
+Code	Name	Type
+ONPARK	On-Site Parking	Parking / Shuttle
+OPNPRK	Open parking	Parking / Shuttle
+OUTPAR	Outdoor Parking	Parking / Shuttle
+PARK	Parking	Parking / Shuttle
+PARKCO	Parking - Controlled Access Gates to Enter Parking Area	Parking / Shuttle
+PARKDE	Parking Deck	Parking / Shuttle
+PARKHT	Parking Fee Managed by Hotel	Parking / Shuttle
+PARKLO	Parking Lot	Parking / Shuttle
+PRVPRK	Private Parking	Parking / Shuttle
+PBLPRK	Public Parking	Parking / Shuttle
+PPRK	Public Parking Area Near By	Parking / Shuttle
+RECVEH	Recreational Vehicle Parking	Parking / Shuttle
+SLBTRN	Sail Boat Rental (Surcharge)	Parking / Shuttle
+SEPARK	Secured Parking	Parking / Shuttle
+SHUTTL	Shuttle to Local Attractions	Parking / Shuttle
+SHTTLE	Shuttle to Local Businesses	Parking / Shuttle
+STPARK	Street Side Parking	Parking / Shuttle
+TRUCK	Truck Parking	Parking / Shuttle
+VALET	Valet Parking	Parking / Shuttle
+YACHTR	Yacht Rental (Surcharge)	Parking / Shuttle
+A7	All Pets	Pet Policy
+C1	Cats Only	Pet Policy
+D2	Dogs Only	Pet Policy
+D10	Domestic Pets	Pet Policy
+L3	Large Domestic Animals	Pet Policy
+M4	Midsize Domestic Animals	Pet Policy
+P11	Pets Not Allowed	Pet Policy
+S8	Small Domestic Animals	Pet Policy
+S5	Small Domestic Animals Only	Pet Policy
+W9	Working Animals	Pet Policy
+W6	Working Animals Only	Pet Policy
+A8	0.5 ml Water (Free of Charge)	Room Facilities
+RMSR	24 Hours Room Service	Room Facilities
+ROOM	24 Hours Room Service (Paid)	Room Facilities
+ADTLT	Additional Toilet	Room Facilities
+ADSL	ADSL Internet Connection	Room Facilities
+ 
+Code	Name	Type
+AIR	Air Conditioning	Room Facilities
+HR126	Air Conditioning Individually Controlled in Room	Room Facilities
+ALRM	Alarm Clock	Room Facilities
+ALFSHO	Alfresco Shower	Room Facilities
+ANGFRA	Angled Furniture Arrangement	Room Facilities
+ANTIK	Antique Furnitures	Room Facilities
+ARMCHR	Armchair	Room Facilities
+BBCHR	Baby Chair	Room Facilities
+BYCOR	Baby Chair (On Request)	Room Facilities
+HR5145	Baby Safety Gates	Room Facilities
+BAL	Balcony	Room Facilities
+HR8	Barbeque Grills	Room Facilities
+BTHAMN	Bath Amenities	Room Facilities
+HR15	Bath or Shower	Room Facilities
+HMSG	Bath with Hydro-Massage Function	Room Facilities
+BROB	Bathrobes	Room Facilities
+BATH	Bathroom	Room Facilities
+HR5153	Bathroom Emergency Pull Cord	Room Facilities
+BTUB	Bathtub	Room Facilities
+HR127	Bathtub & Whirlpool Separate	Room Facilities
+HR14	Bathtub Only	Room Facilities
+BIDT	Bidet	Room Facilities
+BLNDER	Blender	Room Facilities
+HR265	Bluray Player	Room Facilities
+BGAM	Board Games / Puzzles	Room Facilities
+HR5179	Body Soap	Room Facilities
+BOOK	Books	Room Facilities
+BNKBDS	Bunk Beds	Room Facilities
+CINT	Cable Internet	Room Facilities
+SATTVR	Cable-Satellite TV	Room Facilities
+CRPT	Carpeted	Room Facilities
+CD	CD / DVD Player	Room Facilities
+CDVD	CD / DVD Player	Room Facilities
+HR129	CD Player	Room Facilities
+CFAN	Ceiling Fan	Room Facilities
+HEATR	Central Heating	Room Facilities
+ 
+Code	Name	Type
+A1	Central Heating and Cooling	Room Facilities
+HR230	Chair Provided with Desk	Room Facilities
+PAYVU	Channels (Pay Per View)	Room Facilities
+CHCHR	Children's Chair	Room Facilities
+CTVEW	City View	Room Facilities
+CLEAN	Cleaning Products	Room Facilities
+CLOSET	Closet / Wardrobe	Room Facilities
+HR162	Closets in Room	Room Facilities
+RACK	Clothes Rack	Room Facilities
+HR158	CNN Available	Room Facilities
+COFEE	Coffee Facilities	Room Facilities
+HR20	Color Television	Room Facilities
+COMP	Computer	Room Facilities
+HR5178	Conditioner	Room Facilities
+HR25	Cordless Phone	Room Facilities
+CRIB	Crib (Upon Request)	Room Facilities
+MAIDR	Daily Maid Service	Room Facilities
+DLXBTH	Deluxe Bath Set	Room Facilities
+HR133	Desk with Electrical Outlet	Room Facilities
+HR29	Desk with Lamp	Room Facilities
+DBS	Digital Bathroom Scale	Room Facilities
+A3	Digital Safe Box (Free of Charge)	Room Facilities
+DIGI	Digital Scale	Room Facilities
+DINE	Dining Area	Room Facilities
+DITABL	Dining Table	Room Facilities
+DDTEL	Direct Dial Telephone	Room Facilities
+DSHWSH	Dishwasher	Room Facilities
+DRSRM	Dressing Room	Room Facilities
+DRTBL	Dressing Table	Room Facilities
+DRRFCL	Drying rack for clothing	Room Facilities
+ELCBBQ	Electric BBQ grill	Room Facilities
+ELEKTL	Electric Kettle	Room Facilities
+LOCKR	Electronic Locks	Room Facilities
+ENSBTH	En-suite Bathroom	Room Facilities
+ELA	Executive Lounge Access	Room Facilities
+EXBED	Extra Long Beds (> 2 metres)	Room Facilities
+FAX	Fax	Room Facilities
+ 
+Code	Name	Type
+A5	Fire Detector	Room Facilities
+FRPLC	Fireplace	Room Facilities
+FLTV	Flat Screen TV	Room Facilities
+FRSTVU	Forest View	Room Facilities
+WTR	Free Bottle of Water	Room Facilities
+FRETEA	Free Coffee and Tea Service	Room Facilities
+HR46	Free Movies / Videos	Room Facilities
+TOIL	Free Toiletries	Room Facilities
+BTH	Free Toiletries (On Request)	Room Facilities
+FRNBLC	French balcony	Room Facilities
+FRPATI	Front Patio	Room Facilities
+HR47	Full Kitchen	Room Facilities
+FULMRR	Full-Length Mirror	Room Facilities
+FRNS	Furnace	Room Facilities
+GAMSOL	Game Console	Room Facilities
+PS3	Game Console - PS3	Room Facilities
+HR5174	Game Console - PS4	Room Facilities
+HR5173	Game Console - Wii U	Room Facilities
+HR5172	Game Console - Xbox One	Room Facilities
+GVEW	Garden View	Room Facilities
+GASGRL	Gas grill	Room Facilities
+HR49	Grecian Tub	Room Facilities
+LANDRY	Guest Laundry	Room Facilities
+HR220	Gulf View	Room Facilities
+HDRY	Hairdryer	Room Facilities
+HNDCP	Handicap Rooms Available	Room Facilities
+HNGRS	Hangers	Room Facilities
+FLOORR	Hardwood / Parquet Floor	Room Facilities
+HT	Heating	Room Facilities
+INTR	High-Speed Internet Access	Room Facilities
+HA7	Hot Drinks Set (Free of Charge)	Room Facilities
+HTUB	Hot Tub	Room Facilities
+ELRGE	Hypoallergenic	Room Facilities
+ICEMKR	Ice maker	Room Facilities
+INTTV	Interactive TV	Room Facilities
+ICR	Interconnected Room Available	Room Facilities
+A22	International Direct Phone Calling	Room Facilities
+ 
+Code	Name	Type
+IPOD	iPod Dock	Room Facilities
+IRON	Iron & Ironing Board	Room Facilities
+IRN	Iron Service (Paid)	Room Facilities
+A4	Ironing Service	Room Facilities
+JC	Jacuzzi	Room Facilities
+JUCER	Juicer	Room Facilities
+A9	Kettle	Room Facilities
+KMEAL	Kid-Friendly Food	Room Facilities
+VISCO	King Size Visco Bed	Room Facilities
+KCHN	Kitchen	Room Facilities
+KCHNT	Kitchenette	Room Facilities
+KCHNW	Kitchenware	Room Facilities
+LAKEVU	Lake View	Room Facilities
+LAMP	Lamp	Room Facilities
+LVU	Landmark View	Room Facilities
+HR63	Laptop	Room Facilities
+LPTSF	Laptop-Suitable Safe	Room Facilities
+HR64	Large Desk	Room Facilities
+LCD	LCD Full HD Television	Room Facilities
+A6	LCD TV	Room Facilities
+TVLED	LED TV	Room Facilities
+LIN	Linen	Room Facilities
+HR139	List of Movie Channels Available	Room Facilities
+LVNG	Living Room	Room Facilities
+MICROV	Microwave	Room Facilities
+MWTR	Mineral Water (Upon Request)	Room Facilities
+MNFRDG	Mini Fridge	Room Facilities
+MNKTCH	Mini Kitchen	Room Facilities
+MNBAR	Mini-Bar	Room Facilities
+HR164	Mini-Refrigerator	Room Facilities
+MRR	Mirror	Room Facilities
+MODF	Modern Furnishing	Room Facilities
+MSQTNT	Mosquito Net	Room Facilities
+MNTVEW	Mountain View	Room Facilities
+CHANL	Movie & Sport Channels	Room Facilities
+MOVLIB	Movie Library	Room Facilities
+PAYTV	Movies (On Demand, Pay Per View)	Room Facilities
+ 
+Code	Name	Type
+HR72	Multi-Line Phone	Room Facilities
+MUZK	Music	Room Facilities
+NETFLX	Netflix	Room Facilities
+A12	Newspaper Service (Free of Charge)	Room Facilities
+NGTSTD	Night Stand	Room Facilities
+NONSMK	Non-Smoking Rooms Available	Room Facilities
+HR224	Ocean View	Room Facilities
+WIN	Open Windows	Room Facilities
+OUTDIN	Outdoor Dining Area	Room Facilities
+OUTSIT	Outdoor Furniture	Room Facilities
+OVN	Oven	Room Facilities
+HR141	Oversized Bathtub	Room Facilities
+PTIO	Patio	Room Facilities
+HR80	Phone in Bathroom	Room Facilities
+HR81	Plates and Bowls	Room Facilities
+PLYSTT	PlayStation	Room Facilities
+PTWLR	Pool Towels	Room Facilities
+POLVU	Pool View	Room Facilities
+HR85	Private Bathroom	Room Facilities
+PVENTR	Private Entrance	Room Facilities
+PPOOL	Private Pool	Room Facilities
+TRACE	Private Terrace	Room Facilities
+PTS	PTS (Prime to Serve) Service	Room Facilities
+RDO	Radio	Room Facilities
+RSH	Rain Showerhead	Room Facilities
+RAZOR	Razor Plug	Room Facilities
+REFRIG	Refrigerator	Room Facilities
+HR89	Refrigerator with Ice Maker	Room Facilities
+RELX	Relaxation Corner	Room Facilities
+RIVRVU	River View	Room Facilities
+ROLWAY	Rollaway Bed (Upon Request)	Room Facilities
+ROLW	Rollaways (Upon Request)	Room Facilities
+SEC	Room Security	Room Facilities
+RMSVS	Room Service (Up to Midnight)	Room Facilities
+SAFER	Safe Deposit Box	Room Facilities
+HR217	Satellite Radio	Room Facilities
+A2	Satellite TV	Room Facilities
+ 
+Code	Name	Type
+SAWSH	Sauna with Shower	Room Facilities
+SVEW	Sea View	Room Facilities
+HR166	Self-Controlled Heating / Cooling System	Room Facilities
+HR155	Separate Tub and Shower	Room Facilities
+HR276	Separate Tub or Shower	Room Facilities
+SWA	Separate Work Area	Room Facilities
+SEW	Sewing Kit	Room Facilities
+HR5177	Shampoo (On Request)	Room Facilities
+SHBATH	Shared Bathroom	Room Facilities
+SHRTLT	Shared Toilet	Room Facilities
+SHOWR	Shower	Room Facilities
+HR5180	Shower Cap	Room Facilities
+HR97	Shower Only	Room Facilities
+HR98	Silverware / Utensils	Room Facilities
+SIT	Sitting Area	Room Facilities
+SLPR	Slippers	Room Facilities
+SMARTV	Smart TV	Room Facilities
+DETECT	Smoke Detector	Room Facilities
+SOFA	Sofa	Room Facilities
+SFWPLB	Sofa with pulling bed	Room Facilities
+SOUNDF	Soundproof Windows	Room Facilities
+HR144	Soundproofed Room	Room Facilities
+SPAR	Spa Bath	Room Facilities
+HR103	Speaker Phone	Room Facilities
+A11	Special Decoration	Room Facilities
+STV	Stove	Room Facilities
+STOTOP	Stovetop	Room Facilities
+SURSYS	Surround Sound System	Room Facilities
+TMKR	Tea / Coffee Maker	Room Facilities
+TELE	Telephone	Room Facilities
+HR108	Telephone for Hearing Impaired	Room Facilities
+HR194	Telephone TDD / Textphone	Room Facilities
+TV	Television	Room Facilities
+MRBL	Tile / Marble Bathroom Floor	Room Facilities
+TOASTR	Toaster	Room Facilities
+TLT	Toilet	Room Facilities
+ 
+Code	Name	Type
+HR5141	Toilet Paper	Room Facilities
+HR5176	Toothbrush	Room Facilities
+TWL	Towels	Room Facilities
+HR5170	Trash Cans	Room Facilities
+TMDRY	Tumble dryer	Room Facilities
+TMBDRY	Tumble Dryer (Surcharge)	Room Facilities
+TRUND	Turndown Service	Room Facilities
+HR147	Two-Line Phone	Room Facilities
+UCB	Unisex Customized Bouquets	Room Facilities
+UPACES	Upper Floors Accessible By Lift	Room Facilities
+STAIRS	Upper Floors Accessible By Stairs Only	Room Facilities
+VACUM	Vacuum Cleaner	Room Facilities
+HR115	VCR Movies	Room Facilities
+HR117	Video Games	Room Facilities
+HR218	Video on Demand	Room Facilities
+VMAIL	Voice Mail	Room Facilities
+WAKE	Wake-up Call	Room Facilities
+WIS	Walk-in Shower	Room Facilities
+WASH	Washing Machine	Room Facilities
+WSHMCH	Washing Machine (Surcharge)	Room Facilities
+DRINK	Welcome Drink	Room Facilities
+WHCHR	Wheelchairs (On Request)	Room Facilities
+WIFIR	Wi-Fi Internet Access (Free)	Room Facilities
+WIFICH	Wi-Fi Internet Access (Surcharge)	Room Facilities
+A10	Wide Screen LCD TV	Room Facilities
+HR5171	Wine Glasses	Room Facilities
+BALCNY	With Balcony or Without Balcony	Room Facilities
+WOODFL	Wooden Floor	Room Facilities
+WRKDSK	Working desk	Room Facilities
+DESK	Writing Desk	Room Facilities
+S268	All Public Areas Non-Smoking	Smoking Options
+A47	All Rooms Non-Smoking	Smoking Options
+S312	All Spaces Non-Smoking (Public and Private)	Smoking Options
+S198	Non-Smoking Room (Generic)	Smoking Options
+SMKALR	Smoking allowed in Living room	Smoking Options
+SPDR1	Smoking Permitted in Designated Areas and Rooms	Smoking Options
+ 
+Code	Name	Type
+SOC5	5x5 Soccer Court	Sport Facilities
+ARCH	Archery	Sport Facilities
+SP5031	Badminton Equipment	Sport Facilities
+BSKTBL	Basketball Court	Sport Facilities
+BCYCL	Bicycle	Sport Facilities
+BIKING	Biking	Sport Facilities
+SP5025	Billard	Sport Facilities
+BLRD	Billiards	Sport Facilities
+GMP	Board Games / Puzzles	Sport Facilities
+BOWL	Bowling	Sport Facilities
+CNOE	Canoeing	Sport Facilities
+CNOOR	Canoeing (On Request)	Sport Facilities
+CRK	Cricket	Sport Facilities
+CYCL	Cycling	Sport Facilities
+DART	Darts	Sport Facilities
+GOLFOR	Golf (On Request)	Sport Facilities
+GLFC	Golf Course	Sport Facilities
+HIK	Hiking	Sport Facilities
+HIKOR	Hiking (On Request)	Sport Facilities
+HOR	Horse Riding	Sport Facilities
+HBROR	Horseback riding (On Request)	Sport Facilities
+ISKT	Ice Skating	Sport Facilities
+KYKNG	Kayaking	Sport Facilities
+KYKOR	Kayaking (On Request)	Sport Facilities
+GOLF	Mini Golfing	Sport Facilities
+MTBIK	Mountain Biking	Sport Facilities
+PARAGL	Paragliding	Sport Facilities
+RAFT	Rafting	Sport Facilities
+RFTOR	Rafting (On Request)	Sport Facilities
+SAIOR	Sailing (On Request)	Sport Facilities
+SAIL	Sailing / Boating	Sport Facilities
+SKIPV	Ski Pass Vendor	Sport Facilities
+SKISCL	Ski School	Sport Facilities
+SKISTG	Ski Storage	Sport Facilities
+SKI	Ski-to-Door Access	Sport Facilities
+SKING	Skiing	Sport Facilities
+SNROR	Snorkeling (On Request)	Sport Facilities
+ 
+Code	Name	Type
+SNOKL	Snorkelling	Sport Facilities
+SOC	Soccer	Sport Facilities
+SQS	Squash	Sport Facilities
+TBLSCR	Table Soccer	Sport Facilities
+TTNS	Table Tennis	Sport Facilities
+TBTENO	Table tennis (On Request)	Sport Facilities
+TEN	Tennis Court	Sport Facilities
+TEQP	Tennis Equipment	Sport Facilities
+TENS	Tennis Equipment (With Deposit)	Sport Facilities
+TRMPLN	Trampoline	Sport Facilities
+VOLE	Volleyball	Sport Facilities
+WTRSPT	Water Sports	Sport Facilities
+WSP	Water Sports (Paid)	Sport Facilities
+WSURF	Windsurfing	Sport Facilities
+WINOR	Windsurfing (On Request)	Sport Facilities
+WRS	Wrestling	Sport Facilities
+ACTEXR	Activities and Excursions (On Request)	Various Facilities
+BTQ	Boutique	Various Facilities
+FAK	First Aid Kit	Various Facilities
+FSHNG	Fishing	Various Facilities
+FSHOR	Fishing (On Request)	Various Facilities
+TURISM	Rural Tourism	Various Facilities
+YATCHT	Yatch Tours	Various Facilities
+

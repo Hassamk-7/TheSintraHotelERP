@@ -1,0 +1,221 @@
+import { useState, useEffect } from 'react'
+import axios from '../../utils/axios.js'
+import {
+  FolderOpenIcon,
+  PlusIcon,
+  PencilIcon,
+  TrashIcon,
+  CheckCircleIcon,
+  MagnifyingGlassIcon
+} from '@heroicons/react/24/outline'
+
+const InventoryCategoryMaster = () => {
+  const [items, setItems] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [success, setSuccess] = useState('')
+  const [showForm, setShowForm] = useState(false)
+  const [editingId, setEditingId] = useState(null)
+  const [searchTerm, setSearchTerm] = useState('')
+  const [formData, setFormData] = useState({ name: '', description: '' })
+  const [errors, setErrors] = useState({})
+
+  const fetchItems = async () => {
+    try {
+      setLoading(true)
+      setError('')
+      const res = await axios.get('/inventory/categories', {
+        params: { page: 1, pageSize: 5000, search: searchTerm }
+      })
+      const list = Array.isArray(res.data) ? res.data : res.data?.data || []
+      setItems(list)
+    } catch (e) {
+      console.error(e)
+      setError('Failed to load categories')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    fetchItems()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  useEffect(() => {
+    const t = setTimeout(fetchItems, 300)
+    return () => clearTimeout(t)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchTerm])
+
+  const validate = () => {
+    const next = {}
+    if (!formData.name.trim()) next.name = 'Name is required'
+    setErrors(next)
+    return Object.keys(next).length === 0
+  }
+
+  const resetForm = () => {
+    setFormData({ name: '', description: '' })
+    setErrors({})
+  }
+
+  const handleCancel = () => {
+    resetForm()
+    setEditingId(null)
+    setShowForm(false)
+  }
+
+  const handleEdit = (row) => {
+    setEditingId(row.id ?? row.Id)
+    setFormData({
+      name: row.name ?? row.Name ?? '',
+      description: row.description ?? row.Description ?? ''
+    })
+    setShowForm(true)
+  }
+
+  const handleDelete = async (id) => {
+    if (!window.confirm('Delete this inventory category?')) return
+    try {
+      setLoading(true)
+      setSuccess('')
+      await axios.delete(`/inventory/categories/${id}`)
+      setSuccess('Category deleted')
+      await fetchItems()
+      setTimeout(() => setSuccess(''), 3000)
+    } catch (e) {
+      console.error(e)
+      setError(e.response?.data?.message || 'Delete failed')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (!validate()) return
+    try {
+      setLoading(true)
+      setSuccess('')
+      const payload = { name: formData.name.trim(), description: formData.description.trim() }
+      if (editingId) {
+        await axios.put(`/inventory/categories/${editingId}`, payload)
+        setSuccess('Category updated')
+      } else {
+        await axios.post('/inventory/categories', payload)
+        setSuccess('Category created')
+      }
+      await fetchItems()
+      handleCancel()
+      setTimeout(() => setSuccess(''), 3000)
+    } catch (e2) {
+      console.error(e2)
+      setError(e2.response?.data?.message || 'Save failed')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const filtered = items.filter((x) => {
+    const q = searchTerm.trim().toLowerCase()
+    if (!q) return true
+    const name = String(x.name ?? x.Name ?? '').toLowerCase()
+    return name.includes(q)
+  })
+
+  return (
+    <div className="space-y-6">
+      <div className="bg-gradient-to-r from-indigo-600 to-blue-700 rounded-2xl p-6 text-white">
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-2xl font-bold mb-2">Inventory Category Master</h1>
+            <p className="text-indigo-100">Manage categories used to group inventory items</p>
+          </div>
+          <FolderOpenIcon className="h-12 w-12 text-indigo-200" />
+        </div>
+      </div>
+
+      {error && (
+        <div className="bg-red-50 border border-red-200 rounded-lg p-4"><span className="text-red-700">{error}</span></div>
+      )}
+      {success && (
+        <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-center"><CheckCircleIcon className="h-5 w-5 text-green-600 mr-2"/><span className="text-green-700">{success}</span></div>
+      )}
+
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between">
+          <div className="relative flex-1 max-w-xl">
+            <MagnifyingGlassIcon className="h-5 w-5 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+            <input value={searchTerm} onChange={(e)=>setSearchTerm(e.target.value)} placeholder="Search category..." className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <button type="button" onClick={()=>{resetForm();setEditingId(null);setShowForm(true)}} className="flex items-center justify-center px-4 py-2 bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold rounded-lg hover:from-indigo-700 hover:to-blue-700">
+            <PlusIcon className="h-5 w-5 mr-2"/>Add Category</button>
+        </div>
+      </div>
+
+      {showForm && (
+        <div className="bg-white rounded-2xl shadow-lg border border-gray-200">
+          <div className="p-6 border-b border-gray-200"><h2 className="text-xl font-semibold text-gray-900">{editingId? 'Edit':'Add'} Category</h2></div>
+          <form onSubmit={handleSubmit} className="p-6 space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Name <span className="text-red-500">*</span></label>
+                <input value={formData.name} onChange={(e)=>setFormData({...formData,name:e.target.value})} className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 ${errors.name?'border-red-500':'border-gray-300'}`} placeholder="Beverages" />
+                {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
+              </div>
+              <div className="md:col-span-2">
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Description</label>
+                <textarea rows={3} value={formData.description} onChange={(e)=>setFormData({...formData,description:e.target.value})} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Optional description"></textarea>
+              </div>
+            </div>
+            <div className="flex items-center justify-end space-x-4 pt-6 border-t border-gray-200">
+              <button type="button" onClick={handleCancel} className="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-gray-50">Cancel</button>
+              <button type="submit" disabled={loading} className="px-8 py-2 bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold rounded-lg hover:from-indigo-700 hover:to-blue-700 disabled:opacity-50">{loading?'Saving...':(editingId?'Update':'Save')}</button>
+            </div>
+          </form>
+        </div>
+      )}
+
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+        <div className="p-6 border-b border-gray-200"><h2 className="text-lg font-semibold text-gray-900">Categories</h2></div>
+        {loading && !showForm ? (
+          <div className="p-8 text-center text-gray-600">Loading...</div>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="min-w-full divide-y divide-gray-200">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                </tr>
+              </thead>
+              <tbody className="bg-white divide-y divide-gray-200">
+                {filtered.length===0 ? (
+                  <tr><td colSpan={2} className="px-6 py-8 text-center text-gray-500">No categories found</td></tr>
+                ) : (
+                  filtered.map((row)=>{
+                    const id=row.id ?? row.Id
+                    return (
+                      <tr key={id} className="hover:bg-gray-50">
+                        <td className="px-6 py-4 text-sm text-gray-900">{row.name ?? row.Name}</td>
+                        <td className="px-6 py-4 text-sm font-medium">
+                          <div className="flex space-x-2">
+                            <button onClick={()=>handleEdit(row)} className="text-indigo-600 hover:text-indigo-900 p-1 rounded hover:bg-indigo-50" title="Edit"><PencilIcon className="h-4 w-4"/></button>
+                            <button onClick={()=>handleDelete(id)} className="text-red-600 hover:text-red-900 p-1 rounded hover:bg-red-50" title="Delete"><TrashIcon className="h-4 w-4"/></button>
+                          </div>
+                        </td>
+                      </tr>
+                    )
+                  })
+                )}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+export default InventoryCategoryMaster
