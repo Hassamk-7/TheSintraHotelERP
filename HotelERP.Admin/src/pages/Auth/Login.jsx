@@ -1,11 +1,19 @@
 import { useMemo, useState } from 'react'
 import { Navigate } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
-import { EyeIcon, EyeSlashIcon, KeyIcon, EnvelopeIcon, ChevronRightIcon, Cog6ToothIcon, MegaphoneIcon, BanknotesIcon, SparklesIcon, BuildingStorefrontIcon } from '@heroicons/react/24/outline'
+import { EyeIcon, EyeSlashIcon, KeyIcon, EnvelopeIcon, ChevronRightIcon, Cog6ToothIcon, MegaphoneIcon, BanknotesIcon, SparklesIcon, BuildingStorefrontIcon, ShieldCheckIcon } from '@heroicons/react/24/outline'
 
 const Login = () => {
   const { login, isAuthenticated } = useAuth()
   const departmentOptions = useMemo(() => ([
+    {
+      id: 'admin-operations',
+      title: 'Admin Operations',
+      subtitle: 'System administration and super user access',
+      icon: ShieldCheckIcon,
+      buttonClass: 'from-red-500 to-red-700 shadow-red-900/30',
+      defaultEmail: 'superadmin'
+    },
     {
       id: 'operations',
       title: 'Operations',
@@ -96,31 +104,22 @@ const Login = () => {
   }
 
   return (
-    <div className="h-screen overflow-hidden flex">
+    <div className="min-h-screen flex flex-col lg:flex-row">
       {/* Left Side - Branding */}
-      <div className="hidden lg:flex lg:w-[48%] relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-950">
+      <div className="hidden lg:flex lg:w-[45%] xl:w-[48%] relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-950 min-h-screen">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.14),transparent_35%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.12),transparent_25%)]"></div>
         <div className="absolute inset-x-0 bottom-0 h-56 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.1),transparent_45%)]"></div>
-        <div className="relative z-10 flex h-full w-full flex-col justify-center px-10 py-8 text-white xl:px-14">
-          <div className="mx-auto w-full max-w-[540px] rounded-[36px] border border-white/10 bg-white/5 px-8 py-8 shadow-[0_30px_80px_rgba(15,23,42,0.22)] backdrop-blur-[2px]">
-          <div className="mb-7 flex items-center gap-4">
-            <img src="/whitelogo.png" alt="The Sintra Hotel" className="h-20 w-20 rounded-3xl bg-white/10 p-3 object-contain shadow-xl backdrop-blur-sm" />
+        <div className="relative z-10 flex h-full w-full flex-col justify-center px-6 py-6 text-white xl:px-12 2xl:px-14 overflow-y-auto">
+          <div className="mx-auto w-full max-w-[540px] rounded-[20px] xl:rounded-[28px] border border-white/10 bg-white/5 px-4 py-4 xl:px-6 xl:py-6 shadow-[0_30px_80px_rgba(15,23,42,0.22)] backdrop-blur-[2px]">
+          <div className="mb-3 xl:mb-4 flex items-center gap-2.5 xl:gap-3">
+            <img src="/whitelogo.png" alt="The Sintra Hotel" className="h-12 w-12 xl:h-14 xl:w-14 rounded-xl xl:rounded-2xl bg-white/10 p-1.5 object-contain shadow-lg backdrop-blur-sm" />
             <div>
-              <div className="text-4xl font-extrabold tracking-tight">PMS</div>
-              <div className="text-base font-semibold text-blue-100">Hotel Management System</div>
+              <div className="text-xl xl:text-2xl font-extrabold tracking-tight">PMS</div>
+              <div className="text-[11px] xl:text-xs font-semibold text-blue-100">Hotel Management System</div>
             </div>
           </div>
 
-          <div className="max-w-2xl">
-            <h1 className="whitespace-nowrap text-[1.95rem] font-extrabold leading-tight xl:text-[2.15rem]">Sign in to your Department</h1>
-            <div className="mt-3 flex items-center gap-4 text-blue-100">
-              <span className="h-px flex-1 bg-white/20"></span>
-              <span className="text-base font-medium">Select your login category</span>
-              <span className="h-px flex-1 bg-white/20"></span>
-            </div>
-          </div>
-
-          <div className="mt-6 flex max-w-xl flex-col gap-2.5">
+          <div className="flex max-w-xl flex-col gap-1.5 xl:gap-2">
             {departmentOptions.map(option => {
               const Icon = option.icon
               const isActive = option.id === selectedDepartment
@@ -130,32 +129,32 @@ const Login = () => {
                   key={option.id}
                   type="button"
                   onClick={() => handleDepartmentSelect(option.id)}
-                  className={`group flex items-center justify-between rounded-2xl bg-gradient-to-r px-5 py-3.5 text-left shadow-xl transition duration-200 hover:scale-[1.01] ${option.buttonClass} ${isActive ? 'ring-2 ring-white/70' : 'opacity-90 hover:opacity-100'}`}
+                  className={`group flex items-center justify-between rounded-lg xl:rounded-xl bg-gradient-to-r px-2.5 xl:px-4 py-1.5 xl:py-2 text-left shadow-md transition duration-200 hover:scale-[1.01] ${option.buttonClass} ${isActive ? 'ring-2 ring-white/70' : 'opacity-90 hover:opacity-100'}`}
                 >
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/15 backdrop-blur-sm">
-                      <Icon className="h-6 w-6 text-white" />
+                  <div className="flex items-center gap-2.5 xl:gap-3">
+                    <div className="flex h-6 w-6 xl:h-8 xl:w-8 items-center justify-center rounded-lg xl:rounded-xl bg-white/15 backdrop-blur-sm flex-shrink-0">
+                      <Icon className="h-4 w-4 xl:h-5 xl:w-5 text-white" />
                     </div>
-                    <div>
-                      <div className="text-xl font-bold leading-none text-white">{option.title}</div>
-                      <div className="mt-1 text-xs text-white/85">{option.subtitle}</div>
+                    <div className="min-w-0">
+                      <div className="text-sm xl:text-base font-bold leading-none text-white">{option.title}</div>
+                      <div className="mt-0.5 text-[10px] xl:text-[11px] text-white/75 truncate">{option.subtitle}</div>
                     </div>
                   </div>
-                  <ChevronRightIcon className="h-6 w-6 text-white transition group-hover:translate-x-1" />
+                  <ChevronRightIcon className="h-4 w-4 xl:h-5 xl:w-5 text-white transition group-hover:translate-x-1 flex-shrink-0" />
                 </button>
               )
             })}
           </div>
 
-          <div className="mt-5 max-w-xl rounded-3xl border border-white/15 bg-white/10 p-4 backdrop-blur-md">
-            <div className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-100">Selected Access</div>
-            <div className="mt-2 text-2xl font-bold text-white">{activeDepartment.title}</div>
-            <p className="mt-2 text-sm leading-6 text-blue-100">
-              {activeDepartment.subtitle}. Use your authorized users account on the right side to continue securely into the system.
+          <div className="mt-3 max-w-xl rounded-xl border border-white/15 bg-white/10 p-2.5 xl:p-3.5 backdrop-blur-md">
+            <div className="text-[10px] xl:text-xs font-semibold uppercase tracking-[0.18em] text-blue-100">Selected Access</div>
+            <div className="mt-0.5 text-base xl:text-lg font-bold text-white">{activeDepartment.title}</div>
+            <p className="mt-0.5 text-[11px] xl:text-xs text-blue-100 leading-4">
+              {activeDepartment.subtitle}
             </p>
-            <div className="mt-4 grid grid-cols-2 gap-3 text-sm text-blue-50">
-              <div className="rounded-2xl bg-white/10 px-4 py-3">Users access by role</div>
-              <div className="rounded-2xl bg-white/10 px-4 py-3">Department wise login tabs</div>
+            <div className="mt-2 grid grid-cols-2 gap-2 text-[10px] xl:text-xs text-blue-50">
+              <div className="rounded-lg xl:rounded-xl bg-white/10 px-3 py-1.5">Users access by role</div>
+              <div className="rounded-lg xl:rounded-xl bg-white/10 px-3 py-1.5">Department wise login tabs</div>
             </div>
           </div>
           </div>
@@ -165,15 +164,30 @@ const Login = () => {
       </div>
 
       {/* Right Side - Login Form */}
-      <div className="flex-1 flex items-center justify-center overflow-hidden bg-gray-50 px-4 py-6 sm:px-6 lg:px-8">
+      <div className="flex-1 flex items-center justify-center min-h-screen bg-gray-50 px-4 py-4 sm:px-6 lg:px-6 xl:px-8">
         <div className="max-w-md w-full">
           {/* Mobile Logo */}
-          <div className="lg:hidden text-center mb-8">
-            <img src="/whitelogo.png" alt="The Sintra Hotel" className="h-24 w-24 mx-auto mb-4 rounded-2xl shadow-md object-contain" />
-            <h2 className="text-2xl font-bold text-gray-900">The Sintra Hotel</h2>
+          <div className="lg:hidden text-center mb-6">
+            <img src="/whitelogo.png" alt="The Sintra Hotel" className="h-20 w-20 sm:h-24 sm:w-24 mx-auto mb-3 rounded-2xl shadow-md object-contain" />
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900">The Sintra Hotel</h2>
+            <p className="text-sm text-gray-600 mt-1">PMS - Hotel Management System</p>
+          </div>
+          
+          {/* Mobile Department Selector */}
+          <div className="lg:hidden mb-4 w-full">
+            <label className="block text-sm font-semibold text-gray-700 mb-2">Select Department</label>
+            <select 
+              value={selectedDepartment}
+              onChange={(e) => handleDepartmentSelect(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+            >
+              {departmentOptions.map(option => (
+                <option key={option.id} value={option.id}>{option.title}</option>
+              ))}
+            </select>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+          <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl p-5 sm:p-8 border border-gray-100">
             <div className="text-center mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Welcome Back</h2>
               <p className="text-gray-600">Sign in to your account to continue</p>
@@ -273,7 +287,12 @@ const Login = () => {
             </form>
           </div>
           
-          <div className="text-center mt-6">
+          <div className="text-center mt-4 sm:mt-6 lg:hidden">
+            <p className="text-xs sm:text-sm text-gray-500">
+              © 2025 Growbiz Tech. Developed by Senior Software Architect Zubair.
+            </p>
+          </div>
+          <div className="text-center mt-6 hidden lg:block">
             <p className="text-sm text-gray-500">
               © 2025 Growbiz Tech. Developed by Senior Software Architect Zubair.
             </p>
