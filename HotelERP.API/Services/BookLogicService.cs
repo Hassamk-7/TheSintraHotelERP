@@ -26,6 +26,10 @@ namespace HotelERP.API.Services
         public string HotelCode { get; set; } = "";
         public int ChannelId { get; set; }
         public bool IsProduction { get; set; }
+        public int DefaultMinStay { get; set; } = 1;
+        public int DefaultAdvanceBookingDays { get; set; }
+        public int DefaultClosedOnArrival { get; set; }
+        public int DefaultClosedOnDeparture { get; set; }
     }
 
     public class BookLogicService
@@ -66,7 +70,11 @@ namespace HotelERP.API.Services
                     Password = !string.IsNullOrEmpty(dbSetting.Password) ? dbSetting.Password : _settings.Password,
                     HotelCode = !string.IsNullOrEmpty(dbSetting.HotelCode) ? dbSetting.HotelCode : _settings.HotelCode,
                     ChannelId = dbSetting.ChannelId > 0 ? dbSetting.ChannelId : _settings.ChannelId,
-                    IsProduction = dbSetting.IsProduction
+                    IsProduction = dbSetting.IsProduction,
+                    DefaultMinStay = dbSetting.DefaultMinStay > 0 ? dbSetting.DefaultMinStay : 1,
+                    DefaultAdvanceBookingDays = dbSetting.DefaultAdvanceBookingDays,
+                    DefaultClosedOnArrival = dbSetting.DefaultClosedOnArrival,
+                    DefaultClosedOnDeparture = dbSetting.DefaultClosedOnDeparture
                 };
             }
 
@@ -450,6 +458,7 @@ namespace HotelERP.API.Services
         {
             fromDate = NormalizeDateForBL(fromDate);
             toDate = NormalizeDateForBL(toDate);
+            var settings = await GetEffectiveSettings();
             var mappings = await _context.ChannelManagerRoomMappings
                 .Include(m => m.LocalRoomType)
                 .Where(m => m.IsActive)
@@ -466,9 +475,18 @@ namespace HotelERP.API.Services
                 var parsedFromDate = DateTime.ParseExact(fromDate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 var parsedToDate = DateTime.ParseExact(toDate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 var availableCount = await GetAvailableRoomCountForDateRange(mapping.LocalRoomTypeId, parsedFromDate, parsedToDate);
+                var stopSales = availableCount <= 0 ? 1 : 0;
 
                 var result = await UpdateAvailability(
-                    mapping.ExternalRoomId, fromDate, toDate, availableCount);
+                    mapping.ExternalRoomId,
+                    fromDate,
+                    toDate,
+                    availableCount,
+                    stopSales,
+                    settings.DefaultMinStay,
+                    settings.DefaultAdvanceBookingDays,
+                    settings.DefaultClosedOnArrival,
+                    settings.DefaultClosedOnDeparture);
 
                 if (result.Success)
                     successCount++;
@@ -1102,6 +1120,7 @@ namespace HotelERP.API.Services
         {
             try
             {
+                var settings = await GetEffectiveSettings();
                 var reservation = await _context.Reservations
                     .Include(r => r.Room)
                         .ThenInclude(r => r.RoomType)
@@ -1126,13 +1145,22 @@ namespace HotelERP.API.Services
                     ? reservation.CheckInDate.AddDays(1)
                     : reservation.CheckOutDate;
                 var availableCount = await GetAvailableRoomCountForDateRange(roomType.Id, reservation.CheckInDate, checkOut);
+                var stopSales = availableCount <= 0 ? 1 : 0;
 
                 // Push availability update to BookLogic
                 var fromDate = reservation.CheckInDate.ToString("dd/MM/yyyy");
                 var toDate = checkOut.ToString("dd/MM/yyyy");
 
                 var result = await UpdateAvailability(
-                    roomMapping.ExternalRoomId, fromDate, toDate, availableCount);
+                    roomMapping.ExternalRoomId,
+                    fromDate,
+                    toDate,
+                    availableCount,
+                    stopSales,
+                    settings.DefaultMinStay,
+                    settings.DefaultAdvanceBookingDays,
+                    settings.DefaultClosedOnArrival,
+                    settings.DefaultClosedOnDeparture);
 
                 _logger.LogInformation(
                     "BookLogic availability notification for reservation {ResId}: {Action} - Available={Count} - {Result}",

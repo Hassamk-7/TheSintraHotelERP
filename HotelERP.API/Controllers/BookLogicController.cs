@@ -66,6 +66,10 @@ namespace HotelERP.API.Controllers
                     s.AutoPullReservations,
                     s.AutoProcessReservations,
                     s.SyncIntervalMinutes,
+                    s.DefaultMinStay,
+                    s.DefaultAdvanceBookingDays,
+                    s.DefaultClosedOnArrival,
+                    s.DefaultClosedOnDeparture,
                     s.LastAvailabilitySync,
                     s.LastReservationSync,
                     s.LastRateSync,
@@ -100,6 +104,10 @@ namespace HotelERP.API.Controllers
                             autoPullReservations = false,
                             autoProcessReservations = false,
                             syncIntervalMinutes = 30,
+                            defaultMinStay = 1,
+                            defaultAdvanceBookingDays = 0,
+                            defaultClosedOnArrival = 0,
+                            defaultClosedOnDeparture = 0,
                             source = "appsettings"
                         }
                     });
@@ -134,6 +142,10 @@ namespace HotelERP.API.Controllers
                     existing.AutoPullReservations = dto.AutoPullReservations;
                     existing.AutoProcessReservations = dto.AutoProcessReservations;
                     existing.SyncIntervalMinutes = dto.SyncIntervalMinutes;
+                    existing.DefaultMinStay = dto.DefaultMinStay;
+                    existing.DefaultAdvanceBookingDays = dto.DefaultAdvanceBookingDays;
+                    existing.DefaultClosedOnArrival = dto.DefaultClosedOnArrival;
+                    existing.DefaultClosedOnDeparture = dto.DefaultClosedOnDeparture;
                     existing.UpdatedAt = DateTime.UtcNow;
                 }
                 else
@@ -155,6 +167,10 @@ namespace HotelERP.API.Controllers
                         AutoPullReservations = dto.AutoPullReservations,
                         AutoProcessReservations = dto.AutoProcessReservations,
                         SyncIntervalMinutes = dto.SyncIntervalMinutes,
+                        DefaultMinStay = dto.DefaultMinStay,
+                        DefaultAdvanceBookingDays = dto.DefaultAdvanceBookingDays,
+                        DefaultClosedOnArrival = dto.DefaultClosedOnArrival,
+                        DefaultClosedOnDeparture = dto.DefaultClosedOnDeparture,
                         CreatedAt = DateTime.UtcNow
                     };
                     _context.ChannelManagerSettings.Add(setting);
@@ -996,6 +1012,10 @@ namespace HotelERP.API.Controllers
             public bool AutoPullReservations { get; set; }
             public bool AutoProcessReservations { get; set; }
             public int SyncIntervalMinutes { get; set; } = 30;
+            public int DefaultMinStay { get; set; } = 1;
+            public int DefaultAdvanceBookingDays { get; set; }
+            public int DefaultClosedOnArrival { get; set; }
+            public int DefaultClosedOnDeparture { get; set; }
         }
 
         public class RoomMappingDto

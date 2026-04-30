@@ -52,6 +52,14 @@ namespace HotelERP.API.Models
 
         public int SyncIntervalMinutes { get; set; } = 5;
 
+        public int DefaultMinStay { get; set; } = 1;
+
+        public int DefaultAdvanceBookingDays { get; set; }
+
+        public int DefaultClosedOnArrival { get; set; }
+
+        public int DefaultClosedOnDeparture { get; set; }
+
         public DateTime? LastAvailabilitySync { get; set; }
 
         public DateTime? LastReservationSync { get; set; }

@@ -63,7 +63,11 @@ const ChannelManager = () => {
     autoSyncAvailability: false,
     autoPullReservations: false,
     autoProcessReservations: false,
-    syncIntervalMinutes: 5
+    syncIntervalMinutes: 5,
+    defaultMinStay: 1,
+    defaultAdvanceBookingDays: 0,
+    defaultClosedOnArrival: 0,
+    defaultClosedOnDeparture: 0
   })
 
   // Room mapping form
@@ -83,7 +87,7 @@ const ChannelManager = () => {
   const [syncForm, setSyncForm] = useState({
     reservationId: '', roomId: '', rateId: '', localRoomRateId: '', fromDate: new Date().toISOString().split('T')[0],
     toDate: new Date(Date.now() + 30 * 86400000).toISOString().split('T')[0],
-    allotment: 1, price: 0, minStay: 1, stopSales: 0
+    allotment: 1, price: 0, minStay: 1, stopSales: 0, advanceBookingDays: 0, closedOnArrival: 0, closedOnDeparture: 0
   })
 
   const selectedRateMapping = rateMappings.find(rm => String(rm.externalRateId) === String(syncForm.rateId))
@@ -136,7 +140,11 @@ const ChannelManager = () => {
           autoSyncAvailability: s.autoSyncAvailability ?? false,
           autoPullReservations: s.autoPullReservations ?? false,
           autoProcessReservations: s.autoProcessReservations ?? false,
-          syncIntervalMinutes: s.syncIntervalMinutes || 30
+          syncIntervalMinutes: s.syncIntervalMinutes || 30,
+          defaultMinStay: s.defaultMinStay || 1,
+          defaultAdvanceBookingDays: s.defaultAdvanceBookingDays || 0,
+          defaultClosedOnArrival: s.defaultClosedOnArrival || 0,
+          defaultClosedOnDeparture: s.defaultClosedOnDeparture || 0
         })
       }
     } catch (e) { console.warn('Settings fetch failed:', e.message) }
@@ -357,7 +365,12 @@ const ChannelManager = () => {
     try {
       const res = await axios.post('/booklogic/availability-update', {
         roomId: syncForm.roomId, fromDate: syncForm.fromDate, toDate: syncForm.toDate,
-        allotment: syncForm.allotment, stopSales: syncForm.stopSales, minStay: syncForm.minStay
+        allotment: syncForm.allotment,
+        stopSales: syncForm.stopSales,
+        minStay: syncForm.minStay,
+        advanceBookingDays: syncForm.advanceBookingDays,
+        closedOnArrival: syncForm.closedOnArrival,
+        closedOnDeparture: syncForm.closedOnDeparture
       })
       showToast(res.data.message, res.data.success ? 'success' : 'error')
       fetchLogs()
@@ -1005,6 +1018,29 @@ const ChannelManager = () => {
                 </select>
               </div>
             </div>
+            <div className="grid grid-cols-3 gap-3">
+              <div>
+                <label className="block text-xs font-medium text-gray-600 mb-1">Advance Booking Days</label>
+                <input type="number" value={syncForm.advanceBookingDays} onChange={e => setSyncForm({ ...syncForm, advanceBookingDays: parseInt(e.target.value) || 0 })}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm" />
+              </div>
+              <div>
+                <label className="block text-xs font-medium text-gray-600 mb-1">Closed On Arrival</label>
+                <select value={syncForm.closedOnArrival} onChange={e => setSyncForm({ ...syncForm, closedOnArrival: parseInt(e.target.value) })}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                  <option value={0}>No</option>
+                  <option value={1}>Yes</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-xs font-medium text-gray-600 mb-1">Closed On Departure</label>
+                <select value={syncForm.closedOnDeparture} onChange={e => setSyncForm({ ...syncForm, closedOnDeparture: parseInt(e.target.value) })}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                  <option value={0}>No</option>
+                  <option value={1}>Yes</option>
+                </select>
+              </div>
+            </div>
             <div className="flex gap-2">
               <button onClick={updateAvailability} disabled={loading}
                 className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 text-sm font-medium">
@@ -1244,6 +1280,32 @@ const ChannelManager = () => {
             <label className="block text-sm font-medium text-gray-700 mb-1">Sync Interval (minutes)</label>
             <input type="number" value={settingsForm.syncIntervalMinutes} onChange={e => setSettingsForm({ ...settingsForm, syncIntervalMinutes: parseInt(e.target.value) || 30 })}
               className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm" />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Default Min Stay</label>
+            <input type="number" value={settingsForm.defaultMinStay} onChange={e => setSettingsForm({ ...settingsForm, defaultMinStay: parseInt(e.target.value) || 1 })}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm" />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Default Advance Booking Days</label>
+            <input type="number" value={settingsForm.defaultAdvanceBookingDays} onChange={e => setSettingsForm({ ...settingsForm, defaultAdvanceBookingDays: parseInt(e.target.value) || 0 })}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm" />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Default Closed On Arrival</label>
+            <select value={settingsForm.defaultClosedOnArrival} onChange={e => setSettingsForm({ ...settingsForm, defaultClosedOnArrival: parseInt(e.target.value) })}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+              <option value={0}>No</option>
+              <option value={1}>Yes</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Default Closed On Departure</label>
+            <select value={settingsForm.defaultClosedOnDeparture} onChange={e => setSettingsForm({ ...settingsForm, defaultClosedOnDeparture: parseInt(e.target.value) })}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+              <option value={0}>No</option>
+              <option value={1}>Yes</option>
+            </select>
           </div>
           <div className="space-y-3 pt-2">
             <label className="flex items-center gap-2">
